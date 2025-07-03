@@ -1,0 +1,25 @@
+{
+  "name": "ufc-predictions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DKeAlvaro/ufc-predictions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DKeAlvaro/ufc-predictions/issues"
+  },
+  "homepage": "https://DKeAlvaro.github.io/ufc-predictions",
+  "description": "",
+  "devDependencies": {
+    "@gradio/client": "^1.15.4",
+    "gh-pages": "^6.3.0"
+  }
+}
