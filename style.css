@@ -1,5 +1,5 @@
 body {
-    background-color: #121212;
+    background-color: #101010;
     color: #ffffff;
     font-family: Arial, sans-serif;
     display: flex;
@@ -11,44 +11,92 @@ body {
 
 .container {
     text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
 }
 
 h1 {
-    color: #bb86fc;
+    color: #D20A0A;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.5px;
 }
 
 .input-group {
     margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.input-container {
+    position: relative;
 }
 
 input[type="text"] {
     background-color: #1e1e1e;
     color: #ffffff;
-    border: 1px solid #bb86fc;
+    border: 2px solid #333;
     border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-    width: 200px;
+    padding: 15px;
+    margin: 5px 0;
+    width: 300px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #D20A0A;
 }
 
 input[type="text"]::placeholder {
     color: #888;
 }
 
+.suggestions {
+    display: none;
+    position: absolute;
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 334px;
+    z-index: 1000;
+    border-radius: 5px;
+    margin-top: 2px;
+    text-align: left;
+}
+
+.suggestions .suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.suggestions .suggestion-item:hover,
+.suggestions .suggestion-item.active {
+    background-color: #D20A0A;
+}
+
 button {
-    background-color: #bb86fc;
-    color: #121212;
+    background-color: #D20A0A;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 15px 30px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #3700b3;
-    color: #ffffff;
+    background-color: #a00808;
 }
 
 .result-container {
@@ -58,4 +106,23 @@ button:hover {
 
 .result-container p {
     font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    input[type="text"] {
+        width: 80vw;
+        max-width: 300px;
+    }
+
+    .suggestions {
+        width: calc(80vw + 4px);
+        max-width: 304px;
+    }
 } 

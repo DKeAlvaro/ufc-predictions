@@ -10,8 +10,14 @@
     <div class="container">
         <h1>UFC Fight Predictor</h1>
         <div class="input-group">
-            <input type="text" id="fighter1" placeholder="Enter Fighter 1 Name">
-            <input type="text" id="fighter2" placeholder="Enter Fighter 2 Name">
+            <div class="input-container">
+                <input type="text" id="fighter1" placeholder="Enter Fighter 1 Name" autocomplete="off">
+                <div id="suggestions1" class="suggestions"></div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="fighter2" placeholder="Enter Fighter 2 Name" autocomplete="off">
+                <div id="suggestions2" class="suggestions"></div>
+            </div>
         </div>
         <button id="predictBtn">Predict Winner</button>
         <div id="result" class="result-container">
