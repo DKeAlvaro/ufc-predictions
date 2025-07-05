@@ -76,7 +76,7 @@ h1 {
 
 .consensus-prediction {
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* Align to bottom for consistent name height */
     justify-content: space-between;
     gap: 15px;
     margin-bottom: 15px;
@@ -115,6 +115,12 @@ h1 {
     display: flex;
     position: relative;
     overflow: hidden; /* Ensures the inner bar respects the border radius */
+    transition: all 0.2s ease-in-out;
+}
+
+.details-breakdown summary:hover .prediction-bar {
+    transform: scale(1.02);
+    border-color: #999;
 }
 
 .bar-fighter1 {
@@ -130,6 +136,10 @@ h1 {
     font-weight: bold;
     color: white;
     text-shadow: 1px 1px 2px black;
+}
+
+.mobile-arrow {
+    display: none;
 }
 
 .f1-prob {
@@ -266,18 +276,18 @@ h1 {
         right: 10px;
     }
 
-    /* On mobile, hide the text and default arrow */
+    /* Hide text/arrow for mobile */
     .details-breakdown > summary {
-        font-size: 0; /* Hide text */
+        font-size: 0;
         padding-right: 0;
     }
     .details-breakdown > summary::after {
-       display: none; /* Hide desktop arrow */
+       display: none;
     }
 
-    /* Create a new, custom arrow in the middle of the bar */
-    .details-breakdown > summary .prediction-bar::after {
-        /* This will now be the only arrow on mobile */
+    /* Use the dedicated div for the mobile arrow */
+    .mobile-arrow {
+        display: block;
         content: '▼';
         font-size: 16px;
         color: rgba(255, 255, 255, 0.7);
@@ -289,7 +299,7 @@ h1 {
         transition: transform 0.3s ease;
     }
 
-    .details-breakdown[open] > summary .prediction-bar::after {
+    .details-breakdown[open] > summary .mobile-arrow {
         transform: translate(-50%, -50%) rotate(180deg);
     }
     

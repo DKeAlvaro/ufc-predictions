@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             const events = await response.json();
             return events;
-        } catch (error) {
+    } catch (error) {
             console.error("Could not load or parse upcoming_predictions.json:", error);
             appContainer.innerHTML = `<p class="error">Could not load prediction data. Please run the prediction script and ensure the JSON file is present.</p>`;
             return null;
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const prob = parseFloat(prediction.probability) || 0;
             if (prediction.winner === fighter1) {
                 f1_prob_sum += prob;
-            } else {
+    } else {
                 f1_prob_sum += (100 - prob);
             }
             valid_models++;
@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     function renderData(events) {
         if (!events || events.length === 0) {
             appContainer.innerHTML = `<p>No upcoming events with predictions found.</p>`;
-            return;
-        }
+        return;
+    }
 
         appContainer.innerHTML = ''; // Clear loading/error message
 
@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 const consensus = calculateConsensus(fight);
                 const fighter1WinnerClass = consensus.consensusWinner === consensus.fighter1 ? 'winner' : '';
                 const fighter2WinnerClass = consensus.consensusWinner === consensus.fighter2 ? 'winner' : '';
+                const fighter1LoserClass = consensus.consensusWinner === consensus.fighter2 ? 'loser' : '';
+                const fighter2LoserClass = consensus.consensusWinner === consensus.fighter1 ? 'loser' : '';
 
                 const tableRows = Object.entries(fight.predictions).map(([model, pred]) => {
                     const modelName = model.replace('Model.joblib', '');
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                             <div class="consensus-prediction">
                                 <div class="fighter-display">
                                     <img src="crown.webp" class="winner-crown" style="visibility: ${fighter1WinnerClass ? 'visible' : 'hidden'}">
-                                    <div class="fighter-name ${fighter1WinnerClass}">${consensus.fighter1}</div>
+                                    <div class="fighter-name ${fighter1WinnerClass} ${fighter1LoserClass}">${consensus.fighter1}</div>
                                 </div>
                                 <div class="prediction-bar" 
                                      data-prob-f1="${consensus.avg_f1_prob.toFixed(1)}%"
@@ -99,10 +101,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                                     <div class="bar-fighter1" style="width: ${consensus.avg_f1_prob}%"></div>
                                     <div class="prob-text f1-prob">${consensus.avg_f1_prob.toFixed(1)}%</div>
                                     <div class="prob-text f2-prob">${(100 - consensus.avg_f1_prob).toFixed(1)}%</div>
+                                    <div class="mobile-arrow"></div>
                                 </div>
                                 <div class="fighter-display">
                                     <img src="crown.webp" class="winner-crown" style="visibility: ${fighter2WinnerClass ? 'visible' : 'hidden'}">
-                                    <div class="fighter-name ${fighter2WinnerClass}">${consensus.fighter2}</div>
+                                    <div class="fighter-name ${fighter2WinnerClass} ${fighter2LoserClass}">${consensus.fighter2}</div>
                                 </div>
                             </div>
                         </summary>
