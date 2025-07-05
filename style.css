@@ -1,18 +1,25 @@
 body {
-    background-color: #101010;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    background-color: #000000;
+    background-image: url(http://transparenttextures.com/patterns/brick-wall-dark.png);
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     padding: 20px;
 }
 
 h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 4.2rem;
     text-align: center;
-    color: #D20A0A;
     text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    line-height: 0.9;
+    background: -webkit-linear-gradient(45deg, #eeeeee, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.1);
 }
 
 #app {
@@ -21,7 +28,7 @@ h1 {
 }
 
 .event-card {
-    background-color: #1a1a1a;
+    background-color: rgba(40, 40, 40, 0.40);
     border: 1px solid #333;
     border-radius: 8px;
     margin-bottom: 30px;
@@ -106,6 +113,14 @@ h1 {
     color: #FFD700; /* Cool gold/yellow color */
 }
 
+.fighter-name.loser-f1 {
+    color: #D20A0A;
+}
+
+.fighter-name.loser-f2 {
+    color: #1E90FF;
+}
+
 .prediction-bar {
     flex-grow: 1;
     height: 35px;
@@ -115,12 +130,6 @@ h1 {
     display: flex;
     position: relative;
     overflow: hidden; /* Ensures the inner bar respects the border radius */
-    transition: all 0.2s ease-in-out;
-}
-
-.details-breakdown summary:hover .prediction-bar {
-    transform: scale(1.02);
-    border-color: #999;
 }
 
 .bar-fighter1 {
@@ -233,6 +242,11 @@ h1 {
 
 /* --- Responsive Mobile Styles --- */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+        letter-spacing: 1px;
+    }
+
     .consensus-prediction {
         flex-wrap: wrap;
         gap: 10px;
