@@ -2,166 +2,304 @@ body {
     background-color: #101010;
     color: #ffffff;
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
-    text-align: center;
+    line-height: 1.6;
     padding: 20px;
-    width: 100%;
-    max-width: 900px;
 }
 
 h1 {
+    text-align: center;
     color: #D20A0A;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1.5px;
+    margin-bottom: 40px;
+}
+
+#app {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
     margin-bottom: 30px;
+    padding: 20px;
 }
 
-.model-selector-container {
+.event-header {
+    border-bottom: 1px solid #D20A0A;
+    padding-bottom: 10px;
     margin-bottom: 20px;
-}
-
-.model-selector-container label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #ccc;
-}
-
-select {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    border: 2px solid #333;
-    border-radius: 5px;
-    padding: 15px;
-    width: 334px;
-    font-size: 16px;
     cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23cccccc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.3-5.4-13z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 15px top 50%;
-    background-size: 12px;
-}
-
-select:focus {
-    outline: none;
-    border-color: #D20A0A;
-}
-
-.input-group {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.input-container {
     position: relative;
+    user-select: none; /* Prevents text selection on click */
 }
 
-input[type="text"] {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    border: 2px solid #333;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 5px 0;
-    width: 300px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-input[type="text"]:focus {
-    outline: none;
-    border-color: #D20A0A;
-}
-
-input[type="text"]::placeholder {
+.event-header::after {
+    content: '−'; /* Minus sign for expanded state */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
     color: #888;
 }
 
-.suggestions {
-    display: none;
+.event-card.collapsed .event-header::after {
+    content: '+'; /* Plus sign for collapsed state */
+}
+
+.event-header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 24px;
+}
+
+.event-header p {
+    margin: 5px 0 0;
+    color: #ccc;
+    font-size: 16px;
+}
+
+.fight-card {
+    padding: 15px 0;
+    border-bottom: 1px solid #444;
+}
+
+.fight-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.consensus-prediction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.fighter-display {
+    flex-basis: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.winner-crown {
+    height: 25px;
+    width: 45px;
+    visibility: hidden; /* Hide the crown by default */
+}
+
+.fighter-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fighter-name.winner {
+    color: #FFD700; /* Cool gold/yellow color */
+}
+
+.prediction-bar {
+    flex-grow: 1;
+    height: 35px;
+    background-color: #1E90FF;
+    border: 1px solid #555;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    overflow: hidden; /* Ensures the inner bar respects the border radius */
+}
+
+.bar-fighter1 {
+    height: 100%;
+    background-color: #D20A0A;
+    transition: width 0.5s ease-in-out;
+}
+
+.prob-text {
     position: absolute;
-    border: 1px solid #333;
-    background-color: #1e1e1e;
-    max-height: 200px;
-    overflow-y: auto;
-    width: 334px;
-    z-index: 1000;
-    border-radius: 5px;
-    margin-top: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.f1-prob {
+    left: 10px;
+}
+
+.f2-prob {
+    right: 10px;
+}
+
+.details-breakdown {
+    margin-top: 10px;
+}
+
+.details-breakdown summary {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 14px;
+    text-align: center;
+    list-style: none; /* Remove default arrow */
+    position: relative;
+    padding-right: 20px; /* Space for the arrow */
+}
+.details-breakdown summary::-webkit-details-marker {
+    display: none; /* Hide arrow for Safari */
+}
+
+
+.details-breakdown summary:hover {
+    color: #fff;
+}
+
+.details-breakdown summary::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.details-breakdown[open] > summary::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.details-breakdown table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.details-breakdown th, .details-breakdown td {
+    padding: 8px;
     text-align: left;
+    border-bottom: 1px solid #333;
 }
 
-.suggestions .suggestion-item {
-    padding: 10px 15px;
-    cursor: pointer;
-    color: #ffffff;
-    transition: background-color 0.2s;
+.details-breakdown th {
+    background-color: #2c2c2c;
 }
 
-.suggestions .suggestion-item:hover,
-.suggestions .suggestion-item.active {
-    background-color: #D20A0A;
-}
-
-button {
-    background-color: #D20A0A;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #a00808;
-}
-
-.result-container {
-    margin-top: 20px;
-    min-height: 50px;
-}
-
-.result-container p {
-    font-size: 18px;
+.details-breakdown td.winner-f1 {
+    color: #D20A0A;
     font-weight: bold;
 }
 
+.details-breakdown td.winner-f2 {
+    color: #1E90FF;
+    font-weight: bold;
+}
+
+.error {
+    text-align: center;
+    color: #ffcdd2;
+    background-color: #b71c1c;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.fights-container {
+    max-height: 10000px; /* A large value to allow content to show */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.event-card.collapsed .fights-container {
+    max-height: 0;
+}
+
+/* --- Responsive Mobile Styles --- */
 @media (max-width: 768px) {
-    .input-group {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+    .consensus-prediction {
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
-    input[type="text"] {
-        width: 80vw;
-        max-width: 300px;
+    .fighter-display {
+        flex-basis: 45%;
+        order: 1; /* Move names to the top row */
     }
 
-    .suggestions {
-        width: calc(80vw + 4px);
-        max-width: 304px;
+    .prediction-bar {
+        flex-basis: 100%;
+        order: 2; /* Move bar to the bottom row */
     }
-    select {
-        width: 80vw;
-        max-width: 300px;
+
+    /* Hide desktop percentages */
+    .prob-text {
+        display: none;
+    }
+
+    /* Cool mobile percentages using pseudo-elements */
+    .prediction-bar::before,
+    .prediction-bar::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+        font-size: 18px;
+    }
+
+    .prediction-bar::before {
+        content: attr(data-prob-f1);
+        left: 10px;
+    }
+
+    .prediction-bar::after {
+        content: attr(data-prob-f2);
+        right: 10px;
+    }
+
+    /* On mobile, hide the text and default arrow */
+    .details-breakdown > summary {
+        font-size: 0; /* Hide text */
+        padding-right: 0;
+    }
+    .details-breakdown > summary::after {
+       display: none; /* Hide desktop arrow */
+    }
+
+    /* Create a new, custom arrow in the middle of the bar */
+    .details-breakdown > summary .prediction-bar::after {
+        /* This will now be the only arrow on mobile */
+        content: '▼';
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-shadow: none;
+        transition: transform 0.3s ease;
+    }
+
+    .details-breakdown[open] > summary .prediction-bar::after {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    
+    .table-wrapper {
+        max-height: 5000px;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .details-breakdown:not([open]) .table-wrapper {
+        max-height: 0;
     }
 } 

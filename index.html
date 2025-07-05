@@ -3,39 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UFC Fight Predictor</title>
+    <title>UFC Upcoming Fight Predictions</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>UFC Fight Predictor</h1>
-        <div class="model-selector-container">
-            <label for="modelSelector">Choose a Model:</label>
-            <select id="modelSelector">
-                <option value="XGBoostModel.joblib" selected>XGBoost</option>
-                <option value="LGBMModel.joblib">LightGBM</option>
-                <option value="RandomForestModel.joblib">Random Forest</option>
-                <option value="SVCModel.joblib">Support Vector Machine</option>
-                <option value="LogisticRegressionModel.joblib">Logistic Regression</option>
-                <option value="BernoulliNBModel.joblib">Bernoulli Naive Bayes</option>
-                <option value="EloBaselineModel.joblib">Elo Baseline</option>
-            </select>
-        </div>
-        <div class="input-group">
-            <div class="input-container">
-                <input type="text" id="fighter1" placeholder="Enter Fighter 1 Name" autocomplete="off">
-                <div id="suggestions1" class="suggestions"></div>
-            </div>
-            <div class="input-container">
-                <input type="text" id="fighter2" placeholder="Enter Fighter 2 Name" autocomplete="off">
-                <div id="suggestions2" class="suggestions"></div>
-            </div>
-        </div>
-        <button id="predictBtn">Predict Winner</button>
-        <div id="result" class="result-container">
-            <p></p>
-        </div>
-    </div>
+    <h1>UFC Upcoming Predictions</h1>
+    <main id="app">
+        <p>Loading predictions...</p>
+    </main>
+
+    <!-- Chart.js library for creating graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Your custom script -->
     <script type="module" src="script.js"></script>
 </body>
-</html> 
+</html>

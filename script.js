@@ -1,128 +1,130 @@
-import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client@1.15.4/dist/index.min.js";
-
-const predictBtn = document.getElementById("predictBtn");
-const fighter1Input = document.getElementById("fighter1");
-const fighter2Input = document.getElementById("fighter2");
-const modelSelector = document.getElementById("modelSelector");
-const resultDiv = document.getElementById("result").querySelector('p');
-const suggestions1Div = document.getElementById("suggestions1");
-const suggestions2Div = document.getElementById("suggestions2");
-
-let fighters = [];
-let activeSuggestionIndex = -1;
-
-async function loadFighters() {
-    try {
-        const response = await fetch('fighters.txt');
-        const text = await response.text();
-        fighters = text.split('\n').map(name => name.trim()).filter(name => name);
-    } catch (error) {
-        console.error("Could not load fighters list:", error);
-    }
-}
-
-function showSuggestions(input, suggestionsDiv) {
-    const inputText = input.value.toLowerCase();
-    suggestionsDiv.innerHTML = '';
-    activeSuggestionIndex = -1; 
-    if (inputText.length === 0) {
-        suggestionsDiv.style.display = 'none';
-        return;
-    }
-
-    const filteredFighters = fighters.filter(f => f.toLowerCase().includes(inputText)).slice(0, 5);
-
-    if (filteredFighters.length > 0) {
-        filteredFighters.forEach(fighter => {
-            const div = document.createElement('div');
-            div.textContent = fighter;
-            div.classList.add('suggestion-item');
-            div.addEventListener('click', () => {
-                input.value = fighter;
-                suggestionsDiv.style.display = 'none';
-            });
-            suggestionsDiv.appendChild(div);
-        });
-        suggestionsDiv.style.display = 'block';
-    } else {
-        suggestionsDiv.style.display = 'none';
-    }
-}
-
-function handleKeyDown(e, input, suggestionsDiv) {
-    const items = suggestionsDiv.querySelectorAll('.suggestion-item');
-    if (items.length === 0) return;
-
-    if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        activeSuggestionIndex++;
-        if (activeSuggestionIndex >= items.length) activeSuggestionIndex = 0;
-        updateActiveSuggestion(items);
-    } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        activeSuggestionIndex--;
-        if (activeSuggestionIndex < 0) activeSuggestionIndex = items.length - 1;
-        updateActiveSuggestion(items);
-    } else if (e.key === 'Enter') {
-        e.preventDefault();
-        if (activeSuggestionIndex > -1) {
-            items[activeSuggestionIndex].click();
+document.addEventListener("DOMContentLoaded", async () => {
+    const appContainer = document.getElementById('app');
+    
+    async function loadPredictions() {
+        try {
+            const response = await fetch('upcoming_predictions.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const events = await response.json();
+            return events;
+        } catch (error) {
+            console.error("Could not load or parse upcoming_predictions.json:", error);
+            appContainer.innerHTML = `<p class="error">Could not load prediction data. Please run the prediction script and ensure the JSON file is present.</p>`;
+            return null;
         }
     }
-}
 
-function updateActiveSuggestion(items) {
-    items.forEach((item, index) => {
-        if (index === activeSuggestionIndex) {
-            item.classList.add('active');
-            item.scrollIntoView({ block: 'nearest' });
-        } else {
-            item.classList.remove('active');
+    function calculateConsensus(fightData) {
+        const fighter1 = fightData.fight.split(' vs. ')[0];
+        let f1_prob_sum = 0;
+        let valid_models = 0;
+
+        for (const model in fightData.predictions) {
+            const prediction = fightData.predictions[model];
+            if (prediction.error || !prediction.probability) continue;
+
+            const prob = parseFloat(prediction.probability) || 0;
+            if (prediction.winner === fighter1) {
+                f1_prob_sum += prob;
+            } else {
+                f1_prob_sum += (100 - prob);
+            }
+            valid_models++;
         }
-    });
-}
 
-fighter1Input.addEventListener('input', () => showSuggestions(fighter1Input, suggestions1Div));
-fighter2Input.addEventListener('input', () => showSuggestions(fighter2Input, suggestions2Div));
+        if (valid_models === 0) {
+            return { consensusWinner: "N/A", consensusProbability: 0, fighter1, fighter2: fightData.fight.split(' vs. ')[1] };
+        }
 
-fighter1Input.addEventListener('keydown', (e) => handleKeyDown(e, fighter1Input, suggestions1Div));
-fighter2Input.addEventListener('keydown', (e) => handleKeyDown(e, fighter2Input, suggestions2Div));
-
-
-document.addEventListener('click', (e) => {
-    if (e.target !== fighter1Input) {
-        suggestions1Div.style.display = 'none';
-    }
-    if (e.target !== fighter2Input) {
-        suggestions2Div.style.display = 'none';
-    }
-});
-
-predictBtn.addEventListener("click", async () => {
-    const fighter1 = fighter1Input.value;
-    const fighter2 = fighter2Input.value;
-    const modelName = modelSelector.value;
-
-    if (!fighter1 || !fighter2) {
-        resultDiv.textContent = "Please enter both fighter names.";
-        return;
-    }
-
-    resultDiv.textContent = "Predicting...";
-
-    try {
-        const app = await Client.connect("AlvaroMros/ufc-predictor");
-        const result = await app.predict("/predict_fight", [
-            modelName,
-            fighter1,
-            fighter2,
-        ]);
+        const avg_f1_prob = f1_prob_sum / valid_models;
+        const fighter2 = fightData.fight.split(' vs. ')[1];
         
-        resultDiv.textContent = result.data[0];
-    } catch (error) {
-        console.error("Prediction failed:", error);
-        resultDiv.textContent = "Could not get prediction. See console for details.";
-    }
-});
+        const consensusWinner = avg_f1_prob >= 50 ? fighter1 : fighter2;
+        const consensusProbability = avg_f1_prob >= 50 ? avg_f1_prob : 100 - avg_f1_prob;
 
-loadFighters(); 
+        return { consensusWinner, consensusProbability, fighter1, fighter2, avg_f1_prob };
+    }
+
+    function renderData(events) {
+        if (!events || events.length === 0) {
+            appContainer.innerHTML = `<p>No upcoming events with predictions found.</p>`;
+            return;
+        }
+
+        appContainer.innerHTML = ''; // Clear loading/error message
+
+        events.forEach(event => {
+            const eventEl = document.createElement('div');
+            eventEl.className = 'event-card';
+
+            const headerEl = document.createElement('div');
+            headerEl.className = 'event-header';
+            headerEl.innerHTML = `<h2>${event.event_name}</h2><p>${event.event_date}</p>`;
+            
+            const fightsContainerEl = document.createElement('div');
+            fightsContainerEl.className = 'fights-container';
+
+            headerEl.addEventListener('click', () => {
+                eventEl.classList.toggle('collapsed');
+            });
+
+            event.fights.forEach((fight) => {
+                const consensus = calculateConsensus(fight);
+                const fighter1WinnerClass = consensus.consensusWinner === consensus.fighter1 ? 'winner' : '';
+                const fighter2WinnerClass = consensus.consensusWinner === consensus.fighter2 ? 'winner' : '';
+
+                const tableRows = Object.entries(fight.predictions).map(([model, pred]) => {
+                    const modelName = model.replace('Model.joblib', '');
+                    const winner = pred.error ? 'Error' : pred.winner;
+                    const prob = pred.error ? '-' : `${parseFloat(pred.probability).toFixed(1)}%`;
+                    const winnerClass = winner === consensus.fighter1 ? 'winner-f1' : (winner === consensus.fighter2 ? 'winner-f2' : '');
+                    return `<tr><td>${modelName}</td><td class="${winnerClass}">${winner}</td><td>${prob}</td></tr>`;
+                }).join('');
+
+                const fightEl = document.createElement('div');
+                fightEl.className = 'fight-card';
+                fightEl.innerHTML = `
+                    <details class="details-breakdown">
+                        <summary>
+                            <div class="consensus-prediction">
+                                <div class="fighter-display">
+                                    <img src="crown.webp" class="winner-crown" style="visibility: ${fighter1WinnerClass ? 'visible' : 'hidden'}">
+                                    <div class="fighter-name ${fighter1WinnerClass}">${consensus.fighter1}</div>
+                                </div>
+                                <div class="prediction-bar" 
+                                     data-prob-f1="${consensus.avg_f1_prob.toFixed(1)}%"
+                                     data-prob-f2="${(100 - consensus.avg_f1_prob).toFixed(1)}%">
+                                    <div class="bar-fighter1" style="width: ${consensus.avg_f1_prob}%"></div>
+                                    <div class="prob-text f1-prob">${consensus.avg_f1_prob.toFixed(1)}%</div>
+                                    <div class="prob-text f2-prob">${(100 - consensus.avg_f1_prob).toFixed(1)}%</div>
+                                </div>
+                                <div class="fighter-display">
+                                    <img src="crown.webp" class="winner-crown" style="visibility: ${fighter2WinnerClass ? 'visible' : 'hidden'}">
+                                    <div class="fighter-name ${fighter2WinnerClass}">${consensus.fighter2}</div>
+                                </div>
+                            </div>
+                        </summary>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr><th>Model</th><th>Predicted Winner</th><th>Confidence</th></tr>
+                                </thead>
+                                <tbody>${tableRows}</tbody>
+                            </table>
+                        </div>
+                    </details>
+                `;
+                fightsContainerEl.appendChild(fightEl);
+            });
+
+            eventEl.appendChild(headerEl);
+            eventEl.appendChild(fightsContainerEl);
+            appContainer.appendChild(eventEl);
+        });
+    }
+
+    const predictionData = await loadPredictions();
+    renderData(predictionData);
+}); 
