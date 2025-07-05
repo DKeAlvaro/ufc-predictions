@@ -9,6 +9,18 @@
 <body>
     <div class="container">
         <h1>UFC Fight Predictor</h1>
+        <div class="model-selector-container">
+            <label for="modelSelector">Choose a Model:</label>
+            <select id="modelSelector">
+                <option value="XGBoostModel.joblib" selected>XGBoost</option>
+                <option value="LGBMModel.joblib">LightGBM</option>
+                <option value="RandomForestModel.joblib">Random Forest</option>
+                <option value="SVCModel.joblib">Support Vector Machine</option>
+                <option value="LogisticRegressionModel.joblib">Logistic Regression</option>
+                <option value="BernoulliNBModel.joblib">Bernoulli Naive Bayes</option>
+                <option value="EloBaselineModel.joblib">Elo Baseline</option>
+            </select>
+        </div>
         <div class="input-group">
             <div class="input-container">
                 <input type="text" id="fighter1" placeholder="Enter Fighter 1 Name" autocomplete="off">
