@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UFC Upcoming Fight Predictions</title>
+    <title>UFC Past Prediction Results</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Teko:wght@700&display=swap" rel="stylesheet">
@@ -11,16 +11,23 @@
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <h1>UFC<br>Upcoming Predictions</h1>
-    <a href="past_results.html" class="nav-link">View Past Results & Scoreboard</a>
+    <h1>UFC<br>Prediction Scoreboard</h1>
+    <a href="index.html" class="nav-link">View Upcoming Predictions</a>
+
     <main id="app">
-        <p>Loading predictions...</p>
+        <div id="scoreboard">
+            <p>Loading podium...</p>
+        </div>
+
+        <section id="results-container">
+            <h2>Past Event Results</h2>
+            <div id="past-events">
+                <p>Loading results...</p>
+            </div>
+        </section>
     </main>
 
-    <!-- Chart.js library for creating graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
     <!-- Your custom script -->
-    <script type="module" src="static/script.js"></script>
+    <script type="module" src="static/past_results.js"></script>
 </body>
-</html>
+</html> 

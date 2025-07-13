@@ -318,12 +318,339 @@ h1 {
     }
     
     .table-wrapper {
+        overflow-x: auto;
         max-height: 5000px;
-        overflow: hidden;
         transition: max-height 0.4s ease-in-out;
     }
 
     .details-breakdown:not([open]) .table-wrapper {
         max-height: 0;
+        overflow: hidden;
+    }
+} 
+
+.breakdown-table th, .breakdown-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+/* --- Past Results Page --- */
+
+.nav-link {
+    display: block;
+    text-align: center;
+    margin: -10px 0 20px 0;
+    font-family: 'Roboto', sans-serif;
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+#results-container {
+    background-color: rgba(20, 20, 20, 0.7);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#results-container h2 {
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-top: 0;
+    border-bottom: 2px solid #d13a3a;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Scoreboard List Styles --- */
+.scoreboard-list {
+    margin-bottom: 30px;
+}
+
+.scoreboard-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.scoreboard-rank {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.scoreboard-medal {
+    width: 40px;
+    height: 40px;
+}
+
+.scoreboard-model-name {
+    flex-grow: 1;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.scoreboard-stats {
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+}
+
+.scoreboard-accuracy {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    display: block;
+}
+
+.scoreboard-record {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* --- New Event Header Collapsible Style (+/-) --- */
+.past-event-card > h3.collapsible-header {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding-right: 40px; /* Space for the icon */
+}
+
+.past-event-card > h3.collapsible-header::after {
+    content: '+';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #aaa;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    transition: transform 0.3s ease;
+}
+
+.past-event-card > h3.collapsible-header.active::after {
+    content: '-';
+    transform: translateY(-50%) rotate(180deg);
+}
+/* ------------------------------------------------ */
+
+.past-event-card {
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.past-event-card h3 {
+    font-family: 'Teko', sans-serif;
+    font-size: 2rem;
+    margin: 0 0 5px 0;
+    color: #fff;
+}
+
+.past-event-card .event-date {
+    font-style: italic;
+    color: #aaa;
+    margin-top: 0;
+}
+
+.past-fight {
+    border-top: 1px solid #555;
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.past-fight:first-child {
+    border-top: none;
+}
+
+.past-fight-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.past-fight-info h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.actual-winner {
+    font-weight: 900;
+    color: #ffc107; /* Gold */
+}
+
+.model-accuracy-summary {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #00aaff;
+    padding: 8px 12px 8px 30px; /* Add padding for arrow */
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #ddd;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.model-accuracy-summary:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.model-accuracy-summary::before {
+    content: '▶';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+}
+
+.model-accuracy-summary.active::before {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+
+.model-accuracy-summary .correct-count {
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #28a745; /* Green */
+}
+
+.model-accuracy-summary .total-count {
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.past-fight-predictions {
+    flex: 2;
+    min-width: 300px;
+}
+
+.past-fight-predictions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+}
+
+.probability {
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.collapsible-header {
+    /* Generic styles removed as they are now specific */
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.correct-pick {
+    color: #28a745; /* Green */
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.incorrect-pick {
+    color: #d13a3a; /* Red */
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.error {
+    color: #ffc107;
+    text-align: center;
+    font-weight: bold;
+} 
+
+/* --- Media Queries for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    main#app {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+
+    #results-container h2 {
+        font-size: 2rem;
+    }
+
+    #scoreboard {
+        overflow-x: visible; /* No longer need to scroll */
+    }
+
+    .scoreboard-model-name {
+        font-size: 1.5rem;
+    }
+
+    .scoreboard-accuracy {
+        font-size: 1.3rem;
+    }
+
+    /* Adjust +/- icon for mobile */
+    .past-event-card > h3.collapsible-header::after {
+        font-size: 2rem;
+    }
+
+    .past-fight {
+        flex-direction: column;
+    }
+
+    .past-fight-info, .past-fight-predictions {
+        min-width: 100%;
+    }
+
+    .model-accuracy-summary {
+        padding: 10px;
+        padding-right: 30px; /* Make space for the new arrow */
+        text-align: left;
+    }
+
+    .model-accuracy-summary::before {
+        display: none; /* Hide the desktop arrow */
+    }
+
+    .model-accuracy-summary::after {
+        content: '▼';
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        transition: transform 0.3s ease;
+        color: #00aaff;
+        font-size: 1rem;
+    }
+
+    .model-accuracy-summary.active::after {
+        transform: translateY(-50%) rotate(180deg);
     }
 } 

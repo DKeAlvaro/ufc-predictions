@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     async function loadPredictions() {
         try {
-            const response = await fetch('upcoming_predictions.json');
+            const response = await fetch('data/upcoming_predictions.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <summary>
                             <div class="consensus-prediction">
                                 <div class="fighter-display">
-                                    <img src="crown.webp" class="winner-crown" style="visibility: ${fighter1WinnerClass ? 'visible' : 'hidden'}">
+                                    <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter1WinnerClass ? 'visible' : 'hidden'}">
                                     <div class="fighter-name ${fighter1WinnerClass} ${fighter1LoserClass}">${consensus.fighter1}</div>
                                 </div>
                                 <div class="prediction-bar" 
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                     <div class="mobile-arrow"></div>
                                 </div>
                                 <div class="fighter-display">
-                                    <img src="crown.webp" class="winner-crown" style="visibility: ${fighter2WinnerClass ? 'visible' : 'hidden'}">
+                                    <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter2WinnerClass ? 'visible' : 'hidden'}">
                                     <div class="fighter-name ${fighter2WinnerClass} ${fighter2LoserClass}">${consensus.fighter2}</div>
                                 </div>
                             </div>
