@@ -2,7 +2,7 @@
     {
         "event_name": "UFC 318: Holloway vs. Poirier 3",
         "event_date": "July 19, 2025",
-        "last_updated": "2025-07-13T23:32:42.205502",
+        "last_updated": "2025-07-14T22:38:09.723648",
         "fights": [
             {
                 "fight": "Max Holloway vs. Dustin Poirier",
@@ -10,15 +10,15 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Max Holloway",
-                        "probability": "75.3%"
+                        "probability": "75.1%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Max Holloway",
-                        "probability": "67.1%"
+                        "probability": "59.6%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Max Holloway",
-                        "probability": "65.0%"
+                        "probability": "55.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Max Holloway",
@@ -26,7 +26,7 @@
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Max Holloway",
-                        "probability": "62.0%"
+                        "probability": "62.3%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Max Holloway",
@@ -44,23 +44,23 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Paulo Costa",
-                        "probability": "73.4%"
+                        "probability": "72.6%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Paulo Costa",
-                        "probability": "57.6%"
+                        "probability": "58.7%"
                     },
                     "RandomForestModel.joblib": {
-                        "winner": "Paulo Costa",
-                        "probability": "53.0%"
+                        "winner": "Roman Kopylov",
+                        "probability": "57.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Roman Kopylov",
-                        "probability": "54.0%"
+                        "probability": "53.9%"
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Paulo Costa",
-                        "probability": "58.6%"
+                        "probability": "58.3%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Roman Kopylov",
@@ -77,28 +77,28 @@
                 "weight_class": "Welterweight",
                 "predictions": {
                     "XGBoostModel.joblib": {
-                        "winner": "Kevin Holland",
-                        "probability": "58.3%"
+                        "winner": "Daniel Rodriguez",
+                        "probability": "57.5%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Daniel Rodriguez",
-                        "probability": "55.8%"
+                        "probability": "60.4%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Daniel Rodriguez",
-                        "probability": "67.0%"
+                        "probability": "59.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Daniel Rodriguez",
-                        "probability": "55.6%"
+                        "probability": "55.7%"
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Daniel Rodriguez",
-                        "probability": "50.2%"
+                        "probability": "50.6%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Daniel Rodriguez",
-                        "probability": "61.0%"
+                        "probability": "61.1%"
                     },
                     "EloBaselineModel.joblib": {
                         "winner": "Daniel Rodriguez",
@@ -112,15 +112,15 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Dan Ige",
-                        "probability": "75.4%"
+                        "probability": "83.5%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Dan Ige",
-                        "probability": "89.6%"
+                        "probability": "87.2%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Dan Ige",
-                        "probability": "86.0%"
+                        "probability": "83.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Dan Ige",
@@ -128,7 +128,7 @@
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Dan Ige",
-                        "probability": "88.3%"
+                        "probability": "88.1%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Dan Ige",
@@ -146,19 +146,19 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Daniel Zellhuber",
-                        "probability": "85.6%"
+                        "probability": "77.4%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Daniel Zellhuber",
-                        "probability": "51.5%"
+                        "probability": "57.5%"
                     },
                     "RandomForestModel.joblib": {
-                        "winner": "Daniel Zellhuber",
+                        "winner": "Michael Johnson",
                         "probability": "53.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Michael Johnson",
-                        "probability": "53.4%"
+                        "probability": "53.2%"
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Daniel Zellhuber",
@@ -179,16 +179,16 @@
                 "weight_class": "Bantamweight",
                 "predictions": {
                     "XGBoostModel.joblib": {
-                        "winner": "Vinicius Oliveira",
-                        "probability": "53.5%"
+                        "winner": "Kyler Phillips",
+                        "probability": "53.6%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Kyler Phillips",
-                        "probability": "50.6%"
+                        "probability": "54.7%"
                     },
                     "RandomForestModel.joblib": {
-                        "winner": "Kyler Phillips",
-                        "probability": "53.0%"
+                        "winner": "Vinicius Oliveira",
+                        "probability": "55.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Kyler Phillips",
@@ -200,7 +200,7 @@
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Kyler Phillips",
-                        "probability": "71.6%"
+                        "probability": "71.5%"
                     },
                     "EloBaselineModel.joblib": {
                         "winner": "Kyler Phillips",
@@ -214,15 +214,15 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Brendan Allen",
-                        "probability": "82.2%"
+                        "probability": "54.1%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Brendan Allen",
-                        "probability": "78.7%"
+                        "probability": "72.0%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Brendan Allen",
-                        "probability": "71.0%"
+                        "probability": "68.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Brendan Allen",
@@ -248,23 +248,23 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Francisco Prado",
-                        "probability": "88.7%"
+                        "probability": "78.4%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Francisco Prado",
-                        "probability": "63.1%"
+                        "probability": "56.7%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Francisco Prado",
-                        "probability": "73.0%"
+                        "probability": "66.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Francisco Prado",
-                        "probability": "71.4%"
+                        "probability": "71.5%"
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Francisco Prado",
-                        "probability": "65.7%"
+                        "probability": "65.8%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Francisco Prado",
@@ -282,15 +282,15 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Ateba Gautier",
-                        "probability": "96.0%"
+                        "probability": "93.1%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Ateba Gautier",
-                        "probability": "82.7%"
+                        "probability": "77.7%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Ateba Gautier",
-                        "probability": "81.0%"
+                        "probability": "79.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Ateba Gautier",
@@ -298,7 +298,7 @@
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Ateba Gautier",
-                        "probability": "79.7%"
+                        "probability": "79.9%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Ateba Gautier",
@@ -315,28 +315,28 @@
                 "weight_class": "Welterweight",
                 "predictions": {
                     "XGBoostModel.joblib": {
-                        "winner": "Adam Fugitt",
-                        "probability": "66.0%"
+                        "winner": "Islam Dulatov",
+                        "probability": "53.1%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Adam Fugitt",
-                        "probability": "62.5%"
+                        "probability": "72.9%"
                     },
                     "RandomForestModel.joblib": {
-                        "winner": "Islam Dulatov",
-                        "probability": "53.0%"
+                        "winner": "Adam Fugitt",
+                        "probability": "60.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Adam Fugitt",
-                        "probability": "50.8%"
+                        "probability": "50.0%"
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Islam Dulatov",
-                        "probability": "54.5%"
+                        "probability": "54.4%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Adam Fugitt",
-                        "probability": "84.5%"
+                        "probability": "84.4%"
                     },
                     "EloBaselineModel.joblib": {
                         "winner": "Adam Fugitt",
@@ -350,15 +350,15 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Jimmy Crute",
-                        "probability": "91.4%"
+                        "probability": "90.4%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Jimmy Crute",
-                        "probability": "79.5%"
+                        "probability": "81.0%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Jimmy Crute",
-                        "probability": "80.0%"
+                        "probability": "85.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Jimmy Crute",
@@ -366,7 +366,7 @@
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Jimmy Crute",
-                        "probability": "78.8%"
+                        "probability": "78.4%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Jimmy Crute",
@@ -384,15 +384,15 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Ryan Spann",
-                        "probability": "86.4%"
+                        "probability": "87.7%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Ryan Spann",
-                        "probability": "85.5%"
+                        "probability": "88.8%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Ryan Spann",
-                        "probability": "86.0%"
+                        "probability": "83.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Ryan Spann",
@@ -400,11 +400,11 @@
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Ryan Spann",
-                        "probability": "87.6%"
+                        "probability": "87.5%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Ryan Spann",
-                        "probability": "71.9%"
+                        "probability": "71.8%"
                     },
                     "EloBaselineModel.joblib": {
                         "winner": "Ryan Spann",
@@ -418,23 +418,23 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Brunno Ferreira",
-                        "probability": "55.2%"
+                        "probability": "68.7%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Brunno Ferreira",
-                        "probability": "61.9%"
+                        "probability": "59.2%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Brunno Ferreira",
-                        "probability": "66.0%"
+                        "probability": "62.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Brunno Ferreira",
-                        "probability": "79.6%"
+                        "probability": "79.5%"
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Brunno Ferreira",
-                        "probability": "63.8%"
+                        "probability": "64.0%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Brunno Ferreira",
@@ -452,19 +452,19 @@
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Nicolle Caliari",
-                        "probability": "51.3%"
+                        "probability": "57.1%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Carli Judice",
-                        "probability": "73.9%"
+                        "probability": "67.4%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Carli Judice",
-                        "probability": "72.0%"
+                        "probability": "66.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Carli Judice",
-                        "probability": "75.6%"
+                        "probability": "75.5%"
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Carli Judice",

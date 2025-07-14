@@ -196,12 +196,48 @@ document.addEventListener('DOMContentLoaded', () => {
             renderScoreboard(scoreboard);
             renderPastEvents(pastResultsData);
             addCollapsibleListeners();
+            updateLastUpdatedTimestamp();
 
             // Automatically open the first event card by default
             const firstEventHeader = pastEventsDiv.querySelector('.event-card:first-child .collapsible-header');
             if (firstEventHeader) {
                 firstEventHeader.click();
             }
+        }
+    };
+
+    const updateLastUpdatedTimestamp = async () => {
+        const timestampElement = document.getElementById('last-updated-timestamp');
+        if (!timestampElement) {
+            return;
+        }
+
+        try {
+            // Fetch the upcoming predictions to get the last_updated timestamp
+            const response = await fetch('data/upcoming_predictions.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const upcomingEvents = await response.json();
+            
+            if (upcomingEvents && upcomingEvents.length > 0 && upcomingEvents[0].last_updated) {
+                const lastUpdated = upcomingEvents[0].last_updated;
+                const date = new Date(lastUpdated);
+                const formattedDate = date.toLocaleString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZoneName: 'short'
+                });
+                timestampElement.textContent = formattedDate;
+            } else {
+                timestampElement.textContent = 'Unknown';
+            }
+        } catch (error) {
+            console.error('Error fetching/formatting timestamp:', error);
+            timestampElement.textContent = 'Unknown';
         }
     };
 

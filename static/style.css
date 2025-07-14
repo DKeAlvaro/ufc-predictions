@@ -762,4 +762,51 @@ h1 {
         padding: 10px;
         text-align: left;
     }
+}
+
+/* Page Header Styles */
+.page-header {
+    text-align: center;
+    margin: 20px auto 30px;
+    max-width: 600px;
+    background-color: rgba(40, 40, 40, 0.4);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.page-header .last-updated,
+.page-header .contact-info {
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+.page-header .last-updated strong,
+.page-header .contact-info strong {
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+.page-header .contact-info a {
+    color: #D20A0A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.page-header .contact-info a:hover {
+    color: #ff3333;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        margin: 15px 20px 25px;
+        padding: 12px;
+    }
+    
+    .page-header .last-updated,
+    .page-header .contact-info {
+        font-size: 0.8rem;
+    }
 } 

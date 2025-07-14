@@ -130,4 +130,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const predictionData = await loadPredictions();
     renderData(predictionData);
-}); 
+    updateLastUpdatedTimestamp(predictionData);
+});
+
+function updateLastUpdatedTimestamp(events) {
+    const timestampElement = document.getElementById('last-updated-timestamp');
+    if (!timestampElement || !events || events.length === 0) {
+        timestampElement.textContent = 'Unknown';
+        return;
+    }
+
+    try {
+        const lastUpdated = events[0].last_updated;
+        if (lastUpdated) {
+            const date = new Date(lastUpdated);
+            const formattedDate = date.toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                timeZoneName: 'short'
+            });
+            timestampElement.textContent = formattedDate;
+        } else {
+            timestampElement.textContent = 'Unknown';
+        }
+    } catch (error) {
+        console.error('Error formatting timestamp:', error);
+        timestampElement.textContent = 'Unknown';
+    }
+} 
