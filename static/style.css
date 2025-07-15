@@ -764,52 +764,56 @@ h1 {
     }
 }
 
-/* Page Header Styles */
-.page-header {
-    text-align: center;
-    margin: 20px auto 30px;
-    max-width: 600px;
-    background-color: rgba(40, 40, 40, 0.4);
-    border: 1px solid #333;
+/* Floating Info Box */
+.floating-info {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid #444;
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    font-size: 0.8rem;
 }
 
-.page-header .last-run,
-.page-header .last-updated,
-.page-header .contact-info {
-    margin: 8px 0;
-    font-size: 0.9rem;
-    color: #cccccc;
+.floating-info .last-run,
+.floating-info .last-updated,
+.floating-info .contact-info {
+    margin: 5px 0;
+    color: #ccc;
+    text-align: right;
 }
 
-.page-header .last-run strong,
-.page-header .last-updated strong,
-.page-header .contact-info strong {
-    color: #ffffff;
-    margin-right: 8px;
+.floating-info strong {
+    color: #fff;
+    font-weight: bold;
 }
 
-.page-header .contact-info a {
+.floating-info .contact-info {
+    margin-top: 8px;
+    padding-top: 5px;
+    border-top: 1px solid #444;
+}
+
+.floating-info .contact-info a {
     color: #D20A0A;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 0.9em;
 }
 
-.page-header .contact-info a:hover {
+.floating-info .contact-info a:hover {
     color: #ff3333;
     text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-    .page-header {
-        margin: 15px 20px 25px;
-        padding: 12px;
-    }
-    
-    .page-header .last-run,
-    .page-header .last-updated,
-    .page-header .contact-info {
-        font-size: 0.8rem;
+    .floating-info {
+        bottom: 12px;
+        right: 12px;
+        padding: 12px 16px;
+        font-size: 0.85rem;
     }
 } 

@@ -222,18 +222,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('data/last_run.json');
             if (response.ok) {
                 const data = await response.json();
-                if (data.last_run_readable) {
-                    timestampElement.textContent = data.last_run_readable;
-                } else if (data.last_run) {
+                if (data.last_run) {
                     const date = new Date(data.last_run);
-                    timestampElement.textContent = date.toLocaleString('en-US', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        timeZoneName: 'short'
-                    });
+                                         // Show month, day, and year
+                     const formattedDate = date.toLocaleString('en-US', {
+                         year: 'numeric',
+                         month: 'short',
+                         day: 'numeric'
+                     });
+                    timestampElement.textContent = formattedDate;
                 } else {
                     timestampElement.textContent = 'Unknown';
                 }
@@ -266,10 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const formattedDate = date.toLocaleString('en-US', {
                     year: 'numeric',
                     month: 'short',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    timeZoneName: 'short'
+                    day: 'numeric'
                 });
                 timestampElement.textContent = formattedDate;
             } else {

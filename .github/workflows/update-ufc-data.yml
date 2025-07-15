@@ -34,7 +34,7 @@ jobs:
       run: |
         # Always update the last run timestamp
         mkdir -p data
-        echo "{\"last_run\": \"$(date -u -Iseconds)\", \"last_run_readable\": \"$(date -u '+%Y-%m-%d %H:%M:%S UTC')\"}" > data/last_run.json
+        echo "{\"last_run\": \"$(date -u -Iseconds)\"}" > data/last_run.json
         
     - name: Run UFC data update pipeline
       run: |
