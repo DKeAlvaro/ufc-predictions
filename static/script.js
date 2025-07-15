@@ -130,8 +130,48 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const predictionData = await loadPredictions();
     renderData(predictionData);
-    updateLastUpdatedTimestamp(predictionData);
+    updateTimestamps(predictionData);
 });
+
+async function updateTimestamps(events) {
+    // Update Last Run timestamp
+    await updateLastRunTimestamp();
+    
+    // Update Last Updated timestamp
+    updateLastUpdatedTimestamp(events);
+}
+
+async function updateLastRunTimestamp() {
+    const timestampElement = document.getElementById('last-run-timestamp');
+    if (!timestampElement) return;
+
+    try {
+        const response = await fetch('data/last_run.json');
+        if (response.ok) {
+            const data = await response.json();
+            if (data.last_run_readable) {
+                timestampElement.textContent = data.last_run_readable;
+            } else if (data.last_run) {
+                const date = new Date(data.last_run);
+                timestampElement.textContent = date.toLocaleString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZoneName: 'short'
+                });
+            } else {
+                timestampElement.textContent = 'Unknown';
+            }
+        } else {
+            timestampElement.textContent = 'Unknown';
+        }
+    } catch (error) {
+        console.error('Error fetching last run timestamp:', error);
+        timestampElement.textContent = 'Unknown';
+    }
+}
 
 function updateLastUpdatedTimestamp(events) {
     const timestampElement = document.getElementById('last-updated-timestamp');

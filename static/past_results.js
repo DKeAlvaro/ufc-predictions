@@ -196,13 +196,53 @@ document.addEventListener('DOMContentLoaded', () => {
             renderScoreboard(scoreboard);
             renderPastEvents(pastResultsData);
             addCollapsibleListeners();
-            updateLastUpdatedTimestamp();
+            updateTimestamps();
 
             // Automatically open the first event card by default
             const firstEventHeader = pastEventsDiv.querySelector('.event-card:first-child .collapsible-header');
             if (firstEventHeader) {
                 firstEventHeader.click();
             }
+        }
+    };
+
+    const updateTimestamps = async () => {
+        // Update Last Run timestamp
+        await updateLastRunTimestamp();
+        
+        // Update Last Updated timestamp
+        await updateLastUpdatedTimestamp();
+    };
+
+    const updateLastRunTimestamp = async () => {
+        const timestampElement = document.getElementById('last-run-timestamp');
+        if (!timestampElement) return;
+
+        try {
+            const response = await fetch('data/last_run.json');
+            if (response.ok) {
+                const data = await response.json();
+                if (data.last_run_readable) {
+                    timestampElement.textContent = data.last_run_readable;
+                } else if (data.last_run) {
+                    const date = new Date(data.last_run);
+                    timestampElement.textContent = date.toLocaleString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        timeZoneName: 'short'
+                    });
+                } else {
+                    timestampElement.textContent = 'Unknown';
+                }
+            } else {
+                timestampElement.textContent = 'Unknown';
+            }
+        } catch (error) {
+            console.error('Error fetching last run timestamp:', error);
+            timestampElement.textContent = 'Unknown';
         }
     };
 

@@ -775,6 +775,7 @@ h1 {
     padding: 15px;
 }
 
+.page-header .last-run,
 .page-header .last-updated,
 .page-header .contact-info {
     margin: 8px 0;
@@ -782,6 +783,7 @@ h1 {
     color: #cccccc;
 }
 
+.page-header .last-run strong,
 .page-header .last-updated strong,
 .page-header .contact-info strong {
     color: #ffffff;
@@ -805,6 +807,7 @@ h1 {
         padding: 12px;
     }
     
+    .page-header .last-run,
     .page-header .last-updated,
     .page-header .contact-info {
         font-size: 0.8rem;

@@ -26,6 +26,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
+    - name: Update last run timestamp
+      run: |
+        # Always update the last run timestamp
+        mkdir -p data
+        echo "{\"last_run\": \"$(date -u -Iseconds)\", \"last_run_readable\": \"$(date -u '+%Y-%m-%d %H:%M:%S UTC')\"}" > data/last_run.json
+        
     - name: Run UFC data update pipeline
       run: |
         cd src
@@ -38,16 +44,24 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # Add any changed data files
+        # Always add the last_run.json file
+        git add data/last_run.json
+        
+        # Check if there are other data changes
         git add data/*.json
         
-        # Check if there are changes to commit
-        if git diff --staged --quiet; then
-          echo "No data changes to commit"
-        else
+        # Determine commit message based on what changed
+        if git diff --staged --name-only | grep -E "(upcoming_predictions|past_event_results)\.json" > /dev/null; then
+          # Data was actually updated
           git commit -m "🤖 Auto-update UFC data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-          git push
+          echo "✅ Data updated and committed"
+        else
+          # Only last_run was updated (no new events)
+          git commit -m "🕐 Update last run timestamp - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo "🕐 No new events found, only updating last run timestamp"
         fi
+        
+        git push
         
     - name: Display update summary
       run: |
