@@ -8,6 +8,10 @@ on:
   # Allow manual triggering from GitHub Actions tab
   workflow_dispatch:
 
+# Grant write permissions to the GITHUB_TOKEN
+permissions:
+  contents: write
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
