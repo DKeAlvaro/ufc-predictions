@@ -3,11 +3,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     async function loadPredictions() {
         try {
-            const response = await fetch('data/upcoming_predictions.json');
+            // Add a cache-busting query parameter to ensure the latest file is loaded
+            const response = await fetch('data/upcoming_predictions.json?' + new Date().getTime());
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const events = await response.json();
+            let events = await response.json();
+            
+            // Normalize the data to always be an array
+            if (events && !Array.isArray(events)) {
+                events = [events];
+            }
+
             return events;
     } catch (error) {
             console.error("Could not load or parse upcoming_predictions.json:", error);
@@ -35,7 +42,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         if (valid_models === 0) {
-            return { consensusWinner: "N/A", consensusProbability: 0, fighter1, fighter2: fightData.fight.split(' vs. ')[1] };
+            return { 
+                consensusWinner: "N/A", 
+                consensusProbability: 0, 
+                fighter1, 
+                fighter2: fightData.fight.split(' vs. ')[1],
+                avg_f1_prob: 50 // Default to 50% to avoid breaking the UI, but this won't be shown
+            };
         }
 
         const avg_f1_prob = f1_prob_sum / valid_models;
@@ -72,53 +85,77 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             event.fights.forEach((fight) => {
                 const consensus = calculateConsensus(fight);
-                const fighter1WinnerClass = consensus.consensusWinner === consensus.fighter1 ? 'winner' : '';
-                const fighter2WinnerClass = consensus.consensusWinner === consensus.fighter2 ? 'winner' : '';
-                const fighter1LoserClass = consensus.consensusWinner === consensus.fighter2 ? 'loser' : '';
-                const fighter2LoserClass = consensus.consensusWinner === consensus.fighter1 ? 'loser' : '';
+                const fightEl = document.createElement('div');
+                fightEl.className = 'fight-card';
 
                 const tableRows = Object.entries(fight.predictions).map(([model, pred]) => {
                     const modelName = model.replace('Model.joblib', '');
                     const winner = pred.error ? 'Error' : pred.winner;
-                    const prob = pred.error ? '-' : `${parseFloat(pred.probability).toFixed(1)}%`;
+                    const prob = pred.error || !pred.probability ? '-' : `${parseFloat(pred.probability).toFixed(1)}%`;
                     const winnerClass = winner === consensus.fighter1 ? 'winner-f1' : (winner === consensus.fighter2 ? 'winner-f2' : '');
                     return `<tr><td>${modelName}</td><td class="${winnerClass}">${winner}</td><td>${prob}</td></tr>`;
                 }).join('');
 
-                const fightEl = document.createElement('div');
-                fightEl.className = 'fight-card';
-                fightEl.innerHTML = `
-                    <details class="details-breakdown">
-                        <summary>
-                            <div class="consensus-prediction">
-                                <div class="fighter-display">
-                                    <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter1WinnerClass ? 'visible' : 'hidden'}">
-                                    <div class="fighter-name ${fighter1WinnerClass} ${fighter1LoserClass}">${consensus.fighter1}</div>
+                if (consensus.consensusWinner === 'N/A') {
+                    fightEl.innerHTML = `
+                        <details class="details-breakdown">
+                            <summary>
+                                <div class="consensus-prediction no-consensus">
+                                    <div class="fighter-name">${consensus.fighter1}</div>
+                                    <div class="no-consensus-text">No Consensus Available</div>
+                                    <div class="fighter-name">${consensus.fighter2}</div>
                                 </div>
-                                <div class="prediction-bar" 
-                                     data-prob-f1="${consensus.avg_f1_prob.toFixed(1)}%"
-                                     data-prob-f2="${(100 - consensus.avg_f1_prob).toFixed(1)}%">
-                                    <div class="bar-fighter1" style="width: ${consensus.avg_f1_prob}%"></div>
-                                    <div class="prob-text f1-prob">${consensus.avg_f1_prob.toFixed(1)}%</div>
-                                    <div class="prob-text f2-prob">${(100 - consensus.avg_f1_prob).toFixed(1)}%</div>
-                                    <div class="mobile-arrow"></div>
-                                </div>
-                                <div class="fighter-display">
-                                    <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter2WinnerClass ? 'visible' : 'hidden'}">
-                                    <div class="fighter-name ${fighter2WinnerClass} ${fighter2LoserClass}">${consensus.fighter2}</div>
-                                </div>
+                            </summary>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr><th>Model</th><th>Predicted Winner</th><th>Confidence</th></tr>
+                                    </thead>
+                                    <tbody>${tableRows}</tbody>
+                                </table>
                             </div>
-                        </summary>
-                        <div class="table-wrapper">
-                            <table>
-                                <thead>
-                                    <tr><th>Model</th><th>Predicted Winner</th><th>Confidence</th></tr>
-                                </thead>
-                                <tbody>${tableRows}</tbody>
-                            </table>
-                        </div>
-                    </details>
-                `;
+                        </details>
+                    `;
+                } else {
+                    const fighter1WinnerClass = consensus.consensusWinner === consensus.fighter1 ? 'winner' : '';
+                    const fighter2WinnerClass = consensus.consensusWinner === consensus.fighter2 ? 'winner' : '';
+                    const fighter1LoserClass = consensus.consensusWinner === consensus.fighter2 ? 'loser' : '';
+                    const fighter2LoserClass = consensus.consensusWinner === consensus.fighter1 ? 'loser' : '';
+
+                    fightEl.innerHTML = `
+                        <details class="details-breakdown">
+                            <summary>
+                                <div class="consensus-prediction">
+                                    <div class="fighter-display">
+                                        <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter1WinnerClass ? 'visible' : 'hidden'}">
+                                        <div class="fighter-name ${fighter1WinnerClass} ${fighter1LoserClass}">${consensus.fighter1}</div>
+                                    </div>
+                                    <div class="prediction-bar" 
+                                        data-prob-f1="${consensus.avg_f1_prob.toFixed(1)}%"
+                                        data-prob-f2="${(100 - consensus.avg_f1_prob).toFixed(1)}%">
+                                        <div class="bar-fighter1" style="width: ${consensus.avg_f1_prob}%"></div>
+                                        <div class="prob-text f1-prob">${consensus.avg_f1_prob.toFixed(1)}%</div>
+                                        <div class="prob-text f2-prob">${(100 - consensus.avg_f1_prob).toFixed(1)}%</div>
+                                        <div class="mobile-arrow"></div>
+                                    </div>
+                                    <div class="fighter-display">
+                                        <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter2WinnerClass ? 'visible' : 'hidden'}">
+                                        <div class="fighter-name ${fighter2WinnerClass} ${fighter2LoserClass}">${consensus.fighter2}</div>
+                                    </div>
+                                </div>
+                            </summary>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr><th>Model</th><th>Predicted Winner</th><th>Confidence</th></tr>
+                                    </thead>
+                                    <tbody>${tableRows}</tbody>
+                                </table>
+                            </div>
+                        </details>
+                    `;
+                }
+                
                 fightsContainerEl.appendChild(fightEl);
             });
 
