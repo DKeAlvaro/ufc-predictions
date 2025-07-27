@@ -46,6 +46,43 @@ document.addEventListener('DOMContentLoaded', () => {
         return scoreboard;
     };
 
+    const calculateEventBestModel = (event) => {
+        const scoreboard = {};
+        event.results.forEach(fight => {
+            if (fight.predictions && Object.keys(fight.predictions).length > 0) {
+                const actualWinner = fight.winner;
+                for (const model in fight.predictions) {
+                    if (!scoreboard[model]) {
+                        scoreboard[model] = { correct: 0, total: 0 };
+                    }
+                    const prediction = fight.predictions[model];
+                    if (prediction.winner === actualWinner) {
+                        scoreboard[model].correct++;
+                    }
+                    scoreboard[model].total++;
+                }
+            }
+        });
+
+        if (Object.keys(scoreboard).length === 0) {
+            return { bestModelName: 'N/A', correct: 0, total: 0 };
+        }
+
+        const sortedModels = Object.entries(scoreboard).sort(([, a], [, b]) => {
+            const accuracyA = a.total > 0 ? (a.correct / a.total) : 0;
+            const accuracyB = b.total > 0 ? (b.correct / b.total) : 0;
+            if (accuracyB !== accuracyA) {
+                return accuracyB - accuracyA;
+            }
+            return b.correct - a.correct; // Tie-breaker
+        });
+
+        const [bestModel, stats] = sortedModels[0];
+        const bestModelName = bestModel.replace('Model.joblib', '');
+        
+        return { bestModelName, correct: stats.correct, total: stats.total };
+    };
+
     const renderScoreboard = (scoreboard) => {
         const sortedModels = Object.entries(scoreboard).sort(([, a], [, b]) => {
             const accuracyA = a.total > 0 ? (a.correct / a.total) : 0;
@@ -97,10 +134,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let html = '';
         data.forEach(event => {
-            // Add collapsible class and data-target
+            const { bestModelName, correct, total } = calculateEventBestModel(event);
+            const bestModelInfo = total > 0 ? `<strong>Best Model:</strong> ${bestModelName} (${correct}/${total})` : '';
+
             html += `<div class="event-card past-event-card">
                 <h3 class="collapsible-header" data-target="event-${event.event_name.replace(/\s+/g, '-')}">${event.event_name}</h3>
-                <p class="event-date">${event.event_date}</p>
+                <div class="event-meta">
+                    <p class="event-date">${event.event_date}</p>`;
+            if (bestModelInfo) {
+                html += `<p class="best-model">${bestModelInfo}</p>`;
+            }
+            html += `</div>
                 <div id="event-${event.event_name.replace(/\s+/g, '-')}" class="past-fights-container collapsible-content">`;
             
             event.results.forEach((fight, index) => {
@@ -199,10 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
             updateTimestamps();
 
             // Automatically open the first event card by default
-            const firstEventHeader = pastEventsDiv.querySelector('.event-card:first-child .collapsible-header');
-            if (firstEventHeader) {
-                firstEventHeader.click();
-            }
+            // const firstEventHeader = pastEventsDiv.querySelector('.event-card:first-child .collapsible-header');
+            // if (firstEventHeader) {
+            //     firstEventHeader.click();
+            // }
         }
     };
 

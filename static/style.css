@@ -561,9 +561,33 @@ h1 {
 }
 
 .past-event-card .event-date {
-    font-style: italic;
-    color: #aaa;
-    margin-top: 0;
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin: 5px 0 10px;
+}
+
+.event-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin: -5px 0 15px;
+}
+
+.best-model {
+    font-weight: 500;
+    margin: 0;
+}
+
+.best-model .accuracy {
+    color: #4CAF50; /* A green color to indicate success */
+    font-weight: bold;
+}
+
+.past-fights-container {
+    border-top: 1px solid #444;
+    padding-top: 15px;
 }
 
 .past-fight {
