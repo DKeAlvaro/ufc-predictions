@@ -1,40 +1,40 @@
 [
     {
-        "event_name": "UFC Fight Night: Albazi vs. Taira",
+        "event_name": "UFC Fight Night: Taira vs. Park",
         "event_date": "August 02, 2025",
-        "last_updated": "2025-07-26T22:34:02.311435",
+        "last_updated": "2025-07-29T02:22:46.043955",
         "fights": [
             {
-                "fight": "Amir Albazi vs. Tatsuro Taira",
+                "fight": "Tatsuro Taira vs. HyunSung Park",
                 "weight_class": "Flyweight",
                 "predictions": {
                     "XGBoostModel.joblib": {
                         "winner": "Tatsuro Taira",
-                        "probability": "75.7%"
+                        "probability": "71.2%"
                     },
                     "LGBMModel.joblib": {
                         "winner": "Tatsuro Taira",
-                        "probability": "71.6%"
+                        "probability": "70.8%"
                     },
                     "RandomForestModel.joblib": {
                         "winner": "Tatsuro Taira",
-                        "probability": "68.0%"
+                        "probability": "67.0%"
                     },
                     "SVCModel.joblib": {
                         "winner": "Tatsuro Taira",
-                        "probability": "75.1%"
+                        "probability": "83.5%"
                     },
                     "LogisticRegressionModel.joblib": {
                         "winner": "Tatsuro Taira",
-                        "probability": "64.2%"
+                        "probability": "67.1%"
                     },
                     "BernoulliNBModel.joblib": {
                         "winner": "Tatsuro Taira",
-                        "probability": "88.0%"
+                        "probability": "86.2%"
                     },
                     "EloBaselineModel.joblib": {
                         "winner": "Tatsuro Taira",
-                        "probability": "52.0%"
+                        "probability": "54.6%"
                     }
                 }
             },
@@ -311,36 +311,36 @@
                 }
             },
             {
-                "fight": "Andre Lima vs. Felipe Bunes",
+                "fight": "Rafael Estevam vs. Felipe Bunes",
                 "weight_class": "Flyweight",
                 "predictions": {
                     "XGBoostModel.joblib": {
-                        "winner": "Andre Lima",
-                        "probability": "76.2%"
+                        "winner": "Rafael Estevam",
+                        "probability": "84.3%"
                     },
                     "LGBMModel.joblib": {
-                        "winner": "Andre Lima",
-                        "probability": "81.1%"
+                        "winner": "Rafael Estevam",
+                        "probability": "75.8%"
                     },
                     "RandomForestModel.joblib": {
-                        "winner": "Andre Lima",
-                        "probability": "89.0%"
+                        "winner": "Rafael Estevam",
+                        "probability": "69.0%"
                     },
                     "SVCModel.joblib": {
-                        "winner": "Andre Lima",
-                        "probability": "82.9%"
+                        "winner": "Rafael Estevam",
+                        "probability": "83.7%"
                     },
                     "LogisticRegressionModel.joblib": {
-                        "winner": "Andre Lima",
-                        "probability": "76.5%"
+                        "winner": "Rafael Estevam",
+                        "probability": "72.5%"
                     },
                     "BernoulliNBModel.joblib": {
-                        "winner": "Andre Lima",
-                        "probability": "80.2%"
+                        "winner": "Rafael Estevam",
+                        "probability": "85.5%"
                     },
                     "EloBaselineModel.joblib": {
-                        "winner": "Andre Lima",
-                        "probability": "60.1%"
+                        "winner": "Rafael Estevam",
+                        "probability": "55.4%"
                     }
                 }
             },
