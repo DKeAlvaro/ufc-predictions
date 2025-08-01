@@ -7,6 +7,7 @@ import predict_upcoming_fights
 import time
 import json
 import os
+from odds import enrich_with_odds
 
 def has_new_past_events():
     """Check if there are new completed events to process."""
@@ -93,6 +94,10 @@ def main():
         try:
             predict_upcoming_fights.main()
             print(">>> STEP 2 COMPLETED SUCCESSFULLY.")
+            # Step 3: Enrich predictions with odds
+            enrich_with_odds()
+            print(">>> STEP 3 COMPLETED SUCCESSFULLY.")
+
         except Exception as e:
             print(f"!!! ERROR in Step 2: {e}")
     else:

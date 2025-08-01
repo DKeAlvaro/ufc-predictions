@@ -1,0 +1,60 @@
+.odds-display {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.odds-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.odds-values {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 5px;
+}
+
+.odds-fighter {
+    color: #ccc;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 0;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.odds-number {
+    font-size: 16px;
+    font-weight: 900;
+    color: #FFD700;
+    text-align: center;
+    min-width: 80px;
+}
+
+.disagreement {
+    border-color: #D20A0A;
+    background-color: rgba(210, 10, 10, 0.1);
+}
+
+.disagreement-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #D20A0A;
+    text-align: center;
+    margin-top: 10px;
+    animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}

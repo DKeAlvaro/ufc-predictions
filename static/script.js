@@ -84,28 +84,59 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
             event.fights.forEach((fight) => {
-                const consensus = calculateConsensus(fight);
-                const fightEl = document.createElement('div');
-                fightEl.className = 'fight-card';
+                  const consensus = calculateConsensus(fight);
+                  
+                  // Determine betting favorite from odds
+                  let favorite = '';
+                  if (fight.odds && fight.odds.fighter1 && fight.odds.fighter2) {
+                      const f1_odds = parseInt(fight.odds.fighter1.odds);
+                      const f2_odds = parseInt(fight.odds.fighter2.odds);
+                      favorite = f1_odds < f2_odds ? consensus.fighter1 : consensus.fighter2;
+                  }
+                  
+                  const disagreementClass = favorite && consensus.consensusWinner !== favorite ? 'betting-opportunity' : '';
+                  const fightEl = document.createElement('div');
+                  fightEl.className = `fight-card ${disagreementClass}`;
 
                 const tableRows = Object.entries(fight.predictions).map(([model, pred]) => {
                     const modelName = model.replace('Model.joblib', '');
                     const winner = pred.error ? 'Error' : pred.winner;
                     const prob = pred.error || !pred.probability ? '-' : `${parseFloat(pred.probability).toFixed(1)}%`;
                     const winnerClass = winner === consensus.fighter1 ? 'winner-f1' : (winner === consensus.fighter2 ? 'winner-f2' : '');
+
                     return `<tr><td>${modelName}</td><td class="${winnerClass}">${winner}</td><td>${prob}</td></tr>`;
                 }).join('');
 
+                let odds_html = '';
+                if (fight.odds && fight.odds.fighter1 && fight.odds.fighter2) {
+                    const f1_odds = fight.odds.fighter1.odds;
+                    const f2_odds = fight.odds.fighter2.odds;
+                    const favorite = f1_odds < f2_odds ? consensus.fighter1 : consensus.fighter2;
+                    const model_winner = consensus.consensusWinner;
+                    let disagreement_class = '';
+                    if (model_winner !== favorite) {
+                        disagreement_class = 'disagreement';
+                    }
+                    odds_html = `
+                        <div class="odds-display ${disagreement_class}">
+                            <div class="odds-label">Odds</div>
+                            <div class="odds-values">
+                                <div class="odds-number">${f1_odds}</div>
+                            <div class="odds-number">${f2_odds}</div>
+                            </div>
+                            ${disagreement_class ? '<div class="disagreement-label">Model/Odds Disagreement</div>' : ''}
+                        </div>
+                    `;
+                }
+
                 if (consensus.consensusWinner === 'N/A') {
                     fightEl.innerHTML = `
-                        <details class="details-breakdown">
-                            <summary>
-                                <div class="consensus-prediction no-consensus">
-                                    <div class="fighter-name">${consensus.fighter1}</div>
-                                    <div class="no-consensus-text">No Consensus Available</div>
-                                    <div class="fighter-name">${consensus.fighter2}</div>
-                                </div>
-                            </summary>
+                        <div class="consensus-prediction no-consensus">
+                            <div class="fighter-name">${consensus.fighter1}</div>
+                            <div class="no-consensus-text">No Consensus Available</div>
+                            <div class="fighter-name">${consensus.fighter2}</div>
+                        </div>
+                        <div class="details-breakdown" style="display: none;">
                             <div class="table-wrapper">
                                 <table>
                                     <thead>
@@ -114,36 +145,36 @@ document.addEventListener("DOMContentLoaded", async () => {
                                     <tbody>${tableRows}</tbody>
                                 </table>
                             </div>
-                        </details>
+                        </div>
                     `;
                 } else {
                     const fighter1WinnerClass = consensus.consensusWinner === consensus.fighter1 ? 'winner' : '';
                     const fighter2WinnerClass = consensus.consensusWinner === consensus.fighter2 ? 'winner' : '';
                     const fighter1LoserClass = consensus.consensusWinner === consensus.fighter2 ? 'loser' : '';
                     const fighter2LoserClass = consensus.consensusWinner === consensus.fighter1 ? 'loser' : '';
-
                     fightEl.innerHTML = `
-                        <details class="details-breakdown">
-                            <summary>
-                                <div class="consensus-prediction">
-                                    <div class="fighter-display">
-                                        <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter1WinnerClass ? 'visible' : 'hidden'}">
-                                        <div class="fighter-name ${fighter1WinnerClass} ${fighter1LoserClass}">${consensus.fighter1}</div>
-                                    </div>
-                                    <div class="prediction-bar" 
-                                        data-prob-f1="${consensus.avg_f1_prob.toFixed(1)}%"
-                                        data-prob-f2="${(100 - consensus.avg_f1_prob).toFixed(1)}%">
-                                        <div class="bar-fighter1" style="width: ${consensus.avg_f1_prob}%"></div>
-                                        <div class="prob-text f1-prob">${consensus.avg_f1_prob.toFixed(1)}%</div>
-                                        <div class="prob-text f2-prob">${(100 - consensus.avg_f1_prob).toFixed(1)}%</div>
-                                        <div class="mobile-arrow"></div>
-                                    </div>
-                                    <div class="fighter-display">
-                                        <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter2WinnerClass ? 'visible' : 'hidden'}">
-                                        <div class="fighter-name ${fighter2WinnerClass} ${fighter2LoserClass}">${consensus.fighter2}</div>
-                                    </div>
-                                </div>
-                            </summary>
+                         ${disagreementClass ? '<div class="betting-indicator">BET</div>' : ''}
+                        <div class="consensus-prediction">
+                            <div class="fighter-display">
+                                <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter1WinnerClass ? 'visible' : 'hidden'}">
+                                <div class="fighter-name ${fighter1WinnerClass} ${fighter1LoserClass}">${consensus.fighter1}</div>
+                                <div class="fighter-odds">${fight.odds && fight.odds.fighter1 ? fight.odds.fighter1.odds : ''}</div>
+                            </div>
+                            <div class="prediction-bar" 
+                                data-prob-f1="${consensus.avg_f1_prob.toFixed(1)}%"
+                                data-prob-f2="${(100 - consensus.avg_f1_prob).toFixed(1)}%">
+                                <div class="bar-fighter1" style="width: ${consensus.avg_f1_prob}%"></div>
+                                <div class="prob-text f1-prob">${consensus.avg_f1_prob.toFixed(1)}%</div>
+                                <div class="prob-text f2-prob">${(100 - consensus.avg_f1_prob).toFixed(1)}%</div>
+                                <div class="mobile-arrow"></div>
+                            </div>
+                            <div class="fighter-display">
+                                <img src="static/crown.webp" class="winner-crown" style="visibility: ${fighter2WinnerClass ? 'visible' : 'hidden'}">
+                                <div class="fighter-name ${fighter2WinnerClass} ${fighter2LoserClass}">${consensus.fighter2}</div>
+                                <div class="fighter-odds">${fight.odds && fight.odds.fighter2 ? fight.odds.fighter2.odds : ''}</div>
+                            </div>
+                        </div>
+                        <div class="details-breakdown" style="display: none;">
                             <div class="table-wrapper">
                                 <table>
                                     <thead>
@@ -152,8 +183,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                                     <tbody>${tableRows}</tbody>
                                 </table>
                             </div>
-                        </details>
+                        </div>
                     `;
+                fightEl.addEventListener('click', (e) => {
+                     // Prevent click from bubbling up from details content
+                     if (e.target.closest('.table-wrapper')) return;
+                     
+                     const details = fightEl.querySelector('.details-breakdown');
+                     details.style.display = details.style.display === 'none' ? 'block' : 'none';
+                 });
                 }
                 
                 fightsContainerEl.appendChild(fightEl);
@@ -231,4 +269,4 @@ function updateLastUpdatedTimestamp(events) {
         console.error('Error formatting timestamp:', error);
         timestampElement.textContent = 'Unknown';
     }
-} 
+}
