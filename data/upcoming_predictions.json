@@ -70,6 +70,16 @@
                         "winner": "Mateusz Rebecki",
                         "probability": "50.6%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Mateusz Rebecki",
+                        "odds": -210
+                    },
+                    "fighter2": {
+                        "name": "Chris Duncan",
+                        "odds": 180
+                    }
                 }
             },
             {
@@ -137,6 +147,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Karol Rosa",
                         "probability": "50.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Karol Rosa",
+                        "odds": -190
+                    },
+                    "fighter2": {
+                        "name": "Nora Cornolle",
+                        "odds": 165
                     }
                 }
             },
@@ -206,6 +226,16 @@
                         "winner": "Danny Silva",
                         "probability": "53.2%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Danny Silva",
+                        "odds": 350
+                    },
+                    "fighter2": {
+                        "name": "Kevin Vallejos",
+                        "odds": -450
+                    }
                 }
             },
             {
@@ -239,6 +269,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Rinya Nakamura",
                         "probability": "54.7%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Rinya Nakamura",
+                        "odds": -405
+                    },
+                    "fighter2": {
+                        "name": "Nathan Fletcher",
+                        "odds": 305
                     }
                 }
             },
@@ -274,6 +314,16 @@
                         "winner": "Rodolfo Vieira",
                         "probability": "57.3%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Rodolfo Vieira",
+                        "odds": -205
+                    },
+                    "fighter2": {
+                        "name": "Tresean Gore",
+                        "odds": 175
+                    }
                 }
             },
             {
@@ -307,6 +357,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Nick Klein",
                         "probability": "50.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Nick Klein",
+                        "odds": 130
+                    },
+                    "fighter2": {
+                        "name": "Andrey Pulyaev",
+                        "odds": -150
                     }
                 }
             },
@@ -342,6 +402,16 @@
                         "winner": "Rafael Estevam",
                         "probability": "55.4%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Rafael Estevam",
+                        "odds": -650
+                    },
+                    "fighter2": {
+                        "name": "Felipe Bunes",
+                        "odds": 475
+                    }
                 }
             },
             {
@@ -375,6 +445,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Piera Rodriguez",
                         "probability": "52.4%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Piera Rodriguez",
+                        "odds": -220
+                    },
+                    "fighter2": {
+                        "name": "Ketlen Souza",
+                        "odds": 185
                     }
                 }
             }

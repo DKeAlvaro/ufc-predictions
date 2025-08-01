@@ -53,27 +53,59 @@ def has_new_upcoming_events():
     except:
         return True  # If there's an error, assume we need to update
 
+def upcoming_predictions_have_odds():
+    """Check if the upcoming predictions file contains odds."""
+    try:
+        OUTPUT_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'upcoming_predictions.json')
+        if not os.path.exists(OUTPUT_PATH):
+            return False
+
+        with open(OUTPUT_PATH, 'r', encoding='utf-8') as f:
+            predictions = json.load(f)
+            if not predictions:
+                return False
+            
+            # Check the first fight of the first event for odds
+            first_event = predictions[0]
+            if 'fights' in first_event and first_event['fights']:
+                first_fight = first_event['fights'][0]
+                return 'odds' in first_fight
+
+    except (json.JSONDecodeError, IndexError):
+        # If file is empty, malformed, or has no fights, we can assume no odds
+        return False
+    except Exception:
+        # For any other error, assume we need to fetch odds to be safe
+        return False
+    
+    return False
+
 def main():
     """
-    Runs the two main data update processes in sequence, but only if there are new events to process.
+    Runs the main data update processes:
+    1. Checks for and records results from the last completed event.
+    2. Scrapes the next upcoming event and generates predictions.
+    3. Enriches upcoming predictions with betting odds if they are missing.
     """
     print("="*50)
     print("STARTING DATA UPDATE PROCESS")
     print("="*50)
     
-    # Check for new events
-    print("\n>>> CHECKING FOR NEW EVENTS...")
+    # Check for new data to process
+    print("\n>>> CHECKING FOR NEW DATA...")
     new_past = has_new_past_events()
     new_upcoming = has_new_upcoming_events()
+    needs_odds_update = not upcoming_predictions_have_odds()
     
-    if not new_past and not new_upcoming:
-        print(">>> NO NEW EVENTS FOUND. Skipping update process.")
+    # Exit if no updates are needed at all
+    if not new_past and not new_upcoming and not needs_odds_update:
+        print(">>> NO NEW DATA TO PROCESS. Skipping update process.")
         print("="*50)
         print("DATA UPDATE PROCESS FINISHED (NO UPDATES NEEDED)")
         print("="*50)
         return
-    
-    print(f">>> NEW EVENTS DETECTED - Past: {'Yes' if new_past else 'No'}, Upcoming: {'Yes' if new_upcoming else 'No'}")
+        
+    print(f">>> PENDING TASKS - Update Past Events: {'Yes' if new_past else 'No'}, Update Upcoming Events: {'Yes' if new_upcoming else 'No'}, Enrich Odds: {'Yes' if needs_odds_update else 'No'}")
     
     # Step 1: Update past events if needed
     if new_past:
@@ -94,14 +126,28 @@ def main():
         try:
             predict_upcoming_fights.main()
             print(">>> STEP 2 COMPLETED SUCCESSFULLY.")
-            # Step 3: Enrich predictions with odds
-            enrich_with_odds()
-            print(">>> STEP 3 COMPLETED SUCCESSFULLY.")
-
         except Exception as e:
             print(f"!!! ERROR in Step 2: {e}")
     else:
         print("\n>>> STEP 2: SKIPPED (No new upcoming events)")
+
+    # Step 3: Enrich predictions with odds if they are missing
+    # This runs regardless of whether there was a new upcoming event,
+    # as long as the current predictions file is missing odds.
+    if not upcoming_predictions_have_odds():
+        print("\n>>> STEP 3: Enriching predictions with odds...")
+        try:
+            # We must ensure the predictions file exists before trying to enrich it
+            UPCOMING_PREDICTIONS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'upcoming_predictions.json')
+            if os.path.exists(UPCOMING_PREDICTIONS_PATH):
+                enrich_with_odds()
+                print(">>> STEP 3 COMPLETED SUCCESSFULLY.")
+            else:
+                print(">>> STEP 3: SKIPPED (No upcoming predictions file to enrich).")
+        except Exception as e:
+            print(f"!!! ERROR in Step 3: {e}")
+    else:
+        print("\n>>> STEP 3: SKIPPED (Odds already exist).")
 
     print("\n" + "="*50)
     print("DATA UPDATE PROCESS FINISHED")
@@ -109,4 +155,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    main()
