@@ -152,11 +152,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Karol Rosa",
-                        "odds": -190
+                        "odds": -175
                     },
                     "fighter2": {
                         "name": "Nora Cornolle",
-                        "odds": 165
+                        "odds": 150
                     }
                 }
             },
@@ -230,11 +230,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Danny Silva",
-                        "odds": 350
+                        "odds": 335
                     },
                     "fighter2": {
                         "name": "Kevin Vallejos",
-                        "odds": -450
+                        "odds": -435
                     }
                 }
             },
@@ -318,11 +318,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Rodolfo Vieira",
-                        "odds": -205
+                        "odds": -210
                     },
                     "fighter2": {
                         "name": "Tresean Gore",
-                        "odds": 175
+                        "odds": 180
                     }
                 }
             },
@@ -450,11 +450,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Piera Rodriguez",
-                        "odds": -220
+                        "odds": -230
                     },
                     "fighter2": {
                         "name": "Ketlen Souza",
-                        "odds": 185
+                        "odds": 195
                     }
                 }
             }
