@@ -179,15 +179,18 @@ def main():
         if upcoming_predictions_data and upcoming_predictions_data.get('event_name') == last_event_data.get('event_name'):
             print("  -> Found matching predictions. Merging with actual results...")
             
-            # Create a lookup map from the prediction data.
+            # Create lookup maps from the prediction data.
             # The key will be a frozenset of the two fighter names, which ignores order.
             predictions_map = {}
+            odds_map = {}
             for fight in upcoming_predictions_data.get('fights', []):
                 fighters = set(fight['fight'].split(' vs. '))
                 # Use a frozenset as the key because it's hashable and order-independent
                 predictions_map[frozenset(fighters)] = fight.get('predictions', {})
+                if 'odds' in fight:
+                    odds_map[frozenset(fighters)] = fight['odds']
 
-            # Iterate through actual results and add the corresponding predictions
+            # Iterate through actual results and add the corresponding predictions and odds
             for result in last_event_data.get('results', []):
                 # Create a similar key from the results data
                 result_fighters = set(result['fight'].split(' vs. '))
@@ -199,6 +202,10 @@ def main():
                 else:
                     # If no prediction was found for a fight, add an empty dict
                     result['predictions'] = {}
+                    
+                # Add odds data if available
+                if result_key in odds_map:
+                    result['odds'] = odds_map[result_key]
         else:
             print("  -> No matching prediction data found. Saving results without predictions.")
             for result in last_event_data.get('results', []):
@@ -214,4 +221,4 @@ def main():
         print(f"Successfully saved new event results to {PAST_RESULTS_PATH}")
 
 if __name__ == "__main__":
-    main() 
+    main()
