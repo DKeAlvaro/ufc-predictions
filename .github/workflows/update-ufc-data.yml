@@ -37,6 +37,8 @@ jobs:
         echo "{\"last_run\": \"$(date -u -Iseconds)\"}" > data/last_run.json
         
     - name: Run UFC data update pipeline
+      env:
+        ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
       run: |
         cd src
         python update_data.py
