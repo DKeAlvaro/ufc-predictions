@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const scoreboardDiv = document.getElementById('scoreboard');
     const pastEventsDiv = document.getElementById('past-events');
 
-    if (!scoreboardDiv || !pastEventsDiv) {
+    if (!pastEventsDiv) {
         console.error('Required divs not found in the DOM.');
         return;
     }
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return data;
         } catch (error) {
             console.error('Error fetching past results:', error);
-            scoreboardDiv.innerHTML = '<p class="error">Could not load scoreboard data.</p>';
             pastEventsDiv.innerHTML = '<p class="error">Could not load past results.</p>';
             return [];
         }
@@ -28,8 +26,37 @@ document.addEventListener('DOMContentLoaded', () => {
         
         data.forEach(event => {
             event.results.forEach(fight => {
+                const actualWinner = fight.winner;
+
+                // Add "Odds Favorite" baseline
+                if (fight.odds && fight.odds.fighter1 && fight.odds.fighter2) {
+                    const favoriteModelName = 'Odds Favorite';
+                    if (!scoreboard[favoriteModelName]) {
+                        scoreboard[favoriteModelName] = { correct: 0, total: 0, betting_wins: 0, betting_losses: 0, profit: 0 };
+                    }
+
+                    const odds1 = fight.odds.fighter1.odds;
+                    const odds2 = fight.odds.fighter2.odds;
+                    const favorite = odds1 < odds2 ? fight.odds.fighter1.name : fight.odds.fighter2.name;
+                    
+                    if (favorite === actualWinner) {
+                        scoreboard[favoriteModelName].correct++;
+                    }
+                    scoreboard[favoriteModelName].total++;
+
+                    const betResult = calculateBetResult(fight, favorite);
+                    if (betResult.wagered) {
+                        if (betResult.won) {
+                            scoreboard[favoriteModelName].betting_wins++;
+                            scoreboard[favoriteModelName].profit += betResult.profit;
+                        } else {
+                            scoreboard[favoriteModelName].betting_losses++;
+                            scoreboard[favoriteModelName].profit -= betResult.wagered;
+                        }
+                    }
+                }
+
                 if (fight.predictions && Object.keys(fight.predictions).length > 0) {
-                    const actualWinner = fight.winner;
                     for (const model in fight.predictions) {
                         if (!scoreboard[model]) {
                             scoreboard[model] = { correct: 0, total: 0, betting_wins: 0, betting_losses: 0, profit: 0 };
@@ -97,11 +124,83 @@ document.addEventListener('DOMContentLoaded', () => {
         return { wagered, won, profit };
     };
 
+    const calculateEventModelStats = (event) => {
+        const modelStats = {};
+        event.results.forEach(fight => {
+            // Add "Odds Favorite" baseline
+            if (fight.odds && fight.odds.fighter1 && fight.odds.fighter2) {
+                const favoriteModelName = 'Odds Favorite';
+                if (!modelStats[favoriteModelName]) {
+                    modelStats[favoriteModelName] = { betting_wins: 0, betting_losses: 0, profit: 0 };
+                }
+                const odds1 = fight.odds.fighter1.odds;
+                const odds2 = fight.odds.fighter2.odds;
+                const favorite = odds1 < odds2 ? fight.odds.fighter1.name : fight.odds.fighter2.name;
+                const betResult = calculateBetResult(fight, favorite);
+                if (betResult.wagered) {
+                    if (betResult.won) {
+                        modelStats[favoriteModelName].betting_wins++;
+                        modelStats[favoriteModelName].profit += betResult.profit;
+                    } else {
+                        modelStats[favoriteModelName].betting_losses++;
+                        modelStats[favoriteModelName].profit -= betResult.wagered;
+                    }
+                }
+            }
+
+            if (fight.predictions && Object.keys(fight.predictions).length > 0) {
+                for (const model in fight.predictions) {
+                    if (!modelStats[model]) {
+                        modelStats[model] = { betting_wins: 0, betting_losses: 0, profit: 0 };
+                    }
+                    const prediction = fight.predictions[model];
+                    const betResult = calculateBetResult(fight, prediction.winner);
+                    if (betResult.wagered) {
+                        if (betResult.won) {
+                            modelStats[model].betting_wins++;
+                            modelStats[model].profit += betResult.profit;
+                        } else {
+                            modelStats[model].betting_losses++;
+                            modelStats[model].profit -= betResult.wagered;
+                        }
+                    }
+                }
+            }
+        });
+        return modelStats;
+    };
+
     const calculateEventBestModel = (event) => {
         const scoreboard = {};
         event.results.forEach(fight => {
+            const actualWinner = fight.winner;
+
+            // Add "Odds Favorite" baseline
+            if (fight.odds && fight.odds.fighter1 && fight.odds.fighter2) {
+                const favoriteModelName = 'Odds Favorite';
+                if (!scoreboard[favoriteModelName]) {
+                    scoreboard[favoriteModelName] = { correct: 0, total: 0, betting_wins: 0, betting_losses: 0, profit: 0 };
+                }
+                const odds1 = fight.odds.fighter1.odds;
+                const odds2 = fight.odds.fighter2.odds;
+                const favorite = odds1 < odds2 ? fight.odds.fighter1.name : fight.odds.fighter2.name;
+                if (favorite === actualWinner) {
+                    scoreboard[favoriteModelName].correct++;
+                }
+                scoreboard[favoriteModelName].total++;
+                const betResult = calculateBetResult(fight, favorite);
+                if (betResult.wagered) {
+                    if (betResult.won) {
+                        scoreboard[favoriteModelName].betting_wins++;
+                        scoreboard[favoriteModelName].profit += betResult.profit;
+                    } else {
+                        scoreboard[favoriteModelName].betting_losses++;
+                        scoreboard[favoriteModelName].profit -= betResult.wagered;
+                    }
+                }
+            }
+
             if (fight.predictions && Object.keys(fight.predictions).length > 0) {
-                const actualWinner = fight.winner;
                 for (const model in fight.predictions) {
                     if (!scoreboard[model]) {
                         scoreboard[model] = { correct: 0, total: 0, betting_wins: 0, betting_losses: 0, profit: 0 };
@@ -148,54 +247,96 @@ document.addEventListener('DOMContentLoaded', () => {
         return { bestModelName, correct: stats.correct, total: stats.total, betting_wins: stats.betting_wins, betting_losses: stats.betting_losses, profit: stats.profit };
     };
 
-    const renderScoreboard = (scoreboard) => {
-        const sortedModels = Object.entries(scoreboard).sort(([, a], [, b]) => {
-            const accuracyA = a.total > 0 ? (a.correct / a.total) : 0;
-            const accuracyB = b.total > 0 ? (b.correct / b.total) : 0;
-            return accuracyB - accuracyA;
-        });
-
-        const topThree = sortedModels.slice(0, 3);
-
-        if (topThree.length === 0) {
-            scoreboardDiv.innerHTML = "<p>Not enough data to create a scoreboard.</p>";
+    const renderInsightsTable = (scoreboard) => {
+        const insightsTableWrapper = document.querySelector('.insights-table-wrapper');
+        if (!insightsTableWrapper) {
+            console.error('Insights table wrapper not found');
             return;
         }
 
-        const medalSVGs = [
-            'static/gold_medal.svg',
-            'static/silver_medal.svg',
-            'static/bronze_medal.svg'
-        ];
+        const models = Object.entries(scoreboard).sort(([, a], [, b]) => {
+            const accuracyA = a.total > 0 ? a.correct / a.total : 0;
+            const accuracyB = b.total > 0 ? b.correct / b.total : 0;
+            return accuracyB - accuracyA;
+        });
+        if (models.length === 0) {
+            insightsContainer.innerHTML = '<p>No model data to display.</p>';
+            return;
+        }
 
-        let html = '<div class="scoreboard-list">';
-        
-        topThree.forEach(([model, stats], index) => {
-            const accuracy = stats.total > 0 ? ((stats.correct / stats.total) * 100).toFixed(1) : '0.0';
+        let tableHtml = `
+            <table class="insights-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th> Fights</th>
+                        <th>Correct</th>
+                        <th>Accuracy</th>
+                        <th>Bets</th>
+                        <th>Wins</th>
+                        <th>Win %</th>
+                        <th>Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        let totalFights = 0;
+        let totalCorrect = 0;
+        let totalBets = 0;
+        let totalBettingWins = 0;
+        let totalProfit = 0;
+
+        models.forEach(([model, stats]) => {
             const modelName = model.replace('Model.joblib', '');
-            const medalImg = `<img src="${medalSVGs[index]}" alt="Rank ${index + 1}" class="scoreboard-medal" />`;
-            const totalBets = stats.betting_wins + stats.betting_losses;
-            const bettingAccuracy = totalBets > 0 ? ((stats.betting_wins / totalBets) * 100).toFixed(1) : '0.0';
-            const profitClass = stats.profit >= 0 ? 'positive-profit' : 'negative-profit';
+            const accuracy = stats.total > 0 ? ((stats.correct / stats.total) * 100).toFixed(1) + '%' : 'N/A';
+            const totalModelBets = stats.betting_wins + stats.betting_losses;
+            const bettingWinRate = totalModelBets > 0 ? ((stats.betting_wins / totalModelBets) * 100).toFixed(1) + '%' : 'N/A';
+            const profitClass = stats.profit > 0 ? 'betting-profit-positive' : stats.profit < 0 ? 'betting-profit-negative' : 'betting-profit-neutral';
 
-            html += `
-                <div class="scoreboard-item">
-                    <div class="scoreboard-rank">${medalImg}</div>
-                    <div class="scoreboard-model-name">${modelName}</div>
-                    <div class="scoreboard-stats">
-                        <span class="scoreboard-accuracy">${accuracy}%</span>
-                        <span class="scoreboard-record">(${stats.correct}/${stats.total})</span>
-                        <div class="betting-stats">
-                            <span class="betting-record">Bets: ${stats.betting_wins}/${totalBets}</span>
-                            <span class="profit ${profitClass}">$${stats.profit.toFixed(0)}</span>
-                        </div>
-                    </div>
-                </div>
+            tableHtml += `
+                <tr>
+                    <td>${modelName}</td>
+                    <td>${stats.total}</td>
+                    <td>${stats.correct}</td>
+                    <td>${accuracy}</td>
+                    <td>${totalModelBets}</td>
+                    <td>${stats.betting_wins}</td>
+                    <td>${bettingWinRate}</td>
+                    <td class="${profitClass}">${stats.profit.toFixed(0)}</td>
+                </tr>
             `;
+
+            totalFights += stats.total;
+            totalCorrect += stats.correct;
+            totalBets += totalModelBets;
+            totalBettingWins += stats.betting_wins;
+            totalProfit += stats.profit;
         });
 
-        html += '</div>';
-        scoreboardDiv.innerHTML = html;
+        const numModels = models.length;
+        const avgAccuracy = totalFights > 0 ? ((totalCorrect / totalFights) * 100).toFixed(1) + '%' : 'N/A';
+        const avgBettingWinRate = totalBets > 0 ? ((totalBettingWins / totalBets) * 100).toFixed(1) + '%' : 'N/A';
+        const avgProfitClass = totalProfit > 0 ? 'betting-profit-positive' : totalProfit < 0 ? 'betting-profit-negative' : 'betting-profit-neutral';
+
+        tableHtml += `
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>Aggregate</strong></td>
+                        <td>${(totalFights / numModels).toFixed(0)}</td>
+                        <td>${(totalCorrect / numModels).toFixed(0)}</td>
+                        <td>${avgAccuracy}</td>
+                        <td>${(totalBets / numModels).toFixed(0)}</td>
+                        <td>${(totalBettingWins / numModels).toFixed(0)}</td>
+                        <td>${avgBettingWinRate}</td>
+                        <td class="${avgProfitClass}">${totalProfit.toFixed(0)}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        `;
+
+        insightsTableWrapper.innerHTML = tableHtml;
     };
 
     const renderPastEvents = (data) => {
@@ -206,22 +347,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let html = '';
         data.forEach(event => {
-            const { bestModelName, correct, total, betting_wins, betting_losses, profit } = calculateEventBestModel(event);
-            const bestModelInfo = total > 0 ? `<strong>Best Model:</strong> ${bestModelName} (${correct}/${total})` : '';
-            const totalBets = betting_wins + betting_losses;
-            const bettingInfo = totalBets > 0 ? `<strong>Betting:</strong> ${betting_wins}/${totalBets} bets won, $${profit.toFixed(0)} profit` : '';
+            const { bestModelName, correct, total } = calculateEventBestModel(event);
+            const eventModelStats = calculateEventModelStats(event);
+
+            let bestBettingModel = 'N/A';
+            let maxProfit = -Infinity;
+            let hasBets = false;
+            Object.values(eventModelStats).forEach(stats => {
+                if (stats.betting_wins + stats.betting_losses > 0) hasBets = true;
+            });
+
+            if (hasBets) {
+                for (const model in eventModelStats) {
+                    if (eventModelStats[model].profit > maxProfit) {
+                        maxProfit = eventModelStats[model].profit;
+                        bestBettingModel = model.replace('Model.joblib', '');
+                    }
+                }
+            }
+
+            const bestModelInfo = total > 0 ? `<strong>Best Picker:</strong> ${bestModelName} (${correct}/${total})` : '';
+            const totalEventProfit = Object.values(eventModelStats).reduce((acc, stats) => acc + stats.profit, 0);
+            const topModelProfit = maxProfit > -Infinity ? maxProfit : 0;
+            const bettingInfo = hasBets ? `<strong>Event Betting:</strong> <span class="${totalEventProfit > 0 ? 'betting-profit-positive' : 'betting-profit-negative'}">${Math.abs(totalEventProfit).toFixed(0)}</span> (Top: ${bestBettingModel} <span class="${topModelProfit > 0 ? 'betting-profit-positive' : 'betting-profit-negative'}">${Math.abs(topModelProfit).toFixed(0)}</span>)` : '';
+
 
             html += `<div class="event-card past-event-card">
                 <h3 class="collapsible-header" data-target="event-${event.event_name.replace(/\s+/g, '-')}">${event.event_name}</h3>
                 <div class="event-meta">
-                    <p class="event-date">${event.event_date}</p>`;
-            if (bestModelInfo) {
-                html += `<p class="best-model">${bestModelInfo}</p>`;
-            }
-            if (bettingInfo) {
-                html += `<p class="betting-summary">${bettingInfo}</p>`;
-            }
-            html += `</div>
+                    <p class="event-date">${event.event_date}</p>
+                    <div class="event-summaries">
+                        ${bestModelInfo ? `<p class="best-model">${bestModelInfo}</p>` : ''}
+                        ${bettingInfo ? `<p class="betting-summary">${bettingInfo}</p>` : ''}
+                    </div>
+                </div>
                 <div id="event-${event.event_name.replace(/\s+/g, '-')}" class="past-fights-container collapsible-content">`;
             
             event.results.forEach((fight, index) => {
@@ -259,19 +418,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Display odds if available
                 let oddsHtml = '';
                 if (fight.odds && fight.odds.fighter1 && fight.odds.fighter2) {
-                    const f1_odds = fight.odds.fighter1.odds;
-                    const f2_odds = fight.odds.fighter2.odds;
+                    const f1_odds = fight.odds.fighter1.odds > 0 ? `+${fight.odds.fighter1.odds}` : fight.odds.fighter1.odds;
+                    const f2_odds = fight.odds.fighter2.odds > 0 ? `+${fight.odds.fighter2.odds}` : fight.odds.fighter2.odds;
                     oddsHtml = `
-                        <div class="odds-display">
-                            <strong>Odds:</strong> ${fight.odds.fighter1.name} ${f1_odds}, ${fight.odds.fighter2.name} ${f2_odds}
+                        <div class="fight-odds">
+                            <div class="fight-odds-item">
+                                <span class="odds-label">${fight.odds.fighter1.name}:</span>
+                                <span class="odds-value">${f1_odds}</span>
+                            </div>
+                            <div class="fight-odds-item">
+                                <span class="odds-label">${fight.odds.fighter2.name}:</span>
+                                <span class="odds-value">${f2_odds}</span>
+                            </div>
                         </div>
                     `;
                 }
                 
                 const totalBets = total_betting_wins + total_betting_losses;
-                const bettingSummary = totalBets > 0 ? 
-                    `<div class="fight-betting-summary">
-                        <strong>Betting Results:</strong> ${total_betting_wins}/${totalBets} models won bets, $${total_profit.toFixed(0)} total profit
+                const profitClass = total_profit > 0 ? 'betting-profit-positive' : total_profit < 0 ? 'betting-profit-negative' : 'betting-profit-neutral';
+                const bettingSummary = totalBets > 0 ? `
+                    <div class="fight-betting-summary">
+                        <div class="betting-stats">
+                            <div class="betting-stat">
+                                <span class="betting-stat-label">Total Profit</span>
+                                <span class="betting-stat-value ${profitClass}">${Math.abs(total_profit).toFixed(0)}</span>
+                            </div>
+                            <div class="betting-stat">
+                                <span class="betting-stat-label">Winning Bets</span>
+                                <span class="betting-stat-value">${total_betting_wins}/${totalBets}</span>
+                            </div>
+                        </div>
                     </div>` : '';
                 
                 html += `<div class="past-fight">
@@ -288,9 +464,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         </p>
                         <ul id="${fightId}" class="collapsible-content">`;
 
-                if (fight.predictions && Object.keys(fight.predictions).length > 0) {
+                const predictions = { ...fight.predictions };
+
+                // Add Favorite baseline to predictions list
+                if (fight.odds && fight.odds.fighter1 && fight.odds.fighter2) {
+                    const odds1 = fight.odds.fighter1.odds;
+                    const odds2 = fight.odds.fighter2.odds;
+                    const favorite = odds1 < odds2 ? fight.odds.fighter1.name : fight.odds.fighter2.name;
+                    predictions['Favorite'] = { winner: favorite, probability: 'Favorite' };
+                }
+
+                if (Object.keys(predictions).length > 0) {
                     // Sort predictions to maintain consistent order
-                    const sortedPredictions = Object.entries(fight.predictions);
+                    const sortedPredictions = Object.entries(predictions);
 
                     for (const [model, prediction] of sortedPredictions) {
                         const predictedWinner = prediction.winner;
@@ -303,12 +489,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         const betResult = calculateBetResult(fight, predictedWinner);
                         let betInfo = '';
                         if (betResult.wagered > 0) {
-                            const betIcon = betResult.won ? '<span class="bet-win">💰</span>' : '<span class="bet-loss">💸</span>';
-                            const profitClass = betResult.won ? 'positive-profit' : 'negative-profit';
-                            betInfo = ` <span class="bet-result ${profitClass}">${betIcon} $${betResult.profit.toFixed(0) - (betResult.won ? 0 : 100)}</span>`;
+                            const netProfit = betResult.won ? betResult.profit : -betResult.wagered;
+
+                            const profitClass = netProfit >= 0 ? 'betting-profit-positive' : 'betting-profit-negative';
+                            betInfo = `<div class="betting-info"><span class="model-betting-result ${profitClass}"><span class="betting-profit-display">${Math.abs(netProfit).toFixed(0)}</span></span></div>`;
                         }
-                        
-                        html += `<li>${icon} ${modelName}: ${predictedWinner} <span class="probability">(${probability})</span>${betInfo}</li>`;
+
+                        html += `<li><div class="model-info">${icon} <strong>${modelName}:</strong> ${predictedWinner} <span class="probability">(${probability})</span></div>${betInfo}</li>`;
                     }
                 } else {
                     html += '<li>No predictions were made for this fight.</li>';
@@ -360,7 +547,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const pastResultsData = await fetchData();
         if (pastResultsData.length > 0) {
             const scoreboard = calculateAccuracy(pastResultsData);
-            renderScoreboard(scoreboard);
+            renderInsightsTable(scoreboard);
             renderPastEvents(pastResultsData);
             addCollapsibleListeners();
             updateTimestamps();

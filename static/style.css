@@ -115,19 +115,21 @@ h1 {
 /* --- Betting Display Styles --- */
 .betting-stats {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-top: 10px;
     font-size: 0.9rem;
+    justify-content: center;
 }
 
 .betting-stat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px 12px;
+    padding: 5px 10px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 60px;
 }
 
 .betting-stat-label {
@@ -145,12 +147,24 @@ h1 {
     color: #00ff88;
 }
 
+.betting-profit-positive::before {
+    content: '+$';
+}
+
 .betting-profit-negative {
     color: #ff4444;
 }
 
+.betting-profit-negative::before {
+    content: '-$';
+}
+
 .betting-profit-neutral {
     color: #aaa;
+}
+
+.betting-profit-neutral::before {
+    content: '$';
 }
 
 .fight-odds {
@@ -183,34 +197,83 @@ h1 {
 .model-betting-result {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    margin-left: 8px;
-    font-size: 0.8rem;
+    gap: 4px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    padding: 2px 6px;
+    border-radius: 5px;
+    vertical-align: middle;
 }
 
-.betting-win {
+.model-betting-result.betting-profit-positive {
+    background-color: rgba(0, 255, 136, 0.15);
     color: #00ff88;
 }
 
-.betting-loss {
+.model-betting-result.betting-profit-negative {
+    background-color: rgba(255, 68, 68, 0.15);
     color: #ff4444;
+}
+
+.bet-icon {
+    font-size: 1.1em;
+    line-height: 1;
 }
 
 .betting-profit-display {
     font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.3);
 }
 
-.betting-profit-display.positive {
-    background: rgba(0, 255, 136, 0.2);
+.event-summaries {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.betting-summary .betting-profit-positive {
     color: #00ff88;
+    font-weight: bold;
 }
 
-.betting-profit-display.negative {
-    background: rgba(255, 68, 68, 0.2);
+.betting-summary .betting-profit-negative {
     color: #ff4444;
+    font-weight: bold;
+}
+
+.fight-betting-summary .betting-stats {
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
+.fight-betting-summary .betting-stat {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.fight-odds {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.fight-odds-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.odds-label {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.odds-value {
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 .event-betting-summary {
@@ -408,6 +471,19 @@ h1 {
 
 /* --- Responsive Mobile Styles --- */
 @media (max-width: 768px) {
+    .event-summaries {
+        align-items: flex-start;
+    }
+
+    .fight-odds {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fight-odds-item {
+        flex-direction: row;
+        justify-content: space-between;
+    }
     h1 {
         font-size: 3rem;
         letter-spacing: 1px;
@@ -486,6 +562,7 @@ h1 {
     text-decoration: underline;
 }
 
+#insights-container,
 #results-container {
     background-color: rgba(20, 20, 20, 0.7);
     padding: 20px;
@@ -494,7 +571,8 @@ h1 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-#results-container h2 {
+#results-container h2,
+#insights-container h2 {
     text-align: center;
     font-family: 'Teko', sans-serif;
     font-size: 2.5rem;
@@ -528,17 +606,17 @@ h1 {
 
 .scoreboard-item {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     position: relative;
     border-radius: 12px;
-    padding: 20px;
+    padding: 15px 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
     overflow: hidden;
     width: 100%;
     max-width: 500px;
+    gap: 15px;
 }
 
 .scoreboard-item::before {
@@ -613,40 +691,54 @@ h1 {
 }
 
 .scoreboard-model-name {
+    flex-grow: 1;
     font-family: 'Teko', sans-serif;
     font-size: 1.8rem;
     color: #000;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     font-weight: 700;
     text-align: left;
+    line-height: 1.1;
     position: relative;
     z-index: 2;
-    line-height: 1.1;
-    flex-grow: 1;
 }
 
 .scoreboard-stats {
-    text-align: right;
-    font-family: 'Roboto', sans-serif;
+    display: flex;
+    gap: 20px;
+    align-items: center;
     position: relative;
     z-index: 2;
-    flex-shrink: 0;
 }
 
-.scoreboard-accuracy {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: #000;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-    display: block;
+.scoreboard-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
     margin-bottom: 2px;
 }
 
-.scoreboard-record {
-    font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.7);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
-    font-weight: 600;
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #000;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.stat-value.betting-profit-positive {
+    color: #004d00;
+}
+
+.stat-value.betting-profit-negative {
+    color: #8b0000;
 }
 
 /* --- New Event Header Collapsible Style (+/-) --- */
@@ -694,21 +786,29 @@ h1 {
 .past-event-card .event-date {
     font-size: 0.9em;
     color: #a0a0a0;
-    margin: 5px 0 10px;
+    margin: 0;
+    font-family: 'Teko', sans-serif;
 }
 
 .event-meta {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     font-size: 0.9em;
     color: #a0a0a0;
-    margin: -5px 0 15px;
+    margin: 5px 0 15px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.best-model {
+.best-model,
+.betting-summary {
     font-weight: 500;
     margin: 0;
+    text-align: right;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
 }
 
 .best-model .accuracy {
@@ -779,12 +879,67 @@ h1 {
     min-width: 300px;
 }
 
+/* Styling for the list of model predictions */
+.past-fight-predictions ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.past-fight-predictions li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.past-fight-predictions .model-info {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    flex-grow: 1; /* Allow this to take up space */
+}
+
+.past-fight-predictions .betting-info {
+    margin-left: auto; /* Pushes the betting info to the right */
+    white-space: nowrap; /* Prevents the bet amount from wrapping */
+}
+
+/* --- Mobile Specific Adjustments for Predictions --- */
+@media (max-width: 480px) {
+    .past-fight-predictions li {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align to the start */
+        gap: 5px;
+        border-bottom: 1px solid #444;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .past-fight-predictions li:last-child {
+        border-bottom: none;
+    }
+
+    .past-fight-predictions .betting-info {
+        margin-left: 0; /* Reset margin */
+        width: 100%;
+        text-align: center; /* Center align bet info */
+    }
+}
+
 .past-fight-predictions ul {
     list-style: none;
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
+}
+
+.past-fight-predictions li {
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
 }
 
 .probability {
@@ -820,8 +975,88 @@ h1 {
     font-weight: bold;
 } 
 
+/* Insights Table */
+#insights-table-container {
+    margin: 20px auto 40px;
+    padding: 0 15px;
+    max-width: 1200px;
+}
+
+.insights-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.insights-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #282c34;
+    color: #e6e6e6;
+    font-size: 1rem;
+    min-width: 800px; /* Ensures table has a minimum width for scrolling */
+}
+
+.insights-table th, .insights-table td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #3a3f4b;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.insights-table thead th {
+    background-color: #d13a3a;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.insights-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.insights-table tbody tr:nth-child(even) {
+    background-color: #2c313a;
+}
+
+.insights-table tbody tr:hover {
+    background-color: #3a3f4b;
+}
+
+.insights-table tfoot {
+    font-weight: bold;
+    background-color: #1f2328;
+    color: #fff;
+}
+
+.insights-table tfoot td {
+    border-top: 2px solid #d13a3a;
+}
+
 /* --- Media Queries for Mobile Responsiveness --- */
-@media (max-width: 768px) {
+@media (max-width: 820px) {
+    #insights-table-container {
+        padding: 0 5px;
+    }
+
+    .insights-table th, .insights-table td {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .insights-table thead th {
+        font-size: 1.2rem;
+    }
+}
     body {
         padding: 5px;
     }
@@ -869,8 +1104,33 @@ h1 {
         height: 40px;
     }
 
+    .scoreboard-model-name-container {
+        gap: 10px;
+    }
+
     .scoreboard-model-name {
         font-size: 1.4rem;
+    }
+
+    .scoreboard-betting-stats {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .scoreboard-betting-stats .betting-stat {
+        min-width: 45px;
+    }
+
+    .scoreboard-betting-stats .betting-stat-label {
+        font-size: 0.65rem;
+    }
+
+    .scoreboard-betting-stats .betting-stat-value {
+        font-size: 0.9rem;
+    }
+
+    .scoreboard-accuracy-container {
+        align-items: center;
     }
 
     .scoreboard-accuracy {
@@ -885,6 +1145,21 @@ h1 {
     .past-event-card {
         padding: 10px;
         margin-bottom: 15px;
+    }
+
+    .event-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .event-summaries {
+        align-items: flex-start;
+    }
+
+    .best-model,
+    .betting-summary {
+        text-align: left;
     }
 
     .past-event-card > h3.collapsible-header {
