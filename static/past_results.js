@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <thead>
                     <tr>
                         <th>Model</th>
-                        <th> Fights</th>
+                        <th>Predictions</th>
                         <th>Correct</th>
                         <th>Accuracy</th>
                         <th>Bets</th>
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${totalModelBets}</td>
                     <td>${stats.betting_wins}</td>
                     <td>${bettingWinRate}</td>
-                    <td class="${profitClass}">${stats.profit.toFixed(0)}</td>
+                    <td class="${profitClass}">${Math.abs(stats.profit).toFixed(0)}</td>
                 </tr>
             `;
 
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <td>${(totalBets / numModels).toFixed(0)}</td>
                         <td>${(totalBettingWins / numModels).toFixed(0)}</td>
                         <td>${avgBettingWinRate}</td>
-                        <td class="${avgProfitClass}">${totalProfit.toFixed(0)}</td>
+                        <td class="${avgProfitClass}">${Math.abs(totalProfit).toFixed(0)}</td>
                     </tr>
                 </tfoot>
             </table>
