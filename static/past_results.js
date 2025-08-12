@@ -273,6 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Calculate cumulative profits and accuracy using fight-by-fight calculation
         let cumulativeOddsFavoriteProfit = 0;
         let cumulativeBestModelProfit = 0;
+        let cumulativeOddsFavoriteInvested = 0;
+        let cumulativeBestModelInvested = 0;
         
         const labels = [];
         const oddsFavoriteData = [];
@@ -282,6 +284,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Calculate profits using the same method as detailed breakdown
             let eventOddsProfit = 0;
             let eventModelProfit = 0;
+            let eventOddsInvested = 0;
+            let eventModelInvested = 0;
             let eventOddsCorrect = 0;
             let eventOddsTotal = 0;
             let eventModelCorrect = 0;
@@ -296,6 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     const oddsBet = calculateBetResult(fight, oddsFavoritePrediction);
                     eventOddsProfit += oddsBet.profit;
+                    eventOddsInvested += oddsBet.wagered;
                     eventOddsTotal++;
                     if (oddsFavoritePrediction === actualWinner) {
                         eventOddsCorrect++;
@@ -306,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (bestModelPrediction) {
                         const modelBet = calculateBetResult(fight, bestModelPrediction);
                         eventModelProfit += modelBet.profit;
+                        eventModelInvested += modelBet.wagered;
                         eventModelTotal++;
                         if (bestModelPrediction === actualWinner) {
                             eventModelCorrect++;
@@ -314,13 +320,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            // Update cumulative profits
+            // Update cumulative profits and invested amounts
             cumulativeOddsFavoriteProfit += eventOddsProfit;
             cumulativeBestModelProfit += eventModelProfit;
+            cumulativeOddsFavoriteInvested += eventOddsInvested;
+            cumulativeBestModelInvested += eventModelInvested;
+            
+            // Calculate percentage gains
+            const oddsPercentageGain = cumulativeOddsFavoriteInvested > 0 ? 
+                ((cumulativeOddsFavoriteProfit / cumulativeOddsFavoriteInvested) * 100) : 0;
+            const modelPercentageGain = cumulativeBestModelInvested > 0 ? 
+                ((cumulativeBestModelProfit / cumulativeBestModelInvested) * 100) : 0;
             
             labels.push(event.event_name);
-            oddsFavoriteData.push(cumulativeOddsFavoriteProfit);
-            bestModelData.push(cumulativeBestModelProfit);
+            oddsFavoriteData.push(oddsPercentageGain);
+            bestModelData.push(modelPercentageGain);
             
             // Update scoreboards
             if (!scoreboard['Odds Favorite']) {
@@ -356,6 +370,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const oddsBet = calculateBetResult(fight, oddsFavoritePrediction);
                     const modelBet = bestModelPrediction ? calculateBetResult(fight, bestModelPrediction) : null;
                     
+                    // Calculate percentage gains
+                    const oddsPercentage = oddsBet.wagered > 0 ? (oddsBet.profit / oddsBet.wagered) * 100 : 0;
+                    const modelPercentage = modelBet && modelBet.wagered > 0 ? (modelBet.profit / modelBet.wagered) * 100 : 0;
+                    
                     fightDetails.push({
                         fight: fight.fight,
                         actualWinner: actualWinner,
@@ -363,13 +381,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             prediction: oddsFavoritePrediction,
                             result: oddsFavoritePrediction === actualWinner ? 'WIN' : 'LOSS',
                             amount: oddsBet.wagered,
-                            profit: oddsBet.profit
+                            profit: oddsBet.profit,
+                            percentage: oddsPercentage
                         },
                         bestModel: {
                             prediction: bestModelPrediction || 'N/A',
                             result: bestModelPrediction === actualWinner ? 'WIN' : 'LOSS',
                             amount: modelBet?.wagered || 0,
-                            profit: modelBet?.profit || 0
+                            profit: modelBet?.profit || 0,
+                            percentage: modelPercentage
                         }
                     });
                 }
@@ -394,26 +414,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         label: 'Odds Favorite',
                         data: oddsFavoriteData,
-                        borderColor: '#ff4757',
-                        backgroundColor: 'rgba(255, 71, 87, 0.1)',
-                        borderWidth: 4,
-                        tension: 0.4,
-                        fill: true,
-                        pointBackgroundColor: '#ff4757',
-                        pointBorderColor: '#ffffff',
-                        pointBorderWidth: 2,
-                        pointRadius: 6,
-                        pointHoverRadius: 8
-                    },
-                    {
-                        label: bestModelName ? bestModelName.replace('Model.joblib', '') : 'Best Model',
-                        data: bestModelData,
                         borderColor: '#2ed573',
                         backgroundColor: 'rgba(46, 213, 115, 0.1)',
                         borderWidth: 4,
                         tension: 0.4,
                         fill: true,
                         pointBackgroundColor: '#2ed573',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    },
+                    {
+                        label: 'My Predictions',
+                        data: bestModelData,
+                        borderColor: '#ff4757',
+                        backgroundColor: 'rgba(255, 71, 87, 0.1)',
+                        borderWidth: 4,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#ff4757',
                         pointBorderColor: '#ffffff',
                         pointBorderWidth: 2,
                         pointRadius: 6,
@@ -436,12 +456,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         labels: {
                             color: '#ffffff',
                             font: {
-                                size: 16,
+                                size: window.innerWidth < 768 ? 14 : 16,
                                 family: 'Roboto',
                                 weight: 'bold'
                             },
                             usePointStyle: true,
-                            padding: 25
+                            padding: window.innerWidth < 768 ? 15 : 25
                         }
                     },
                     tooltip: {
@@ -468,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 const label = context.dataset.label;
                                 const value = context.parsed.y;
                                 const sign = value >= 0 ? '+' : '';
-                                return `${label}: ${sign}$${value.toFixed(0)}`;
+                                return `${label}: ${sign}${value.toFixed(1)}%`;
                             }
                         }
                     }
@@ -484,18 +504,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 scales: {
                     x: {
-                        display: false
+                        display: true,
+                        ticks: {
+                            color: '#ffffff',
+                            font: {
+                                size: window.innerWidth < 768 ? 10 : 12,
+                                family: 'Roboto'
+                            },
+                            maxRotation: 45,
+                            minRotation: 45,
+                            callback: function(value, index) {
+                                const date = new Date(eventsWithOdds[index].event_date);
+                                return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)',
+                            drawBorder: false
+                        }
                     },
                     y: {
                         ticks: {
                             color: '#ffffff',
                             font: {
-                                size: 14,
+                                size: window.innerWidth < 768 ? 12 : 14,
                                 family: 'Roboto'
                             },
                             callback: function(value) {
                                 const sign = value >= 0 ? '+' : '';
-                                return sign + '$' + Math.abs(value).toFixed(0);
+                                return sign + value.toFixed(0) + '%';
                             }
                         },
                         grid: {
@@ -579,26 +616,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 <tr>
                     <td style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);">${fight.fight}</td>
                     <td style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center;">
-                        <span style="color: ${fight.oddsFavorite.result === 'WIN' ? '#2ed573' : '#ff4757'};">
-                            ${fight.oddsFavorite.result}
-                        </span>
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                            <span style="color: ${fight.oddsFavorite.result === 'WIN' ? '#2ed573' : '#ff4757'}; font-weight: bold;">
+                                ${fight.oddsFavorite.result}
+                            </span>
+                            <span style="color: ${fight.oddsFavorite.percentage >= 0 ? '#2ed573' : '#ff4757'}; font-size: 12px;">
+                                ${fight.oddsFavorite.percentage >= 0 ? '+' : ''}${fight.oddsFavorite.percentage.toFixed(1)}%
+                            </span>
+                        </div>
                     </td>
-                    <td style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center;">$${fight.oddsFavorite.amount}</td>
                     <td style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center;">
-                        <span style="color: ${fight.oddsFavorite.profit >= 0 ? '#2ed573' : '#ff4757'};">
-                            ${fight.oddsFavorite.profit >= 0 ? '+' : ''}$${fight.oddsFavorite.profit.toFixed(0)}
-                        </span>
-                    </td>
-                    <td style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center;">
-                        <span style="color: ${fight.bestModel.result === 'WIN' ? '#2ed573' : '#ff4757'};">
-                            ${fight.bestModel.result}
-                        </span>
-                    </td>
-                    <td style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center;">$${fight.bestModel.amount}</td>
-                    <td style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center;">
-                        <span style="color: ${fight.bestModel.profit >= 0 ? '#2ed573' : '#ff4757'};">
-                            ${fight.bestModel.profit >= 0 ? '+' : ''}$${fight.bestModel.profit.toFixed(0)}
-                        </span>
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                        <span style="color: ${fight.bestModel.result === 'WIN' ? '#2ed573' : '#ff4757'}; font-weight: bold;">
+                                            ${fight.bestModel.result}
+                                        </span>
+                                        <span style="color: ${fight.bestModel.percentage >= 0 ? '#2ed573' : '#ff4757'}; font-size: 12px;">
+                                            ${fight.bestModel.percentage >= 0 ? '+' : ''}${fight.bestModel.percentage.toFixed(1)}%
+                                        </span>
+                                    </div>
                     </td>
                 </tr>
             `).join('');
@@ -612,12 +647,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <thead>
                             <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
                                 <th style="padding: 10px 8px; text-align: left;">Fight</th>
-                                <th style="padding: 10px 8px; text-align: center;">Odds Pick</th>
-                                <th style="padding: 10px 8px; text-align: center;">Bet</th>
-                                <th style="padding: 10px 8px; text-align: center;">Profit</th>
-                                <th style="padding: 10px 8px; text-align: center;">Model Pick</th>
-                                <th style="padding: 10px 8px; text-align: center;">Bet</th>
-                                <th style="padding: 10px 8px; text-align: center;">Profit</th>
+                                <th style="padding: 10px 8px; text-align: center;">Odds Favorite</th>
+                                <th style="padding: 10px 8px; text-align: center;">My Predictions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -626,19 +657,29 @@ document.addEventListener('DOMContentLoaded', () => {
                         <tfoot>
                             <tr style="border-top: 2px solid rgba(255,255,255,0.2);">
                                 <td style="padding: 12px 8px; font-weight: bold;">Event Totals</td>
-                                <td style="padding: 12px 8px; text-align: center; font-weight: bold;">-</td>
-                                <td style="padding: 12px 8px; text-align: center; font-weight: bold;">$${eventData.fights.reduce((sum, f) => sum + f.oddsFavorite.amount, 0)}</td>
                                 <td style="padding: 12px 8px; text-align: center; font-weight: bold;">
-                                    <span style="color: ${eventData.fights.reduce((sum, f) => sum + f.oddsFavorite.profit, 0) >= 0 ? '#2ed573' : '#ff4757'};">
-                                        ${eventData.fights.reduce((sum, f) => sum + f.oddsFavorite.profit, 0) >= 0 ? '+' : ''}$${eventData.fights.reduce((sum, f) => sum + f.oddsFavorite.profit, 0).toFixed(0)}
-                                    </span>
+                                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                        ${(() => {
+                                            const totalOddsProfit = eventData.fights.reduce((sum, f) => sum + f.oddsFavorite.profit, 0);
+                                            const totalOddsInvested = eventData.fights.reduce((sum, f) => sum + f.oddsFavorite.amount, 0);
+                                            const oddsPercentage = totalOddsInvested > 0 ? (totalOddsProfit / totalOddsInvested) * 100 : 0;
+                                            return `<span style="color: ${oddsPercentage >= 0 ? '#2ed573' : '#ff4757'};">
+                                                ${oddsPercentage >= 0 ? '+' : ''}${oddsPercentage.toFixed(1)}%
+                                            </span>`;
+                                        })()}
+                                    </div>
                                 </td>
-                                <td style="padding: 12px 8px; text-align: center; font-weight: bold;">-</td>
-                                <td style="padding: 12px 8px; text-align: center; font-weight: bold;">$${eventData.fights.reduce((sum, f) => sum + f.bestModel.amount, 0)}</td>
                                 <td style="padding: 12px 8px; text-align: center; font-weight: bold;">
-                                    <span style="color: ${eventData.fights.reduce((sum, f) => sum + f.bestModel.profit, 0) >= 0 ? '#2ed573' : '#ff4757'};">
-                                        ${eventData.fights.reduce((sum, f) => sum + f.bestModel.profit, 0) >= 0 ? '+' : ''}$${eventData.fights.reduce((sum, f) => sum + f.bestModel.profit, 0).toFixed(0)}
-                                    </span>
+                                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                        ${(() => {
+                                            const totalModelProfit = eventData.fights.reduce((sum, f) => sum + f.bestModel.profit, 0);
+                                            const totalModelInvested = eventData.fights.reduce((sum, f) => sum + f.bestModel.amount, 0);
+                                            const modelPercentage = totalModelInvested > 0 ? (totalModelProfit / totalModelInvested) * 100 : 0;
+                                            return `<span style="color: ${modelPercentage >= 0 ? '#2ed573' : '#ff4757'}">
+                                                ${modelPercentage >= 0 ? '+' : ''}${modelPercentage.toFixed(1)}%
+                                            </span>`;
+                                        })()}
+                                    </div>
                                 </td>
                             </tr>
                         </tfoot>
@@ -651,30 +692,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Add summary cards above the chart
         const container = document.getElementById('profit-chart-container');
-        const oddsFavoriteColor = cumulativeOddsFavoriteProfit >= 0 ? '#2ed573' : '#ff4757';
-        const oddsFavoriteBg = cumulativeOddsFavoriteProfit >= 0 ? 'rgba(46, 213, 115, 0.1)' : 'rgba(255, 71, 87, 0.1)';
-        const oddsFavoriteBorder = cumulativeOddsFavoriteProfit >= 0 ? 'rgba(46, 213, 115, 0.3)' : 'rgba(255, 71, 87, 0.3)';
+        const oddsFavoritePercentage = cumulativeOddsFavoriteInvested > 0 ? 
+            ((cumulativeOddsFavoriteProfit / cumulativeOddsFavoriteInvested) * 100) : 0;
+        const bestModelPercentage = cumulativeBestModelInvested > 0 ? 
+            ((cumulativeBestModelProfit / cumulativeBestModelInvested) * 100) : 0;
+            
+        const oddsFavoriteColor = oddsFavoritePercentage >= 0 ? '#2ed573' : '#ff4757';
+        const oddsFavoriteBg = oddsFavoritePercentage >= 0 ? 'rgba(46, 213, 115, 0.1)' : 'rgba(255, 71, 87, 0.1)';
+        const oddsFavoriteBorder = oddsFavoritePercentage >= 0 ? 'rgba(46, 213, 115, 0.3)' : 'rgba(255, 71, 87, 0.3)';
         
-        const bestModelColor = cumulativeBestModelProfit >= 0 ? '#2ed573' : '#ff4757';
-        const bestModelBg = cumulativeBestModelProfit >= 0 ? 'rgba(46, 213, 115, 0.1)' : 'rgba(255, 71, 87, 0.1)';
-        const bestModelBorder = cumulativeBestModelProfit >= 0 ? 'rgba(46, 213, 115, 0.3)' : 'rgba(255, 71, 87, 0.3)';
+        const bestModelColor = bestModelPercentage >= 0 ? '#2ed573' : '#ff4757';
+        const bestModelBg = bestModelPercentage >= 0 ? 'rgba(46, 213, 115, 0.1)' : 'rgba(255, 71, 87, 0.1)';
+        const bestModelBorder = bestModelPercentage >= 0 ? 'rgba(46, 213, 115, 0.3)' : 'rgba(255, 71, 87, 0.3)';
         
         const summaryHTML = `
             <div style="display: flex; justify-content: space-around; margin-bottom: 30px; gap: 20px; flex-wrap: wrap;">
-                <div style="background: linear-gradient(135deg, ${oddsFavoriteBg}, ${oddsFavoriteBg}); border: 1px solid ${oddsFavoriteBorder}; border-radius: 12px; padding: 20px; text-align: center; min-width: 200px; flex: 1;">
-                    <h3 style="color: ${oddsFavoriteColor}; margin: 0 0 10px 0; font-size: 18px;">Odds Favorite</h3>
+                <div style="background: ${oddsFavoritePercentage >= 0 ? 'linear-gradient(135deg, rgba(46, 213, 115, 0.15), rgba(46, 213, 115, 0.05))' : 'linear-gradient(135deg, rgba(255, 71, 87, 0.15), rgba(255, 71, 87, 0.05))'}; border: 1px solid ${oddsFavoritePercentage >= 0 ? 'rgba(46, 213, 115, 0.4)' : 'rgba(255, 71, 87, 0.4)'}; border-radius: 12px; padding: 20px; text-align: center; min-width: 150px; flex: 1; max-width: 250px;">
+                    <h3 style="color: ${oddsFavoritePercentage >= 0 ? '#2ed573' : '#ff4757'}; margin: 0 0 10px 0; font-size: 18px;">Odds Favorite</h3>
                     <div style="color: #ffffff; font-size: 24px; font-weight: bold; margin-bottom: 5px;">
-                        ${cumulativeOddsFavoriteProfit >= 0 ? '+' : ''}$${cumulativeOddsFavoriteProfit.toFixed(0)}
+                        ${oddsFavoritePercentage >= 0 ? '+' : ''}${oddsFavoritePercentage.toFixed(1)}%
                     </div>
                     <div style="color: #cccccc; font-size: 14px;">
                         ${scoreboard['Odds Favorite'] ? Math.round((scoreboard['Odds Favorite'].correct / scoreboard['Odds Favorite'].total) * 100) : 0}% Accuracy
                     </div>
                 </div>
                 
-                <div style="background: linear-gradient(135deg, ${bestModelBg}, ${bestModelBg}); border: 1px solid ${bestModelBorder}; border-radius: 12px; padding: 20px; text-align: center; min-width: 200px; flex: 1;">
-                    <h3 style="color: ${bestModelColor}; margin: 0 0 10px 0; font-size: 18px;">${bestModelName ? bestModelName.replace('Model.joblib', '') : 'Best Model'}</h3>
+                <div style="background: ${bestModelPercentage >= 0 ? 'linear-gradient(135deg, rgba(46, 213, 115, 0.15), rgba(46, 213, 115, 0.05))' : 'linear-gradient(135deg, rgba(255, 71, 87, 0.15), rgba(255, 71, 87, 0.05))'}; border: 1px solid ${bestModelPercentage >= 0 ? 'rgba(46, 213, 115, 0.4)' : 'rgba(255, 71, 87, 0.4)'}; border-radius: 12px; padding: 20px; text-align: center; min-width: 150px; flex: 1; max-width: 250px;">
+                    <h3 style="color: ${bestModelPercentage >= 0 ? '#2ed573' : '#ff4757'}; margin: 0 0 10px 0; font-size: 18px;">My Predictions</h3>
                     <div style="color: #ffffff; font-size: 24px; font-weight: bold; margin-bottom: 5px;">
-                        ${cumulativeBestModelProfit >= 0 ? '+' : ''}$${cumulativeBestModelProfit.toFixed(0)}
+                        ${bestModelPercentage >= 0 ? '+' : ''}${bestModelPercentage.toFixed(1)}%
                     </div>
                     <div style="color: #cccccc; font-size: 14px;">
                         ${bestModelStats.total > 0 ? Math.round((bestModelStats.correct / bestModelStats.total) * 100) : 0}% Accuracy
@@ -691,7 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add instruction text
         const instruction = document.createElement('p');
         instruction.style.cssText = 'text-align: center; color: #cccccc; margin: 15px 0; font-size: 14px;';
-        instruction.textContent = 'Click on any point in the chart to see detailed fight-by-fight breakdown';
+        instruction.textContent = 'Click on any point!';
         if (!container.querySelector('p')) {
             container.insertBefore(instruction, container.querySelector('#profit-chart').nextSibling);
         }
