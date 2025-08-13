@@ -1108,6 +1108,7 @@ h1 {
 @media (max-width: 820px) {
     #insights-container {
         padding: 10px 5px;
+        margin-bottom: 100px; /* Added to prevent overlap with fixed floating-info */
     }
     
     #insights-table-container {
