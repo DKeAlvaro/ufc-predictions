@@ -643,7 +643,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p style="color: #cccccc; margin: 0 0 15px 0; font-size: 14px;">${eventData.eventDate}</p>
                 
                 <div style="overflow-x: auto;">
-                    <table style="width: 100%; color: #ffffff; font-size: 14px; min-width: 600px;">
+                    <table style="width: 100%; color: #ffffff; font-size: 14px;">
                         <thead>
                             <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
                                 <th style="padding: 10px 8px; text-align: left;">Fight</th>
