@@ -1,646 +1,582 @@
 [
     {
-        "event_name": "UFC Fight Night: Ulberg vs. Reyes",
-        "event_date": "September 27, 2025",
-        "last_updated": "2025-09-15T01:51:23.110955",
+        "event_name": "UFC 320: Ankalaev vs. Pereira 2",
+        "event_date": "October 04, 2025",
+        "last_updated": "2025-09-28T01:53:44.929962",
         "fights": [
             {
-                "fight": "Carlos Ulberg vs. Dominick Reyes",
+                "fight": "Magomed Ankalaev vs. Alex Pereira",
                 "weight_class": "Light Heavyweight",
                 "predictions": {
                     "XGBoostModel.joblib": {
-                        "winner": "Carlos Ulberg",
-                        "probability": "72.4%"
+                        "winner": "Magomed Ankalaev",
+                        "probability": "87.9%"
                     },
                     "LGBMModel.joblib": {
-                        "winner": "Carlos Ulberg",
-                        "probability": "69.0%"
+                        "winner": "Magomed Ankalaev",
+                        "probability": "82.4%"
                     },
                     "RandomForestModel.joblib": {
-                        "winner": "Carlos Ulberg",
+                        "winner": "Magomed Ankalaev",
                         "probability": "68.0%"
                     },
                     "SVCModel.joblib": {
-                        "winner": "Carlos Ulberg",
-                        "probability": "78.3%"
+                        "winner": "Magomed Ankalaev",
+                        "probability": "85.0%"
                     },
                     "LogisticRegressionModel.joblib": {
-                        "winner": "Carlos Ulberg",
-                        "probability": "60.5%"
+                        "winner": "Magomed Ankalaev",
+                        "probability": "77.3%"
                     },
                     "BernoulliNBModel.joblib": {
-                        "winner": "Carlos Ulberg",
-                        "probability": "80.2%"
+                        "winner": "Magomed Ankalaev",
+                        "probability": "75.7%"
                     },
                     "EloBaselineModel.joblib": {
-                        "winner": "Carlos Ulberg",
-                        "probability": "54.7%"
+                        "winner": "Magomed Ankalaev",
+                        "probability": "56.3%"
                     }
                 },
                 "odds": {
                     "fighter1": {
-                        "name": "Carlos Ulberg",
-                        "odds": -200
+                        "name": "Magomed Ankalaev",
+                        "odds": -235
                     },
                     "fighter2": {
-                        "name": "Dominick Reyes",
-                        "odds": 170
+                        "name": "Alex Pereira",
+                        "odds": 200
                     }
                 }
             },
             {
-                "fight": "Junior Tafa vs. Ibo Aslan",
-                "weight_class": "Light Heavyweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Ibo Aslan",
-                        "probability": "61.0%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Ibo Aslan",
-                        "probability": "60.2%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Ibo Aslan",
-                        "probability": "63.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Ibo Aslan",
-                        "probability": "74.5%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Ibo Aslan",
-                        "probability": "58.3%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Ibo Aslan",
-                        "probability": "74.9%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Ibo Aslan",
-                        "probability": "53.7%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Junior Tafa",
-                        "odds": 130
-                    },
-                    "fighter2": {
-                        "name": "Ibo Aslan",
-                        "odds": -150
-                    }
-                }
-            },
-            {
-                "fight": "Jack Jenkins vs. Ramon Taveras",
-                "weight_class": "Featherweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Jack Jenkins",
-                        "probability": "72.7%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Jack Jenkins",
-                        "probability": "68.7%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Jack Jenkins",
-                        "probability": "68.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Jack Jenkins",
-                        "probability": "61.4%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Jack Jenkins",
-                        "probability": "55.7%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Jack Jenkins",
-                        "probability": "81.2%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Jack Jenkins",
-                        "probability": "51.7%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Jack Jenkins",
-                        "odds": -280
-                    },
-                    "fighter2": {
-                        "name": "Ramon Taveras",
-                        "odds": 240
-                    }
-                }
-            },
-            {
-                "fight": "Jimmy Crute vs. Ivan Erslan",
-                "weight_class": "Light Heavyweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Jimmy Crute",
-                        "probability": "85.6%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Jimmy Crute",
-                        "probability": "81.1%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Jimmy Crute",
-                        "probability": "83.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Jimmy Crute",
-                        "probability": "86.4%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Jimmy Crute",
-                        "probability": "79.9%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Jimmy Crute",
-                        "probability": "83.2%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Jimmy Crute",
-                        "probability": "56.6%"
-                    }
-                }
-            },
-            {
-                "fight": "Jake Matthews vs. Neil Magny",
-                "weight_class": "Welterweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Neil Magny",
-                        "probability": "73.7%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Neil Magny",
-                        "probability": "56.8%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Neil Magny",
-                        "probability": "61.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Neil Magny",
-                        "probability": "63.4%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Neil Magny",
-                        "probability": "57.6%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Neil Magny",
-                        "probability": "70.0%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Neil Magny",
-                        "probability": "51.2%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Jake Matthews",
-                        "odds": -600
-                    },
-                    "fighter2": {
-                        "name": "Neil Magny",
-                        "odds": 425
-                    }
-                }
-            },
-            {
-                "fight": "Tom Nolan vs. Evan Elder",
-                "weight_class": "Lightweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Tom Nolan",
-                        "probability": "67.6%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Tom Nolan",
-                        "probability": "63.3%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Tom Nolan",
-                        "probability": "63.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Tom Nolan",
-                        "probability": "73.8%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Tom Nolan",
-                        "probability": "62.6%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Tom Nolan",
-                        "probability": "80.5%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Tom Nolan",
-                        "probability": "52.4%"
-                    }
-                }
-            },
-            {
-                "fight": "Justin Tafa vs. Louie Sutherland",
-                "weight_class": "Heavyweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Justin Tafa",
-                        "odds": -140
-                    },
-                    "fighter2": {
-                        "name": "Louie Sutherland",
-                        "odds": 120
-                    }
-                }
-            },
-            {
-                "fight": "Navajo Stirling vs. Rodolfo Bellato",
-                "weight_class": "Light Heavyweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Rodolfo Bellato",
-                        "probability": "56.1%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Navajo Stirling",
-                        "probability": "57.2%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Navajo Stirling",
-                        "probability": "50.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Navajo Stirling",
-                        "probability": "70.1%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Navajo Stirling",
-                        "probability": "53.0%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Navajo Stirling",
-                        "probability": "86.0%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Navajo Stirling",
-                        "probability": "52.7%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Navajo Stirling",
-                        "odds": -250
-                    },
-                    "fighter2": {
-                        "name": "Rodolfo Bellato",
-                        "odds": 210
-                    }
-                }
-            },
-            {
-                "fight": "Loma Lookboonmee vs. Alexia Thainara",
-                "weight_class": "Women's Strawweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Loma Lookboonmee",
-                        "probability": "66.5%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Loma Lookboonmee",
-                        "probability": "86.6%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Loma Lookboonmee",
-                        "probability": "76.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Loma Lookboonmee",
-                        "probability": "83.3%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Loma Lookboonmee",
-                        "probability": "76.9%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Loma Lookboonmee",
-                        "probability": "86.1%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Loma Lookboonmee",
-                        "probability": "58.5%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Loma Lookboonmee",
-                        "odds": 180
-                    },
-                    "fighter2": {
-                        "name": "Alexia Thainara",
-                        "odds": -210
-                    }
-                }
-            },
-            {
-                "fight": "Jonathan Micallef vs. Oban Elliott",
-                "weight_class": "Welterweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Oban Elliott",
-                        "probability": "64.6%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Oban Elliott",
-                        "probability": "57.5%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Oban Elliott",
-                        "probability": "62.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Oban Elliott",
-                        "probability": "61.2%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Oban Elliott",
-                        "probability": "55.8%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Oban Elliott",
-                        "probability": "75.2%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Oban Elliott",
-                        "probability": "51.7%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Jonathan Micallef",
-                        "odds": -110
-                    },
-                    "fighter2": {
-                        "name": "Oban Elliott",
-                        "odds": -110
-                    }
-                }
-            },
-            {
-                "fight": "Colby Thicknesse vs. Josias Musasa",
+                "fight": "Merab Dvalishvili vs. Cory Sandhagen",
                 "weight_class": "Bantamweight",
                 "predictions": {
                     "XGBoostModel.joblib": {
-                        "winner": "Colby Thicknesse",
-                        "probability": "76.5%"
+                        "winner": "Merab Dvalishvili",
+                        "probability": "90.9%"
                     },
                     "LGBMModel.joblib": {
-                        "winner": "Colby Thicknesse",
-                        "probability": "63.5%"
+                        "winner": "Merab Dvalishvili",
+                        "probability": "80.9%"
                     },
                     "RandomForestModel.joblib": {
-                        "winner": "Colby Thicknesse",
-                        "probability": "65.0%"
+                        "winner": "Merab Dvalishvili",
+                        "probability": "81.0%"
                     },
                     "SVCModel.joblib": {
-                        "winner": "Colby Thicknesse",
-                        "probability": "54.8%"
+                        "winner": "Merab Dvalishvili",
+                        "probability": "82.6%"
                     },
                     "LogisticRegressionModel.joblib": {
-                        "winner": "Colby Thicknesse",
-                        "probability": "57.8%"
+                        "winner": "Merab Dvalishvili",
+                        "probability": "75.8%"
                     },
                     "BernoulliNBModel.joblib": {
-                        "winner": "Colby Thicknesse",
-                        "probability": "78.2%"
+                        "winner": "Merab Dvalishvili",
+                        "probability": "73.9%"
                     },
                     "EloBaselineModel.joblib": {
-                        "winner": "Colby Thicknesse",
+                        "winner": "Merab Dvalishvili",
+                        "probability": "59.4%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Merab Dvalishvili",
+                        "odds": -350
+                    },
+                    "fighter2": {
+                        "name": "Cory Sandhagen",
+                        "odds": 285
+                    }
+                }
+            },
+            {
+                "fight": "Jiri Prochazka vs. Khalil Rountree Jr.",
+                "weight_class": "Light Heavyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Jiri Prochazka",
+                        "probability": "53.5%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Jiri Prochazka",
+                        "probability": "56.6%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Jiri Prochazka",
+                        "probability": "61.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Jiri Prochazka",
+                        "probability": "55.6%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Jiri Prochazka",
+                        "probability": "57.5%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Khalil Rountree Jr.",
+                        "probability": "63.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Khalil Rountree Jr.",
+                        "probability": "50.6%"
+                    }
+                }
+            },
+            {
+                "fight": "Josh Emmett vs. Youssef Zalal",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Youssef Zalal",
+                        "probability": "57.5%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "56.3%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "64.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "75.1%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "63.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "67.3%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "54.2%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Josh Emmett",
+                        "odds": 345
+                    },
+                    "fighter2": {
+                        "name": "Youssef Zalal",
+                        "odds": -415
+                    }
+                }
+            },
+            {
+                "fight": "Abus Magomedov vs. Joe Pyfer",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Joe Pyfer",
+                        "probability": "68.6%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Joe Pyfer",
+                        "probability": "73.4%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Joe Pyfer",
+                        "probability": "66.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Joe Pyfer",
+                        "probability": "74.1%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Joe Pyfer",
+                        "probability": "63.8%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Joe Pyfer",
+                        "probability": "81.6%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Joe Pyfer",
+                        "probability": "53.2%"
+                    }
+                }
+            },
+            {
+                "fight": "Ateba Gautier vs. Ozzy Diaz",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Ateba Gautier",
+                        "probability": "76.7%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Ateba Gautier",
+                        "probability": "78.4%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Ateba Gautier",
+                        "probability": "73.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Ateba Gautier",
+                        "probability": "74.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Ateba Gautier",
+                        "probability": "68.2%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Ateba Gautier",
+                        "probability": "79.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Ateba Gautier",
+                        "probability": "52.4%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Ateba Gautier",
+                        "odds": -1000
+                    },
+                    "fighter2": {
+                        "name": "Ozzy Diaz",
+                        "odds": 700
+                    }
+                }
+            },
+            {
+                "fight": "Edmen Shahbazyan vs. Andre Muniz",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Edmen Shahbazyan",
+                        "probability": "55.3%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Edmen Shahbazyan",
+                        "probability": "59.0%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Edmen Shahbazyan",
+                        "probability": "50.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Andre Muniz",
+                        "probability": "51.7%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Edmen Shahbazyan",
+                        "probability": "52.9%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Andre Muniz",
+                        "probability": "63.5%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Andre Muniz",
+                        "probability": "50.3%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Edmen Shahbazyan",
+                        "odds": -265
+                    },
+                    "fighter2": {
+                        "name": "Andre Muniz",
+                        "odds": 225
+                    }
+                }
+            },
+            {
+                "fight": "Chris Gutierrez vs. Farid Basharat",
+                "weight_class": "Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Chris Gutierrez",
+                        "probability": "81.8%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Chris Gutierrez",
+                        "probability": "75.4%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Chris Gutierrez",
+                        "probability": "70.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Chris Gutierrez",
+                        "probability": "83.8%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Chris Gutierrez",
+                        "probability": "71.1%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Chris Gutierrez",
+                        "probability": "70.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Chris Gutierrez",
+                        "probability": "56.2%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Chris Gutierrez",
+                        "odds": 300
+                    },
+                    "fighter2": {
+                        "name": "Farid Basharat",
+                        "odds": -400
+                    }
+                }
+            },
+            {
+                "fight": "Daniel Santos vs. JooSang Yoo",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Daniel Santos",
+                        "probability": "60.9%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Daniel Santos",
+                        "probability": "65.5%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Daniel Santos",
+                        "probability": "66.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Daniel Santos",
+                        "probability": "78.7%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Daniel Santos",
+                        "probability": "61.0%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Daniel Santos",
+                        "probability": "85.3%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Daniel Santos",
+                        "probability": "53.4%"
+                    }
+                }
+            },
+            {
+                "fight": "Macy Chiasson vs. Yana Santos",
+                "weight_class": "Women's Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Macy Chiasson",
+                        "probability": "71.3%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Macy Chiasson",
+                        "probability": "58.5%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Macy Chiasson",
+                        "probability": "68.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Macy Chiasson",
+                        "probability": "83.0%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Macy Chiasson",
+                        "probability": "68.0%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Macy Chiasson",
+                        "probability": "91.1%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Macy Chiasson",
+                        "probability": "54.2%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Macy Chiasson",
+                        "odds": -205
+                    },
+                    "fighter2": {
+                        "name": "Yana Santos",
+                        "odds": 175
+                    }
+                }
+            },
+            {
+                "fight": "Patchy Mix vs. Jakub Wiklacz",
+                "weight_class": "Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Jakub Wiklacz",
+                        "probability": "64.6%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Jakub Wiklacz",
+                        "probability": "62.9%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Jakub Wiklacz",
+                        "probability": "59.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Jakub Wiklacz",
+                        "probability": "55.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Jakub Wiklacz",
+                        "probability": "52.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Jakub Wiklacz",
+                        "probability": "85.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Jakub Wiklacz",
+                        "probability": "51.9%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Patchy Mix",
+                        "odds": -255
+                    },
+                    "fighter2": {
+                        "name": "Jakub Wiklacz",
+                        "odds": 215
+                    }
+                }
+            },
+            {
+                "fight": "Punahele Soriano vs. Nikolay Veretennikov",
+                "weight_class": "Welterweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Punahele Soriano",
+                        "probability": "63.6%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Punahele Soriano",
+                        "probability": "75.6%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Punahele Soriano",
+                        "probability": "70.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Punahele Soriano",
+                        "probability": "83.8%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Punahele Soriano",
+                        "probability": "75.5%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Punahele Soriano",
+                        "probability": "84.9%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Punahele Soriano",
+                        "probability": "58.1%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Punahele Soriano",
+                        "odds": -220
+                    },
+                    "fighter2": {
+                        "name": "Nikolay Veretennikov",
+                        "odds": 185
+                    }
+                }
+            },
+            {
+                "fight": "Ramiz Brahimaj vs. Austin Vanderford",
+                "weight_class": "Welterweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Austin Vanderford",
+                        "probability": "73.8%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Ramiz Brahimaj",
+                        "probability": "54.2%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Ramiz Brahimaj",
+                        "probability": "50.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Ramiz Brahimaj",
+                        "probability": "56.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Austin Vanderford",
+                        "probability": "51.4%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Ramiz Brahimaj",
+                        "probability": "87.4%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Ramiz Brahimaj",
                         "probability": "50.1%"
                     }
                 },
                 "odds": {
                     "fighter1": {
-                        "name": "Colby Thicknesse",
-                        "odds": 120
+                        "name": "Ramiz Brahimaj",
+                        "odds": 240
                     },
                     "fighter2": {
-                        "name": "Josias Musasa",
-                        "odds": -140
+                        "name": "Austin Vanderford",
+                        "odds": -280
                     }
                 }
             },
             {
-                "fight": "Jamie Mullarkey vs. Rolando Bedoya",
-                "weight_class": "Lightweight",
+                "fight": "Veronica Hardy vs. Brogan Walker",
+                "weight_class": "Women's Flyweight",
                 "predictions": {
                     "XGBoostModel.joblib": {
-                        "winner": "Jamie Mullarkey",
-                        "probability": "90.5%"
+                        "winner": "Veronica Hardy",
+                        "probability": "80.1%"
                     },
                     "LGBMModel.joblib": {
-                        "winner": "Jamie Mullarkey",
-                        "probability": "85.9%"
+                        "winner": "Veronica Hardy",
+                        "probability": "78.6%"
                     },
                     "RandomForestModel.joblib": {
-                        "winner": "Jamie Mullarkey",
+                        "winner": "Veronica Hardy",
                         "probability": "81.0%"
                     },
                     "SVCModel.joblib": {
-                        "winner": "Jamie Mullarkey",
+                        "winner": "Veronica Hardy",
+                        "probability": "84.6%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Veronica Hardy",
+                        "probability": "66.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Veronica Hardy",
                         "probability": "84.0%"
                     },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Jamie Mullarkey",
-                        "probability": "73.5%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Jamie Mullarkey",
-                        "probability": "80.7%"
-                    },
                     "EloBaselineModel.joblib": {
-                        "winner": "Jamie Mullarkey",
-                        "probability": "56.6%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Jamie Mullarkey",
-                        "odds": -113
-                    },
-                    "fighter2": {
-                        "name": "Rolando Bedoya",
-                        "odds": -107
-                    }
-                }
-            },
-            {
-                "fight": "Michelle Montague vs. Luana Carolina",
-                "weight_class": "Women's Bantamweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Could not make a prediction.",
-                        "probability": ""
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Michelle Montague",
-                        "odds": -185
-                    },
-                    "fighter2": {
-                        "name": "Luana Carolina",
-                        "odds": 160
-                    }
-                }
-            },
-            {
-                "fight": "Brando Pericic vs. Elisha Ellison",
-                "weight_class": "Heavyweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Elisha Ellison",
-                        "probability": "53.6%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Elisha Ellison",
-                        "probability": "54.6%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Brando Pericic",
-                        "probability": "68.8%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Elisha Ellison",
-                        "probability": "52.5%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Elisha Ellison",
-                        "probability": "51.8%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Elisha Ellison",
-                        "probability": "88.0%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Brando Pericic",
-                        "probability": "50.0%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Brando Pericic",
-                        "odds": -170
-                    },
-                    "fighter2": {
-                        "name": "Elisha Ellison",
-                        "odds": 142
-                    }
-                }
-            },
-            {
-                "fight": "Cam Rowston vs. Andre Petroski",
-                "weight_class": "Middleweight",
-                "predictions": {
-                    "XGBoostModel.joblib": {
-                        "winner": "Andre Petroski",
-                        "probability": "89.6%"
-                    },
-                    "LGBMModel.joblib": {
-                        "winner": "Andre Petroski",
-                        "probability": "83.6%"
-                    },
-                    "RandomForestModel.joblib": {
-                        "winner": "Andre Petroski",
-                        "probability": "80.0%"
-                    },
-                    "SVCModel.joblib": {
-                        "winner": "Andre Petroski",
-                        "probability": "81.7%"
-                    },
-                    "LogisticRegressionModel.joblib": {
-                        "winner": "Andre Petroski",
-                        "probability": "79.8%"
-                    },
-                    "BernoulliNBModel.joblib": {
-                        "winner": "Andre Petroski",
-                        "probability": "77.1%"
-                    },
-                    "EloBaselineModel.joblib": {
-                        "winner": "Andre Petroski",
-                        "probability": "60.5%"
-                    }
-                },
-                "odds": {
-                    "fighter1": {
-                        "name": "Cam Rowston",
-                        "odds": 110
-                    },
-                    "fighter2": {
-                        "name": "Andre Petroski",
-                        "odds": -130
+                        "winner": "Veronica Hardy",
+                        "probability": "55.4%"
                     }
                 }
             }
