@@ -74,11 +74,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Waldo Cortes-Acosta",
-                        "odds": -105
+                        "odds": 115
                     },
                     "fighter2": {
                         "name": "Ante Delija",
-                        "odds": -115
+                        "odds": -135
                     }
                 }
             },
@@ -118,11 +118,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jeremiah Wells",
-                        "odds": 105
+                        "odds": 110
                     },
                     "fighter2": {
                         "name": "Themba Gorimbo",
-                        "odds": -125
+                        "odds": -130
                     }
                 }
             },
@@ -274,11 +274,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Billy Elekana",
-                        "odds": -250
+                        "odds": -280
                     },
                     "fighter2": {
                         "name": "Kevin Christian",
-                        "odds": 210
+                        "odds": 240
                     }
                 }
             },
@@ -507,11 +507,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Talita Alencar",
-                        "odds": -216
+                        "odds": -210
                     },
                     "fighter2": {
                         "name": "Ariane Carnelossi",
-                        "odds": 186
+                        "odds": 180
                     }
                 }
             }
