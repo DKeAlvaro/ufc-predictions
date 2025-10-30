@@ -118,11 +118,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jeremiah Wells",
-                        "odds": 110
+                        "odds": 118
                     },
                     "fighter2": {
                         "name": "Themba Gorimbo",
-                        "odds": -130
+                        "odds": -138
                     }
                 }
             },
@@ -274,11 +274,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Billy Elekana",
-                        "odds": -280
+                        "odds": -260
                     },
                     "fighter2": {
                         "name": "Kevin Christian",
-                        "odds": 240
+                        "odds": 220
                     }
                 }
             },
@@ -395,11 +395,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ketlen Vieira",
-                        "odds": 132
+                        "odds": 143
                     },
                     "fighter2": {
                         "name": "Norma Dumont",
-                        "odds": -165
+                        "odds": -180
                     }
                 }
             },
@@ -507,11 +507,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Talita Alencar",
-                        "odds": -210
+                        "odds": -230
                     },
                     "fighter2": {
                         "name": "Ariane Carnelossi",
-                        "odds": 180
+                        "odds": 195
                     }
                 }
             }
