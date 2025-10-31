@@ -74,11 +74,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Waldo Cortes-Acosta",
-                        "odds": 115
+                        "odds": 116
                     },
                     "fighter2": {
                         "name": "Ante Delija",
-                        "odds": -135
+                        "odds": -136
                     }
                 }
             },
@@ -395,11 +395,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ketlen Vieira",
-                        "odds": 143
+                        "odds": 150
                     },
                     "fighter2": {
                         "name": "Norma Dumont",
-                        "odds": -180
+                        "odds": -186
                     }
                 }
             },
@@ -507,11 +507,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Talita Alencar",
-                        "odds": -230
+                        "odds": -225
                     },
                     "fighter2": {
                         "name": "Ariane Carnelossi",
-                        "odds": 195
+                        "odds": 190
                     }
                 }
             }
