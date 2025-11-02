@@ -1,5 +1,459 @@
 [
     {
+        "event_name": "UFC Fight Night: Garcia vs. Onama",
+        "event_date": "November 01, 2025",
+        "location": "Las Vegas, Nevada, USA",
+        "url": "http://ufcstats.com/event-details/0e2c2daf11b5d8f2",
+        "results": [
+            {
+                "fight": "Steve Garcia vs. David Onama",
+                "winner": "Steve Garcia",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Steve Garcia",
+                        "probability": "61.1%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "David Onama",
+                        "probability": "57.3%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Steve Garcia",
+                        "probability": "51.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "David Onama",
+                        "probability": "59.8%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "David Onama",
+                        "probability": "53.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "David Onama",
+                        "probability": "70.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "David Onama",
+                        "probability": "50.6%"
+                    }
+                }
+            },
+            {
+                "fight": "Waldo Cortes Acosta vs. Ante Delija",
+                "winner": "Waldo Cortes Acosta",
+                "weight_class": "Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jeremiah Wells vs. Themba Gorimbo",
+                "winner": "Jeremiah Wells",
+                "weight_class": "Welterweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Themba Gorimbo",
+                        "probability": "72.7%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Themba Gorimbo",
+                        "probability": "70.5%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Themba Gorimbo",
+                        "probability": "68.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Themba Gorimbo",
+                        "probability": "65.7%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Themba Gorimbo",
+                        "probability": "55.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Themba Gorimbo",
+                        "probability": "86.4%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Themba Gorimbo",
+                        "probability": "50.7%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Jeremiah Wells",
+                        "odds": 115
+                    },
+                    "fighter2": {
+                        "name": "Themba Gorimbo",
+                        "odds": -135
+                    }
+                }
+            },
+            {
+                "fight": "Yadier del Valle vs. Isaac Dulgarian",
+                "winner": "Yadier del Valle",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Isaac Dulgarian",
+                        "probability": "51.0%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Yadier del Valle",
+                        "probability": "52.5%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Isaac Dulgarian",
+                        "probability": "56.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Isaac Dulgarian",
+                        "probability": "56.5%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Isaac Dulgarian",
+                        "probability": "52.5%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Isaac Dulgarian",
+                        "probability": "79.4%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Isaac Dulgarian",
+                        "probability": "50.3%"
+                    }
+                }
+            },
+            {
+                "fight": "Charles Radtke vs. Daniel Frunza",
+                "winner": "Charles Radtke",
+                "weight_class": "Welterweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Charles Radtke",
+                        "probability": "51.1%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Charles Radtke",
+                        "probability": "59.9%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Charles Radtke",
+                        "probability": "60.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Charles Radtke",
+                        "probability": "79.8%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Charles Radtke",
+                        "probability": "64.6%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Charles Radtke",
+                        "probability": "76.9%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Charles Radtke",
+                        "probability": "55.7%"
+                    }
+                }
+            },
+            {
+                "fight": "Allan Nascimento vs. Cody Durden",
+                "winner": "Allan Nascimento",
+                "weight_class": "Catch Weight",
+                "predictions": {}
+            },
+            {
+                "fight": "Billy Elekana vs. Kevin Christian",
+                "winner": "Billy Elekana",
+                "weight_class": "Light Heavyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Kevin Christian",
+                        "probability": "55.8%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Kevin Christian",
+                        "probability": "58.7%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Kevin Christian",
+                        "probability": "56.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Kevin Christian",
+                        "probability": "68.9%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Kevin Christian",
+                        "probability": "52.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Kevin Christian",
+                        "probability": "73.8%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Kevin Christian",
+                        "probability": "52.7%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Billy Elekana",
+                        "odds": -260
+                    },
+                    "fighter2": {
+                        "name": "Kevin Christian",
+                        "odds": 220
+                    }
+                }
+            },
+            {
+                "fight": "Timmy Cuamba vs. ChangHo Lee",
+                "winner": "Timmy Cuamba",
+                "weight_class": "Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "ChangHo Lee",
+                        "probability": "67.3%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "ChangHo Lee",
+                        "probability": "79.4%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "ChangHo Lee",
+                        "probability": "82.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "ChangHo Lee",
+                        "probability": "83.2%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "ChangHo Lee",
+                        "probability": "75.1%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "ChangHo Lee",
+                        "probability": "71.7%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "ChangHo Lee",
+                        "probability": "58.0%"
+                    }
+                }
+            },
+            {
+                "fight": "Donte Johnson vs. Sedriques Dumas",
+                "winner": "Donte Johnson",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Donte Johnson",
+                        "odds": -350
+                    },
+                    "fighter2": {
+                        "name": "Sedriques Dumas",
+                        "odds": 285
+                    }
+                }
+            },
+            {
+                "fight": "Norma Dumont vs. Ketlen Vieira",
+                "winner": "Norma Dumont",
+                "weight_class": "Women's Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Norma Dumont",
+                        "probability": "53.0%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Norma Dumont",
+                        "probability": "55.3%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Norma Dumont",
+                        "probability": "63.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Norma Dumont",
+                        "probability": "78.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "error": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Norma Dumont",
+                        "probability": "72.2%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Norma Dumont",
+                        "probability": "54.9%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Ketlen Vieira",
+                        "odds": 150
+                    },
+                    "fighter2": {
+                        "name": "Norma Dumont",
+                        "odds": -186
+                    }
+                }
+            },
+            {
+                "fight": "Alice Ardelean vs. Montserrat Conejo Ruiz",
+                "winner": "Alice Ardelean",
+                "weight_class": "Women's Strawweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Alice Ardelean",
+                        "probability": "73.7%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Alice Ardelean",
+                        "probability": "63.0%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Alice Ardelean",
+                        "probability": "78.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Alice Ardelean",
+                        "probability": "68.5%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Alice Ardelean",
+                        "probability": "60.8%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Alice Ardelean",
+                        "probability": "74.5%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Alice Ardelean",
+                        "probability": "52.6%"
+                    }
+                }
+            },
+            {
+                "fight": "Seokhyeon Ko vs. Phil Rowe",
+                "winner": "Seokhyeon Ko",
+                "weight_class": "Welterweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Phil Rowe",
+                        "probability": "59.5%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Phil Rowe",
+                        "probability": "72.1%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Phil Rowe",
+                        "probability": "64.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Phil Rowe",
+                        "probability": "56.3%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Phil Rowe",
+                        "probability": "51.9%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Phil Rowe",
+                        "probability": "84.6%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Phil Rowe",
+                        "probability": "51.0%"
+                    }
+                }
+            },
+            {
+                "fight": "Talita Alencar vs. Ariane Carnelossi",
+                "winner": "Talita Alencar",
+                "weight_class": "Women's Strawweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Ariane Carnelossi",
+                        "probability": "62.9%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Ariane Carnelossi",
+                        "probability": "52.1%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Talita Alencar",
+                        "probability": "60.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Ariane Carnelossi",
+                        "probability": "51.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Ariane Carnelossi",
+                        "probability": "54.9%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Talita Alencar",
+                        "probability": "60.8%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Talita Alencar",
+                        "probability": "50.3%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Talita Alencar",
+                        "odds": -194
+                    },
+                    "fighter2": {
+                        "name": "Ariane Carnelossi",
+                        "odds": 169
+                    }
+                }
+            }
+        ]
+    },
+    {
         "event_name": "UFC 321: Aspinall vs. Gane",
         "event_date": "October 25, 2025",
         "location": "Abu Dhabi, Abu Dhabi, United Arab Emirates",
