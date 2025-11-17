@@ -152,11 +152,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jack Hermansson",
-                        "odds": 170
+                        "odds": 205
                     },
                     "fighter2": {
                         "name": "Myktybek Orolbai",
-                        "odds": -200
+                        "odds": -240
                     }
                 }
             },
@@ -264,11 +264,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Bogdan Grad",
-                        "odds": 210
+                        "odds": 240
                     },
                     "fighter2": {
                         "name": "Luke Riley",
-                        "odds": -250
+                        "odds": -280
                     }
                 }
             },
@@ -342,11 +342,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Tagir Ulanbekov",
-                        "odds": -180
+                        "odds": -190
                     },
                     "fighter2": {
                         "name": "Kyoji Horiguchi",
-                        "odds": 155
+                        "odds": 165
                     }
                 }
             },
@@ -386,11 +386,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Bekzat Almakhan",
-                        "odds": 100
+                        "odds": -123
                     },
                     "fighter2": {
                         "name": "Aleksandre Topuria",
-                        "odds": -120
+                        "odds": 103
                     }
                 }
             },
@@ -430,11 +430,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ismail Naurdiev",
-                        "odds": -180
+                        "odds": -150
                     },
                     "fighter2": {
                         "name": "Ryan Loder",
-                        "odds": 155
+                        "odds": 130
                     }
                 }
             },
@@ -474,11 +474,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Nurullo Aliev",
-                        "odds": -310
+                        "odds": -280
                     },
                     "fighter2": {
                         "name": "Shem Rock",
-                        "odds": 260
+                        "odds": 240
                     }
                 }
             },
@@ -518,11 +518,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Nicolas Dalby",
-                        "odds": 300
+                        "odds": 250
                     },
                     "fighter2": {
                         "name": "Saygid Izagakhmaev",
-                        "odds": -400
+                        "odds": -300
                     }
                 }
             },
