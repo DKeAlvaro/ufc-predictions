@@ -108,11 +108,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Volkan Oezdemir",
-                        "odds": -230
+                        "odds": -225
                     },
                     "fighter2": {
                         "name": "Alonzo Menifield",
-                        "odds": 195
+                        "odds": 190
                     }
                 }
             },
@@ -342,11 +342,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Tagir Ulanbekov",
-                        "odds": -200
+                        "odds": -205
                     },
                     "fighter2": {
                         "name": "Kyoji Horiguchi",
-                        "odds": 170
+                        "odds": 175
                     }
                 }
             },
@@ -386,11 +386,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Bekzat Almakhan",
-                        "odds": -118
+                        "odds": -115
                     },
                     "fighter2": {
                         "name": "Aleksandre Topuria",
-                        "odds": -102
+                        "odds": -105
                     }
                 }
             },
@@ -430,11 +430,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ismail Naurdiev",
-                        "odds": -130
+                        "odds": -131
                     },
                     "fighter2": {
                         "name": "Ryan Loder",
-                        "odds": 110
+                        "odds": 111
                     }
                 }
             },
@@ -518,11 +518,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Nicolas Dalby",
-                        "odds": 250
+                        "odds": 265
                     },
                     "fighter2": {
                         "name": "Saygid Izagakhmaev",
-                        "odds": -300
+                        "odds": -315
                     }
                 }
             },
