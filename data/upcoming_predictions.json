@@ -342,11 +342,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Tagir Ulanbekov",
-                        "odds": -194
+                        "odds": -200
                     },
                     "fighter2": {
                         "name": "Kyoji Horiguchi",
-                        "odds": 169
+                        "odds": 170
                     }
                 }
             },
@@ -386,11 +386,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Bekzat Almakhan",
-                        "odds": 100
+                        "odds": 115
                     },
                     "fighter2": {
                         "name": "Aleksandre Topuria",
-                        "odds": -120
+                        "odds": -135
                     }
                 }
             },
@@ -474,11 +474,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Nurullo Aliev",
-                        "odds": -275
+                        "odds": -280
                     },
                     "fighter2": {
                         "name": "Shem Rock",
-                        "odds": 235
+                        "odds": 240
                     }
                 }
             },
