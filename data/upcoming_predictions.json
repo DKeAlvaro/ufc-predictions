@@ -36,6 +36,16 @@
                         "winner": "Justin Gaethje",
                         "probability": "51.3%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Justin Gaethje",
+                        "odds": 180
+                    },
+                    "fighter2": {
+                        "name": "Paddy Pimblett",
+                        "odds": -218
+                    }
                 }
             },
             {
@@ -70,6 +80,16 @@
                         "winner": "Amanda Nunes",
                         "probability": "69.4%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Kayla Harrison",
+                        "odds": -192
+                    },
+                    "fighter2": {
+                        "name": "Amanda Nunes",
+                        "odds": 160
+                    }
                 }
             },
             {
@@ -103,6 +123,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Song Yadong",
                         "probability": "69.4%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Sean O'Malley",
+                        "odds": -235
+                    },
+                    "fighter2": {
+                        "name": "Song Yadong",
+                        "odds": 200
                     }
                 }
             },
@@ -172,6 +202,16 @@
                         "winner": "Arnold Allen",
                         "probability": "57.3%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Arnold Allen",
+                        "odds": 191
+                    },
+                    "fighter2": {
+                        "name": "Jean Silva",
+                        "odds": -226
+                    }
                 }
             },
             {
@@ -205,6 +245,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Natalia Silva",
                         "probability": "50.6%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Natalia Silva",
+                        "odds": -435
+                    },
+                    "fighter2": {
+                        "name": "Rose Namajunas",
+                        "odds": 365
                     }
                 }
             },
@@ -240,6 +290,16 @@
                         "winner": "Deiveson Figueiredo",
                         "probability": "54.3%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Umar Nurmagomedov",
+                        "odds": -1400
+                    },
+                    "fighter2": {
+                        "name": "Deiveson Figueiredo",
+                        "odds": 800
+                    }
                 }
             },
             {
@@ -273,6 +333,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Ateba Gautier",
                         "probability": "55.4%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Ateba Gautier",
+                        "odds": -900
+                    },
+                    "fighter2": {
+                        "name": "Andrey Pulyaev",
+                        "odds": 600
                     }
                 }
             },
@@ -342,6 +412,16 @@
                         "winner": "Nikita Krylov",
                         "probability": "53.4%"
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Nikita Krylov",
+                        "odds": 165
+                    },
+                    "fighter2": {
+                        "name": "Modestas Bukauskas",
+                        "odds": -190
+                    }
                 }
             },
             {
@@ -375,6 +455,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Alex Perez",
                         "probability": "52.9%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Alex Perez",
+                        "odds": 160
+                    },
+                    "fighter2": {
+                        "name": "Charles Johnson",
+                        "odds": -185
                     }
                 }
             },
@@ -410,6 +500,16 @@
                         "winner": "Could not make a prediction.",
                         "probability": ""
                     }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Josh Hokit",
+                        "odds": -230
+                    },
+                    "fighter2": {
+                        "name": "Denzel Freeman",
+                        "odds": 195
+                    }
                 }
             },
             {
@@ -443,6 +543,16 @@
                     "EloBaselineModel.joblib": {
                         "winner": "Cameron Smotherman",
                         "probability": "51.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Ricky Turcios",
+                        "odds": 162
+                    },
+                    "fighter2": {
+                        "name": "Cameron Smotherman",
+                        "odds": -187
                     }
                 }
             }
