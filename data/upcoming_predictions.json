@@ -152,11 +152,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Tai Tuivasa",
-                        "odds": 220
+                        "odds": 235
                     },
                     "fighter2": {
                         "name": "Tallison Teixeira",
-                        "odds": -260
+                        "odds": -275
                     }
                 }
             },
@@ -240,11 +240,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Junior Tafa",
-                        "odds": 195
+                        "odds": 205
                     },
                     "fighter2": {
                         "name": "Billy Elekana",
-                        "odds": -230
+                        "odds": -240
                     }
                 }
             },
@@ -284,7 +284,7 @@
                 "odds": {
                     "fighter1": {
                         "name": "Cam Rowston",
-                        "odds": -350
+                        "odds": -345
                     },
                     "fighter2": {
                         "name": "Cody Brundage",
@@ -328,11 +328,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jacob Malkoun",
-                        "odds": -135
+                        "odds": -138
                     },
                     "fighter2": {
                         "name": "Torrez Finney",
-                        "odds": 115
+                        "odds": 118
                     }
                 }
             },
@@ -372,11 +372,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jonathan Micallef",
-                        "odds": -130
+                        "odds": -133
                     },
                     "fighter2": {
                         "name": "Oban Elliott",
-                        "odds": 110
+                        "odds": 113
                     }
                 }
             },
@@ -484,11 +484,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Keiichiro Nakamura",
-                        "odds": -115
+                        "odds": 105
                     },
                     "fighter2": {
                         "name": "Sebastian Szalay",
-                        "odds": -105
+                        "odds": -125
                     }
                 }
             },
@@ -528,11 +528,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Sulangrangbo",
-                        "odds": -170
+                        "odds": -247
                     },
                     "fighter2": {
                         "name": "Lawrence Lui",
-                        "odds": 145
+                        "odds": 212
                     }
                 }
             },
