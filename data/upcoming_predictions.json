@@ -108,11 +108,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Rafael Fiziev",
-                        "odds": 108
+                        "odds": 109
                     },
                     "fighter2": {
                         "name": "Mauricio Ruffy",
-                        "odds": -128
+                        "odds": -129
                     }
                 }
             },
@@ -152,11 +152,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Tai Tuivasa",
-                        "odds": 235
+                        "odds": 300
                     },
                     "fighter2": {
                         "name": "Tallison Teixeira",
-                        "odds": -275
+                        "odds": -400
                     }
                 }
             },
@@ -196,11 +196,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Quillan Salkilld",
-                        "odds": -800
+                        "odds": -900
                     },
                     "fighter2": {
                         "name": "Jamie Mullarkey",
-                        "odds": 575
+                        "odds": 600
                     }
                 }
             },
@@ -240,11 +240,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Junior Tafa",
-                        "odds": 205
+                        "odds": 200
                     },
                     "fighter2": {
                         "name": "Billy Elekana",
-                        "odds": -240
+                        "odds": -235
                     }
                 }
             },
@@ -284,7 +284,7 @@
                 "odds": {
                     "fighter1": {
                         "name": "Cam Rowston",
-                        "odds": -345
+                        "odds": -350
                     },
                     "fighter2": {
                         "name": "Cody Brundage",
@@ -328,11 +328,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jacob Malkoun",
-                        "odds": -138
+                        "odds": -146
                     },
                     "fighter2": {
                         "name": "Torrez Finney",
-                        "odds": 118
+                        "odds": 126
                     }
                 }
             },
@@ -372,11 +372,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jonathan Micallef",
-                        "odds": -133
+                        "odds": -134
                     },
                     "fighter2": {
                         "name": "Oban Elliott",
-                        "odds": 113
+                        "odds": 114
                     }
                 }
             },
@@ -484,11 +484,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Keiichiro Nakamura",
-                        "odds": 105
+                        "odds": 110
                     },
                     "fighter2": {
                         "name": "Sebastian Szalay",
-                        "odds": -125
+                        "odds": -130
                     }
                 }
             },
@@ -528,11 +528,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Sulangrangbo",
-                        "odds": -247
+                        "odds": -270
                     },
                     "fighter2": {
                         "name": "Lawrence Lui",
-                        "odds": 212
+                        "odds": 230
                     }
                 }
             },
