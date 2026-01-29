@@ -108,11 +108,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Rafael Fiziev",
-                        "odds": 109
+                        "odds": 102
                     },
                     "fighter2": {
                         "name": "Mauricio Ruffy",
-                        "odds": -129
+                        "odds": -122
                     }
                 }
             },
@@ -152,11 +152,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Tai Tuivasa",
-                        "odds": 300
+                        "odds": 275
                     },
                     "fighter2": {
                         "name": "Tallison Teixeira",
-                        "odds": -400
+                        "odds": -345
                     }
                 }
             },
@@ -196,7 +196,7 @@
                 "odds": {
                     "fighter1": {
                         "name": "Quillan Salkilld",
-                        "odds": -900
+                        "odds": -1100
                     },
                     "fighter2": {
                         "name": "Jamie Mullarkey",
@@ -240,11 +240,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Junior Tafa",
-                        "odds": 200
+                        "odds": 205
                     },
                     "fighter2": {
                         "name": "Billy Elekana",
-                        "odds": -235
+                        "odds": -245
                     }
                 }
             },
@@ -284,7 +284,7 @@
                 "odds": {
                     "fighter1": {
                         "name": "Cam Rowston",
-                        "odds": -350
+                        "odds": -360
                     },
                     "fighter2": {
                         "name": "Cody Brundage",
@@ -328,11 +328,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jacob Malkoun",
-                        "odds": -146
+                        "odds": -147
                     },
                     "fighter2": {
                         "name": "Torrez Finney",
-                        "odds": 126
+                        "odds": 127
                     }
                 }
             },
@@ -372,7 +372,7 @@
                 "odds": {
                     "fighter1": {
                         "name": "Jonathan Micallef",
-                        "odds": -134
+                        "odds": -135
                     },
                     "fighter2": {
                         "name": "Oban Elliott",
@@ -484,11 +484,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Keiichiro Nakamura",
-                        "odds": 110
+                        "odds": 104
                     },
                     "fighter2": {
                         "name": "Sebastian Szalay",
-                        "odds": -130
+                        "odds": -132
                     }
                 }
             },
@@ -528,11 +528,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Sulangrangbo",
-                        "odds": -270
+                        "odds": -250
                     },
                     "fighter2": {
                         "name": "Lawrence Lui",
-                        "odds": 230
+                        "odds": 190
                     }
                 }
             },
@@ -572,11 +572,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Aaron Tau",
-                        "odds": 105
+                        "odds": 102
                     },
                     "fighter2": {
                         "name": "Namsrai Batbayar",
-                        "odds": -125
+                        "odds": -130
                     }
                 }
             }
