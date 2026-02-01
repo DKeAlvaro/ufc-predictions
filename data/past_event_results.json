@@ -1,5 +1,558 @@
 [
     {
+        "event_name": "UFC 325: Volkanovski vs. Lopes 2",
+        "event_date": "January 31, 2026",
+        "location": "Sydney, New South Wales, Australia",
+        "url": "http://ufcstats.com/event-details/30ad2050273d016a",
+        "results": [
+            {
+                "fight": "Alexander Volkanovski vs. Diego Lopes",
+                "winner": "Diego Lopes",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Alexander Volkanovski",
+                        "probability": "94.2%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Alexander Volkanovski",
+                        "probability": "92.9%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Alexander Volkanovski",
+                        "probability": "81.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Alexander Volkanovski",
+                        "probability": "82.1%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Alexander Volkanovski",
+                        "probability": "94.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Alexander Volkanovski",
+                        "probability": "71.4%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Alexander Volkanovski",
+                        "probability": "66.4%"
+                    }
+                }
+            },
+            {
+                "fight": "Dan Hooker vs. Benoit Saint Denis",
+                "winner": "Benoit Saint Denis",
+                "weight_class": "Lightweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Dan Hooker",
+                        "probability": "82.9%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Dan Hooker",
+                        "probability": "76.4%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Dan Hooker",
+                        "probability": "74.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Dan Hooker",
+                        "probability": "82.7%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Dan Hooker",
+                        "probability": "76.2%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Dan Hooker",
+                        "probability": "70.6%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Dan Hooker",
+                        "probability": "58.5%"
+                    }
+                }
+            },
+            {
+                "fight": "Rafael Fiziev vs. Mauricio Ruffy",
+                "winner": "Mauricio Ruffy",
+                "weight_class": "Lightweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Rafael Fiziev",
+                        "probability": "50.1%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Rafael Fiziev",
+                        "probability": "60.3%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Rafael Fiziev",
+                        "probability": "73.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Rafael Fiziev",
+                        "probability": "68.8%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Rafael Fiziev",
+                        "probability": "62.7%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Rafael Fiziev",
+                        "probability": "68.9%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Rafael Fiziev",
+                        "probability": "52.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Rafael Fiziev",
+                        "odds": 100
+                    },
+                    "fighter2": {
+                        "name": "Mauricio Ruffy",
+                        "odds": -120
+                    }
+                }
+            },
+            {
+                "fight": "Tai Tuivasa vs. Tallison Teixeira",
+                "winner": "Tallison Teixeira",
+                "weight_class": "Heavyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Tallison Teixeira",
+                        "probability": "63.0%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Tallison Teixeira",
+                        "probability": "65.0%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Tallison Teixeira",
+                        "probability": "61.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Tallison Teixeira",
+                        "probability": "60.3%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Tallison Teixeira",
+                        "probability": "55.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Tallison Teixeira",
+                        "probability": "81.1%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Tallison Teixeira",
+                        "probability": "51.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Tai Tuivasa",
+                        "odds": 295
+                    },
+                    "fighter2": {
+                        "name": "Tallison Teixeira",
+                        "odds": -360
+                    }
+                }
+            },
+            {
+                "fight": "Quillan Salkilld vs. Jamie Mullarkey",
+                "winner": "Quillan Salkilld",
+                "weight_class": "Lightweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Quillan Salkilld",
+                        "probability": "72.6%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Quillan Salkilld",
+                        "probability": "80.5%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Quillan Salkilld",
+                        "probability": "77.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Quillan Salkilld",
+                        "probability": "84.8%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Quillan Salkilld",
+                        "probability": "75.6%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Quillan Salkilld",
+                        "probability": "77.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Quillan Salkilld",
+                        "probability": "57.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Quillan Salkilld",
+                        "odds": -900
+                    },
+                    "fighter2": {
+                        "name": "Jamie Mullarkey",
+                        "odds": 600
+                    }
+                }
+            },
+            {
+                "fight": "Billy Elekana vs. Junior Tafa",
+                "winner": "Billy Elekana",
+                "weight_class": "Light Heavyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Junior Tafa",
+                        "probability": "52.0%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Billy Elekana",
+                        "probability": "52.1%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Junior Tafa",
+                        "probability": "56.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Junior Tafa",
+                        "probability": "52.7%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Junior Tafa",
+                        "probability": "51.4%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Junior Tafa",
+                        "probability": "84.9%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Junior Tafa",
+                        "probability": "50.9%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Junior Tafa",
+                        "odds": 210
+                    },
+                    "fighter2": {
+                        "name": "Billy Elekana",
+                        "odds": -250
+                    }
+                }
+            },
+            {
+                "fight": "Cam Rowston vs. Cody Brundage",
+                "winner": "Cam Rowston",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Cody Brundage",
+                        "probability": "57.2%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Cam Rowston",
+                        "probability": "54.0%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Cam Rowston",
+                        "probability": "57.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Cam Rowston",
+                        "probability": "65.0%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Cam Rowston",
+                        "probability": "54.7%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Cam Rowston",
+                        "probability": "77.1%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Cam Rowston",
+                        "probability": "51.7%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Cam Rowston",
+                        "odds": -360
+                    },
+                    "fighter2": {
+                        "name": "Cody Brundage",
+                        "odds": 295
+                    }
+                }
+            },
+            {
+                "fight": "Jacob Malkoun vs. Torrez Finney",
+                "winner": "Jacob Malkoun",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Jacob Malkoun",
+                        "probability": "64.5%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Jacob Malkoun",
+                        "probability": "62.0%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Jacob Malkoun",
+                        "probability": "67.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Jacob Malkoun",
+                        "probability": "62.0%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Jacob Malkoun",
+                        "probability": "53.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Jacob Malkoun",
+                        "probability": "81.4%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Jacob Malkoun",
+                        "probability": "51.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Jacob Malkoun",
+                        "odds": -145
+                    },
+                    "fighter2": {
+                        "name": "Torrez Finney",
+                        "odds": 125
+                    }
+                }
+            },
+            {
+                "fight": "Jonathan Micallef vs. Oban Elliott",
+                "winner": "Jonathan Micallef",
+                "weight_class": "Welterweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Oban Elliott",
+                        "probability": "64.6%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Oban Elliott",
+                        "probability": "57.5%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Oban Elliott",
+                        "probability": "62.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Oban Elliott",
+                        "probability": "61.2%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Oban Elliott",
+                        "probability": "55.8%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Oban Elliott",
+                        "probability": "75.2%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Oban Elliott",
+                        "probability": "51.7%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Jonathan Micallef",
+                        "odds": -130
+                    },
+                    "fighter2": {
+                        "name": "Oban Elliott",
+                        "odds": 110
+                    }
+                }
+            },
+            {
+                "fight": "Kaan Ofli vs. Yizha",
+                "winner": "Kaan Ofli",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                }
+            },
+            {
+                "fight": "Dom Mar Fan vs. Sangwook Kim",
+                "winner": "Dom Mar Fan",
+                "weight_class": "Lightweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                }
+            },
+            {
+                "fight": "Keiichiro Nakamura vs. Sebastian Szalay",
+                "winner": "Keiichiro Nakamura",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Keiichiro Nakamura",
+                        "probability": "54.4%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Keiichiro Nakamura",
+                        "probability": "55.1%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Sebastian Szalay",
+                        "probability": "65.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Keiichiro Nakamura",
+                        "probability": "55.0%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Keiichiro Nakamura",
+                        "probability": "52.8%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Sebastian Szalay",
+                        "probability": "77.1%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Keiichiro Nakamura",
+                        "probability": "50.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Keiichiro Nakamura",
+                        "odds": 120
+                    },
+                    "fighter2": {
+                        "name": "Sebastian Szalay",
+                        "odds": -140
+                    }
+                }
+            },
+            {
+                "fight": "Lawrence Lui vs. Sulangrangbo",
+                "winner": "Lawrence Lui",
+                "weight_class": "Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Sulangrangbo",
+                        "odds": -250
+                    },
+                    "fighter2": {
+                        "name": "Lawrence Lui",
+                        "odds": 210
+                    }
+                }
+            }
+        ]
+    },
+    {
         "event_name": "UFC 324: Gaethje vs. Pimblett",
         "event_date": "January 24, 2026",
         "location": "Las Vegas, Nevada, USA",
