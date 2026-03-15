@@ -1,5 +1,613 @@
 [
     {
+        "event_name": "UFC Fight Night: Emmett vs. Vallejos",
+        "event_date": "March 14, 2026",
+        "location": "Las Vegas, Nevada, USA",
+        "url": "http://ufcstats.com/event-details/babc6b5745335f18",
+        "results": [
+            {
+                "fight": "Josh Emmett vs. Kevin Vallejos",
+                "winner": "Kevin Vallejos",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Kevin Vallejos",
+                        "probability": "64.2%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "60.1%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "55.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "81.8%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "79.9%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "77.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Josh Emmett",
+                        "probability": "61.9%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Josh Emmett",
+                        "odds": 475
+                    },
+                    "fighter2": {
+                        "name": "Kevin Vallejos",
+                        "odds": -650
+                    }
+                }
+            },
+            {
+                "fight": "Gillian Robertson vs. Amanda Lemos",
+                "winner": "Gillian Robertson",
+                "weight_class": "Women's Strawweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Gillian Robertson",
+                        "probability": "56.5%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Gillian Robertson",
+                        "probability": "61.1%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Gillian Robertson",
+                        "probability": "65.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Gillian Robertson",
+                        "probability": "60.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Gillian Robertson",
+                        "probability": "53.1%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Gillian Robertson",
+                        "probability": "80.6%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Gillian Robertson",
+                        "probability": "51.2%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Amanda Lemos",
+                        "odds": 170
+                    },
+                    "fighter2": {
+                        "name": "Gillian Robertson",
+                        "odds": -195
+                    }
+                }
+            },
+            {
+                "fight": "Jose Delgado vs. Andre Fili",
+                "winner": "Jose Delgado",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Jose Delgado",
+                        "probability": "75.6%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Jose Delgado",
+                        "probability": "74.9%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Jose Delgado",
+                        "probability": "77.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Jose Delgado",
+                        "probability": "72.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Jose Delgado",
+                        "probability": "66.9%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Jose Delgado",
+                        "probability": "85.7%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Jose Delgado",
+                        "probability": "52.6%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Andre Fili",
+                        "odds": 275
+                    },
+                    "fighter2": {
+                        "name": "Jose Delgado",
+                        "odds": -325
+                    }
+                }
+            },
+            {
+                "fight": "Marwan Rahiki vs. Harry Hardwick",
+                "winner": "Marwan Rahiki",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Marwan Rahiki",
+                        "odds": -270
+                    },
+                    "fighter2": {
+                        "name": "Harry Hardwick",
+                        "odds": 230
+                    }
+                }
+            },
+            {
+                "fight": "Ion Cutelaba vs. Oumar Sy",
+                "winner": "Ion Cutelaba",
+                "weight_class": "Light Heavyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Oumar Sy",
+                        "probability": "59.0%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Oumar Sy",
+                        "probability": "68.0%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Oumar Sy",
+                        "probability": "68.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Oumar Sy",
+                        "probability": "81.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Oumar Sy",
+                        "probability": "66.7%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Oumar Sy",
+                        "probability": "77.6%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Oumar Sy",
+                        "probability": "54.2%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Ion Cutelaba",
+                        "odds": 175
+                    },
+                    "fighter2": {
+                        "name": "Oumar Sy",
+                        "odds": -205
+                    }
+                }
+            },
+            {
+                "fight": "Charles Johnson vs. Bruno Silva",
+                "winner": "Charles Johnson",
+                "weight_class": "Flyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Bruno Silva",
+                        "probability": "50.0%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Charles Johnson",
+                        "probability": "82.1%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Charles Johnson",
+                        "probability": "78.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Charles Johnson",
+                        "probability": "82.2%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Charles Johnson",
+                        "probability": "79.2%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Charles Johnson",
+                        "probability": "87.9%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Charles Johnson",
+                        "probability": "60.4%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Charles Johnson",
+                        "odds": -205
+                    },
+                    "fighter2": {
+                        "name": "Bruno Silva",
+                        "odds": 175
+                    }
+                }
+            },
+            {
+                "fight": "Myktybek Orolbai vs. Chris Curtis",
+                "winner": "Myktybek Orolbai",
+                "weight_class": "Welterweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Myktybek Orolbai",
+                        "probability": "84.7%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Myktybek Orolbai",
+                        "probability": "75.2%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Myktybek Orolbai",
+                        "probability": "77.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Myktybek Orolbai",
+                        "probability": "69.3%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Myktybek Orolbai",
+                        "probability": "61.3%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Myktybek Orolbai",
+                        "probability": "83.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Myktybek Orolbai",
+                        "probability": "52.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Chris Curtis",
+                        "odds": 220
+                    },
+                    "fighter2": {
+                        "name": "Myktybek Orolbai",
+                        "odds": -260
+                    }
+                }
+            },
+            {
+                "fight": "Vitor Petrino vs. Steven Asplund",
+                "winner": "Vitor Petrino",
+                "weight_class": "Heavyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Vitor Petrino",
+                        "odds": -240
+                    },
+                    "fighter2": {
+                        "name": "Steven Asplund",
+                        "odds": 205
+                    }
+                }
+            },
+            {
+                "fight": "Elijah Smith vs. SuYoung You",
+                "winner": "Elijah Smith",
+                "weight_class": "Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "SuYoung You",
+                        "probability": "83.9%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "SuYoung You",
+                        "probability": "68.7%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "SuYoung You",
+                        "probability": "72.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "SuYoung You",
+                        "probability": "72.1%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "SuYoung You",
+                        "probability": "60.7%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "SuYoung You",
+                        "probability": "74.9%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "SuYoung You",
+                        "probability": "52.9%"
+                    }
+                }
+            },
+            {
+                "fight": "Manoel Sousa vs. Bolaji Oki",
+                "winner": "Manoel Sousa",
+                "weight_class": "Lightweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Bolaji Oki",
+                        "probability": "85.4%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Bolaji Oki",
+                        "probability": "84.7%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Bolaji Oki",
+                        "probability": "88.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Bolaji Oki",
+                        "probability": "73.9%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Bolaji Oki",
+                        "probability": "59.9%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Bolaji Oki",
+                        "probability": "81.1%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Bolaji Oki",
+                        "probability": "52.9%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Bolaji Oki",
+                        "odds": 250
+                    },
+                    "fighter2": {
+                        "name": "Manoel Sousa",
+                        "odds": -300
+                    }
+                }
+            },
+            {
+                "fight": "Eryk Anders vs. Brad Tavares",
+                "winner": "Eryk Anders",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Brad Tavares",
+                        "probability": "77.4%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Brad Tavares",
+                        "probability": "73.8%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Brad Tavares",
+                        "probability": "82.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Brad Tavares",
+                        "probability": "84.9%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Brad Tavares",
+                        "probability": "70.8%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Brad Tavares",
+                        "probability": "74.2%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Brad Tavares",
+                        "probability": "55.4%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Brad Tavares",
+                        "odds": -130
+                    },
+                    "fighter2": {
+                        "name": "Eryk Anders",
+                        "odds": 110
+                    }
+                }
+            },
+            {
+                "fight": "Bia Mesquita vs. Montse Rendon",
+                "winner": "Bia Mesquita",
+                "weight_class": "Women's Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                }
+            },
+            {
+                "fight": "Hecher Sosa vs. Luan Lacerda",
+                "winner": "Hecher Sosa",
+                "weight_class": "Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                }
+            },
+            {
+                "fight": "Piera Rodriguez vs. Sam Hughes",
+                "winner": "Piera Rodriguez",
+                "weight_class": "Women's Strawweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Piera Rodriguez",
+                        "probability": "51.7%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Piera Rodriguez",
+                        "probability": "60.1%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Piera Rodriguez",
+                        "probability": "51.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Piera Rodriguez",
+                        "probability": "50.0%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Piera Rodriguez",
+                        "probability": "50.9%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Sam Hughes",
+                        "probability": "76.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Sam Hughes",
+                        "probability": "50.1%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Piera Rodriguez",
+                        "odds": -140
+                    },
+                    "fighter2": {
+                        "name": "Sam Hughes",
+                        "odds": 120
+                    }
+                }
+            }
+        ]
+    },
+    {
         "event_name": "UFC 326: Holloway vs. Oliveira 2",
         "event_date": "March 07, 2026",
         "location": "Las Vegas, Nevada, USA",
