@@ -72,11 +72,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Alexa Grasso",
-                        "odds": 145
+                        "odds": 140
                     },
                     "fighter2": {
                         "name": "Maycee Barber",
-                        "odds": -170
+                        "odds": -160
                     }
                 }
             },
@@ -148,11 +148,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Julian Erosa",
-                        "odds": 240
+                        "odds": 250
                     },
                     "fighter2": {
                         "name": "Lerryan Douglas",
-                        "odds": -280
+                        "odds": -300
                     }
                 }
             },
@@ -191,11 +191,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Mansur Abdul-Malik",
-                        "odds": -120
+                        "odds": -116
                     },
                     "fighter2": {
                         "name": "Yousri Belgaroui",
-                        "odds": 100
+                        "odds": -104
                     }
                 }
             },
@@ -344,11 +344,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Marcin Tybura",
-                        "odds": 104
+                        "odds": 110
                     },
                     "fighter2": {
                         "name": "Tyrell Fortune",
-                        "odds": -124
+                        "odds": -130
                     }
                 }
             },
@@ -388,11 +388,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Casey O'Neill",
-                        "odds": 105
+                        "odds": 115
                     },
                     "fighter2": {
                         "name": "Gabriella Fernandes",
-                        "odds": -125
+                        "odds": -135
                     }
                 }
             },
@@ -432,11 +432,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Navajo Stirling",
-                        "odds": -475
+                        "odds": -600
                     },
                     "fighter2": {
                         "name": "Bruno Lopes",
-                        "odds": 375
+                        "odds": 450
                     }
                 }
             },
@@ -475,11 +475,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ricky Simon",
-                        "odds": -145
+                        "odds": -144
                     },
                     "fighter2": {
                         "name": "Adrian Yanez",
-                        "odds": 125
+                        "odds": 124
                     }
                 }
             },
@@ -519,11 +519,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Alexia Thainara",
-                        "odds": -600
+                        "odds": -620
                     },
                     "fighter2": {
                         "name": "Bruna Brasil",
-                        "odds": 450
+                        "odds": 470
                     }
                 }
             },
