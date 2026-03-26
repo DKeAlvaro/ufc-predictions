@@ -191,11 +191,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Mansur Abdul-Malik",
-                        "odds": -117
+                        "odds": -130
                     },
                     "fighter2": {
                         "name": "Yousri Belgaroui",
-                        "odds": -103
+                        "odds": 110
                     }
                 }
             },
@@ -267,11 +267,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ignacio Bahamondes",
-                        "odds": -300
+                        "odds": -280
                     },
                     "fighter2": {
                         "name": "Tofiq Musayev",
-                        "odds": 250
+                        "odds": 240
                     }
                 }
             },
@@ -388,11 +388,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Casey O'Neill",
-                        "odds": -101
+                        "odds": -110
                     },
                     "fighter2": {
                         "name": "Gabriella Fernandes",
-                        "odds": -119
+                        "odds": -110
                     }
                 }
             },
@@ -475,11 +475,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ricky Simon",
-                        "odds": -143
+                        "odds": -140
                     },
                     "fighter2": {
                         "name": "Adrian Yanez",
-                        "odds": 123
+                        "odds": 120
                     }
                 }
             },
@@ -519,11 +519,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Alexia Thainara",
-                        "odds": -700
+                        "odds": -800
                     },
                     "fighter2": {
                         "name": "Bruna Brasil",
-                        "odds": 500
+                        "odds": 550
                     }
                 }
             },
