@@ -148,11 +148,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Julian Erosa",
-                        "odds": 250
+                        "odds": 285
                     },
                     "fighter2": {
                         "name": "Lerryan Douglas",
-                        "odds": -300
+                        "odds": -350
                     }
                 }
             },
@@ -267,11 +267,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ignacio Bahamondes",
-                        "odds": -280
+                        "odds": -315
                     },
                     "fighter2": {
                         "name": "Tofiq Musayev",
-                        "odds": 240
+                        "odds": 265
                     }
                 }
             },
@@ -344,11 +344,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Marcin Tybura",
-                        "odds": 115
+                        "odds": 118
                     },
                     "fighter2": {
                         "name": "Tyrell Fortune",
-                        "odds": -135
+                        "odds": -138
                     }
                 }
             },
@@ -475,11 +475,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ricky Simon",
-                        "odds": -140
+                        "odds": -150
                     },
                     "fighter2": {
                         "name": "Adrian Yanez",
-                        "odds": 120
+                        "odds": 130
                     }
                 }
             },
