@@ -191,11 +191,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Mansur Abdul-Malik",
-                        "odds": -130
+                        "odds": -138
                     },
                     "fighter2": {
                         "name": "Yousri Belgaroui",
-                        "odds": 110
+                        "odds": 118
                     }
                 }
             },
@@ -267,11 +267,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ignacio Bahamondes",
-                        "odds": -315
+                        "odds": -310
                     },
                     "fighter2": {
                         "name": "Tofiq Musayev",
-                        "odds": 265
+                        "odds": 260
                     }
                 }
             },
@@ -344,11 +344,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Marcin Tybura",
-                        "odds": 118
+                        "odds": 115
                     },
                     "fighter2": {
                         "name": "Tyrell Fortune",
-                        "odds": -138
+                        "odds": -135
                     }
                 }
             },
@@ -388,11 +388,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Casey O'Neill",
-                        "odds": -110
+                        "odds": -120
                     },
                     "fighter2": {
                         "name": "Gabriella Fernandes",
-                        "odds": -110
+                        "odds": 100
                     }
                 }
             },
@@ -475,11 +475,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Ricky Simon",
-                        "odds": -150
+                        "odds": -175
                     },
                     "fighter2": {
                         "name": "Adrian Yanez",
-                        "odds": 130
+                        "odds": 150
                     }
                 }
             },
@@ -519,11 +519,11 @@
                 "odds": {
                     "fighter1": {
                         "name": "Alexia Thainara",
-                        "odds": -800
+                        "odds": -700
                     },
                     "fighter2": {
                         "name": "Bruna Brasil",
-                        "odds": 550
+                        "odds": 500
                     }
                 }
             },
