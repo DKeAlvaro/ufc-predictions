@@ -1,5 +1,520 @@
 [
     {
+        "event_name": "UFC Fight Night: Adesanya vs. Pyfer",
+        "event_date": "March 28, 2026",
+        "location": "Seattle, Washington, USA",
+        "url": "http://ufcstats.com/event-details/5c38639f860a5542",
+        "results": [
+            {
+                "fight": "Joe Pyfer vs. Israel Adesanya",
+                "winner": "Joe Pyfer",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Joe Pyfer",
+                        "probability": "69.2%"
+                    },
+                    "LGBMModel.joblib": {
+                        "error": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Israel Adesanya",
+                        "probability": "65.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Israel Adesanya",
+                        "probability": "84.1%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Israel Adesanya",
+                        "probability": "80.2%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Israel Adesanya",
+                        "probability": "73.5%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Israel Adesanya",
+                        "probability": "58.4%"
+                    }
+                }
+            },
+            {
+                "fight": "Alexa Grasso vs. Maycee Barber",
+                "winner": "Alexa Grasso",
+                "weight_class": "Women's Flyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Maycee Barber",
+                        "probability": "82.5%"
+                    },
+                    "LGBMModel.joblib": {
+                        "error": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Maycee Barber",
+                        "probability": "88.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Maycee Barber",
+                        "probability": "83.2%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Maycee Barber",
+                        "probability": "69.7%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Maycee Barber",
+                        "probability": "81.6%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Maycee Barber",
+                        "probability": "57.7%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Alexa Grasso",
+                        "odds": 160
+                    },
+                    "fighter2": {
+                        "name": "Maycee Barber",
+                        "odds": -185
+                    }
+                }
+            },
+            {
+                "fight": "Michael Chiesa vs. Niko Price",
+                "winner": "Michael Chiesa",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Lerryan Douglas vs. Julian Erosa",
+                "winner": "Lerryan Douglas",
+                "weight_class": "Featherweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Julian Erosa",
+                        "probability": "78.4%"
+                    },
+                    "LGBMModel.joblib": {
+                        "error": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "error": "Server error '500 Internal Server Error' for url 'https://alvaromros-ufc-predictor.hf.space/queue/join'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Julian Erosa",
+                        "probability": "83.1%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Julian Erosa",
+                        "probability": "69.6%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Julian Erosa",
+                        "probability": "83.2%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Julian Erosa",
+                        "probability": "56.3%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Julian Erosa",
+                        "odds": 285
+                    },
+                    "fighter2": {
+                        "name": "Lerryan Douglas",
+                        "odds": -350
+                    }
+                }
+            },
+            {
+                "fight": "Yousri Belgaroui vs. Mansur Abdul-Malik",
+                "winner": "Yousri Belgaroui",
+                "weight_class": "Middleweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Mansur Abdul-Malik",
+                        "probability": "68.2%"
+                    },
+                    "LGBMModel.joblib": {
+                        "error": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Mansur Abdul-Malik",
+                        "probability": "85.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Mansur Abdul-Malik",
+                        "probability": "84.0%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Mansur Abdul-Malik",
+                        "probability": "76.4%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Mansur Abdul-Malik",
+                        "probability": "85.9%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Mansur Abdul-Malik",
+                        "probability": "58.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Mansur Abdul-Malik",
+                        "odds": -138
+                    },
+                    "fighter2": {
+                        "name": "Yousri Belgaroui",
+                        "odds": 118
+                    }
+                }
+            },
+            {
+                "fight": "Terrance McKinney vs. Kyle Nelson",
+                "winner": "Terrance McKinney",
+                "weight_class": "Lightweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Terrance McKinney",
+                        "probability": "82.0%"
+                    },
+                    "LGBMModel.joblib": {
+                        "error": "Server error '500 Internal Server Error' for url 'https://alvaromros-ufc-predictor.hf.space/queue/join'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+                    },
+                    "RandomForestModel.joblib": {
+                        "error": "Server error '500 Internal Server Error' for url 'https://alvaromros-ufc-predictor.hf.space/queue/join'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Terrance McKinney",
+                        "probability": "85.6%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Terrance McKinney",
+                        "probability": "72.7%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Terrance McKinney",
+                        "probability": "86.6%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Terrance McKinney",
+                        "probability": "56.4%"
+                    }
+                }
+            },
+            {
+                "fight": "Tofiq Musayev vs. Ignacio Bahamondes",
+                "winner": "Tofiq Musayev",
+                "weight_class": "Lightweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Ignacio Bahamondes",
+                        "probability": "83.9%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Ignacio Bahamondes",
+                        "probability": "86.7%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Ignacio Bahamondes",
+                        "probability": "71.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Ignacio Bahamondes",
+                        "probability": "82.1%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Ignacio Bahamondes",
+                        "probability": "84.9%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Ignacio Bahamondes",
+                        "probability": "87.7%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Ignacio Bahamondes",
+                        "probability": "61.2%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Ignacio Bahamondes",
+                        "odds": -310
+                    },
+                    "fighter2": {
+                        "name": "Tofiq Musayev",
+                        "odds": 260
+                    }
+                }
+            },
+            {
+                "fight": "Lance Gibson Jr. vs. Chase Hooper",
+                "winner": "Lance Gibson Jr.",
+                "weight_class": "Lightweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "error": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                }
+            },
+            {
+                "fight": "Tyrell Fortune vs. Marcin Tybura",
+                "winner": "Tyrell Fortune",
+                "weight_class": "Heavyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Could not make a prediction.",
+                        "probability": ""
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Marcin Tybura",
+                        "odds": 115
+                    },
+                    "fighter2": {
+                        "name": "Tyrell Fortune",
+                        "odds": -135
+                    }
+                }
+            },
+            {
+                "fight": "Casey O'Neill vs. Gabriella Fernandes",
+                "winner": "Casey O'Neill",
+                "weight_class": "Women's Flyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Casey O'Neill",
+                        "probability": "60.2%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Casey O'Neill",
+                        "probability": "55.4%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Casey O'Neill",
+                        "probability": "56.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Gabriella Fernandes",
+                        "probability": "58.0%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Casey O'Neill",
+                        "probability": "50.2%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Gabriella Fernandes",
+                        "probability": "59.8%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Gabriella Fernandes",
+                        "probability": "50.6%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Casey O'Neill",
+                        "odds": -120
+                    },
+                    "fighter2": {
+                        "name": "Gabriella Fernandes",
+                        "odds": 100
+                    }
+                }
+            },
+            {
+                "fight": "Navajo Stirling vs. Bruno Lopes",
+                "winner": "Navajo Stirling",
+                "weight_class": "Light Heavyweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Navajo Stirling",
+                        "probability": "65.8%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Navajo Stirling",
+                        "probability": "68.7%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Navajo Stirling",
+                        "probability": "76.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Navajo Stirling",
+                        "probability": "81.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Navajo Stirling",
+                        "probability": "66.4%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Navajo Stirling",
+                        "probability": "86.0%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Navajo Stirling",
+                        "probability": "55.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Navajo Stirling",
+                        "odds": -650
+                    },
+                    "fighter2": {
+                        "name": "Bruno Lopes",
+                        "odds": 475
+                    }
+                }
+            },
+            {
+                "fight": "Ricky Simon vs. Adrian Yanez",
+                "winner": "Adrian Yanez",
+                "weight_class": "Bantamweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Ricky Simon",
+                        "probability": "82.2%"
+                    },
+                    "LGBMModel.joblib": {
+                        "error": "Server error '500 Internal Server Error' for url 'https://alvaromros-ufc-predictor.hf.space/queue/join'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Ricky Simon",
+                        "probability": "80.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Ricky Simon",
+                        "probability": "84.0%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Ricky Simon",
+                        "probability": "71.6%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Ricky Simon",
+                        "probability": "68.9%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Ricky Simon",
+                        "probability": "56.3%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Ricky Simon",
+                        "odds": -175
+                    },
+                    "fighter2": {
+                        "name": "Adrian Yanez",
+                        "odds": 150
+                    }
+                }
+            },
+            {
+                "fight": "Alexia Thainara vs. Bruna Brasil",
+                "winner": "Alexia Thainara",
+                "weight_class": "Women's Strawweight",
+                "predictions": {
+                    "XGBoostModel.joblib": {
+                        "winner": "Alexia Thainara",
+                        "probability": "62.0%"
+                    },
+                    "LGBMModel.joblib": {
+                        "winner": "Alexia Thainara",
+                        "probability": "66.0%"
+                    },
+                    "RandomForestModel.joblib": {
+                        "winner": "Alexia Thainara",
+                        "probability": "71.0%"
+                    },
+                    "SVCModel.joblib": {
+                        "winner": "Alexia Thainara",
+                        "probability": "80.4%"
+                    },
+                    "LogisticRegressionModel.joblib": {
+                        "winner": "Alexia Thainara",
+                        "probability": "66.8%"
+                    },
+                    "BernoulliNBModel.joblib": {
+                        "winner": "Alexia Thainara",
+                        "probability": "76.5%"
+                    },
+                    "EloBaselineModel.joblib": {
+                        "winner": "Alexia Thainara",
+                        "probability": "55.0%"
+                    }
+                },
+                "odds": {
+                    "fighter1": {
+                        "name": "Alexia Thainara",
+                        "odds": -700
+                    },
+                    "fighter2": {
+                        "name": "Bruna Brasil",
+                        "odds": 500
+                    }
+                }
+            }
+        ]
+    },
+    {
         "event_name": "UFC Fight Night: Evloev vs. Murphy",
         "event_date": "March 21, 2026",
         "location": "London, England, United Kingdom",
