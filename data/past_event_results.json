@@ -1,5 +1,91 @@
 [
     {
+        "event_name": "UFC Fight Night: Moicano vs. Duncan",
+        "event_date": "April 04, 2026",
+        "location": "Las Vegas, Nevada, USA",
+        "url": "http://ufcstats.com/event-details/9a70f67ad2187fa3",
+        "results": [
+            {
+                "fight": "Renato Moicano vs. Chris Duncan",
+                "winner": "Renato Moicano",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Virna Jandiroba vs. Tabatha Ricci",
+                "winner": "Virna Jandiroba",
+                "weight_class": "Women's Strawweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Abdul Rakhman Yakhyaev vs. Brendson Ribeiro",
+                "winner": "Abdul Rakhman Yakhyaev",
+                "weight_class": "Light Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Ethyn Ewing vs. Rafael Estevam",
+                "winner": "Ethyn Ewing",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Tommy McMillen vs. Manolo Zecchini",
+                "winner": "Tommy McMillen",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jose Delano vs. Robert Ruchala",
+                "winner": "Jose Delano",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Thomas Petersen vs. Guilherme Pat",
+                "winner": "Thomas Petersen",
+                "weight_class": "Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Alessandro Costa vs. Stewart Nicoll",
+                "winner": "Alessandro Costa",
+                "weight_class": "Flyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Darrius Flowers vs. Lando Vannata",
+                "winner": "Darrius Flowers",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Alice Pereira vs. Hailey Cowan",
+                "winner": "Alice Pereira",
+                "weight_class": "Women's Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Tresean Gore vs. Azamat Bekoev",
+                "winner": "Tresean Gore",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Dione Barbosa vs. Melissa Gatto",
+                "winner": "Dione Barbosa",
+                "weight_class": "Women's Flyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Kai Kamaka III vs. Dakota Hope",
+                "winner": "Kai Kamaka III",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            }
+        ]
+    },
+    {
         "event_name": "UFC Fight Night: Adesanya vs. Pyfer",
         "event_date": "March 28, 2026",
         "location": "Seattle, Washington, USA",
