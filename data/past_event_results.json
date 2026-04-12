@@ -1,5 +1,85 @@
 [
     {
+        "event_name": "UFC 327: Prochazka vs. Ulberg",
+        "event_date": "April 11, 2026",
+        "location": "Miami, Florida, USA",
+        "url": "http://ufcstats.com/event-details/f3eb664db7fb1df3",
+        "results": [
+            {
+                "fight": "Jiri Prochazka vs. Carlos Ulberg",
+                "winner": "Carlos Ulberg",
+                "weight_class": "Light Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Azamat Murzakanov vs. Paulo Costa",
+                "winner": "Paulo Costa",
+                "weight_class": "Light Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Josh Hokit vs. Curtis Blaydes",
+                "winner": "Josh Hokit",
+                "weight_class": "Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Dominick Reyes vs. Johnny Walker",
+                "winner": "Dominick Reyes",
+                "weight_class": "Light Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Cub Swanson vs. Nate Landwehr",
+                "winner": "Cub Swanson",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Aaron Pico vs. Patricio Pitbull",
+                "winner": "Aaron Pico",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Kevin Holland vs. Randy Brown",
+                "winner": "Kevin Holland",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Mateusz Gamrot vs. Esteban Ribovics",
+                "winner": "Mateusz Gamrot",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Tatiana Suarez vs. Loopy Godinez",
+                "winner": "Tatiana Suarez",
+                "weight_class": "Women's Strawweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Chris Padilla vs. MarQuel Mederos",
+                "winner": "MarQuel Mederos",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Vicente Luque vs. Kelvin Gastelum",
+                "winner": "Vicente Luque",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Charles Radtke vs. Francisco Prado",
+                "winner": "Charles Radtke",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            }
+        ]
+    },
+    {
         "event_name": "UFC Fight Night: Moicano vs. Duncan",
         "event_date": "April 04, 2026",
         "location": "Las Vegas, Nevada, USA",
