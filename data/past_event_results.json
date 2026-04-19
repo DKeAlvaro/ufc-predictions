@@ -1,5 +1,85 @@
 [
     {
+        "event_name": "UFC Fight Night: Burns vs. Malott",
+        "event_date": "April 18, 2026",
+        "location": "Winnipeg, Manitoba, Canada",
+        "url": "http://ufcstats.com/event-details/c3ac8d0da7b05772",
+        "results": [
+            {
+                "fight": "Mike Malott vs. Gilbert Burns",
+                "winner": "Mike Malott",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Charles Jourdain vs. Kyler Phillips",
+                "winner": "Charles Jourdain",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jai Herbert vs. Mandel Nallo",
+                "winner": "Jai Herbert",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jasmine Jasudavicius vs. Karine Silva",
+                "winner": "Jasmine Jasudavicius",
+                "weight_class": "Women's Flyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Gauge Young vs. Thiago Moises",
+                "winner": "Gauge Young",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Marcio Barbosa vs. Dennis Buzukja",
+                "winner": "Marcio Barbosa",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Robert Valentin vs. Julien Leblanc",
+                "winner": "Robert Valentin",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Gokhan Saricam vs. Tanner Boser",
+                "winner": "Gokhan Saricam",
+                "weight_class": "Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Melissa Croden vs. Daria Zhelezniakova",
+                "winner": "Melissa Croden",
+                "weight_class": "Women's Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "JJ Aldrich vs. Jamey-Lyn Horth",
+                "winner": "JJ Aldrich",
+                "weight_class": "Women's Flyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "John Castaneda vs. Mark Vologdin",
+                "winner": "Mark Vologdin",
+                "weight_class": "Catch Weight",
+                "predictions": {}
+            },
+            {
+                "fight": "John Yannis vs. Jamie Siraj",
+                "winner": "John Yannis",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            }
+        ]
+    },
+    {
         "event_name": "UFC 327: Prochazka vs. Ulberg",
         "event_date": "April 11, 2026",
         "location": "Miami, Florida, USA",
