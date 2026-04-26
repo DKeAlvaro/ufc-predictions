@@ -1,5 +1,91 @@
 [
     {
+        "event_name": "UFC Fight Night: Sterling vs. Zalal",
+        "event_date": "April 25, 2026",
+        "location": "Las Vegas, Nevada, USA",
+        "url": "http://ufcstats.com/event-details/e60d773a0a42048a",
+        "results": [
+            {
+                "fight": "Aljamain Sterling vs. Youssef Zalal",
+                "winner": "Aljamain Sterling",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Joselyne Edwards vs. Norma Dumont",
+                "winner": "Joselyne Edwards",
+                "weight_class": "Women's Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Rafa Garcia vs. Alexander Hernandez",
+                "winner": "Rafa Garcia",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Davey Grant vs. Adrian Luna Martinetti",
+                "winner": "Davey Grant",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Raoni Barcelos vs. Montel Jackson",
+                "winner": "Raoni Barcelos",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Ryan Spann vs. Marcus Buchecha",
+                "winner": "Ryan Spann",
+                "weight_class": "Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Eric McConico vs. Rodolfo Vieira",
+                "winner": "Eric McConico",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jackson McVey vs. Sedriques Dumas",
+                "winner": "Jackson McVey",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Michelle Montague vs. Mayra Bueno Silva",
+                "winner": "Michelle Montague",
+                "weight_class": "Women's Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Cody Durden vs. Jafel Filho",
+                "winner": "Cody Durden",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Francis Marshall vs. Lucas Brennan",
+                "winner": "Francis Marshall",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Victor Valenzuela vs. Max Griffin",
+                "winner": "Victor Valenzuela",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Talita Alencar vs. Julia Polastri",
+                "winner": "Talita Alencar",
+                "weight_class": "Women's Strawweight",
+                "predictions": {}
+            }
+        ]
+    },
+    {
         "event_name": "UFC Fight Night: Burns vs. Malott",
         "event_date": "April 18, 2026",
         "location": "Winnipeg, Manitoba, Canada",
