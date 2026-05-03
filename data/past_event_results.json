@@ -1,5 +1,91 @@
 [
     {
+        "event_name": "UFC Fight Night: Della Maddalena vs. Prates",
+        "event_date": "May 02, 2026",
+        "location": "Perth, Western Australia, Australia",
+        "url": "http://ufcstats.com/event-details/872b018076f831b0",
+        "results": [
+            {
+                "fight": "Carlos Prates vs. Jack Della Maddalena",
+                "winner": "Carlos Prates",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Quillan Salkilld vs. Beneil Dariush",
+                "winner": "Quillan Salkilld",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Steve Erceg vs. Tim Elliott",
+                "winner": "Steve Erceg",
+                "weight_class": "Flyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Marwan Rahiki vs. Ollie Schmid",
+                "winner": "Marwan Rahiki",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Brando Pericic vs. Shamil Gaziev",
+                "winner": "Brando Pericic",
+                "weight_class": "Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Louie Sutherland vs. Tai Tuivasa",
+                "winner": "Louie Sutherland",
+                "weight_class": "Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Cam Rowston vs. Robert Bryczek",
+                "winner": "Cam Rowston",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Junior Tafa vs. Kevin Christian",
+                "winner": "Junior Tafa",
+                "weight_class": "Light Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jacob Malkoun vs. Gerald Meerschaert",
+                "winner": "Jacob Malkoun",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Colby Thicknesse vs. Vince Morales",
+                "winner": "Colby Thicknesse",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Wes Schultz vs. Ben Johnston",
+                "winner": "Wes Schultz",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jonathan Micallef vs. Themba Gorimbo",
+                "winner": "Jonathan Micallef",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Kody Steele vs. Dom Mar Fan",
+                "winner": "Kody Steele",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            }
+        ]
+    },
+    {
         "event_name": "UFC Fight Night: Sterling vs. Zalal",
         "event_date": "April 25, 2026",
         "location": "Las Vegas, Nevada, USA",
