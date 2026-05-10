@@ -1,5 +1,91 @@
 [
     {
+        "event_name": "UFC 328: Chimaev vs. Strickland",
+        "event_date": "May 09, 2026",
+        "location": "Newark, New Jersey, USA",
+        "url": "http://ufcstats.com/event-details/9eedac48b497de5a",
+        "results": [
+            {
+                "fight": "Khamzat Chimaev vs. Sean Strickland",
+                "winner": "Sean Strickland",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Joshua Van vs. Tatsuro Taira",
+                "winner": "Tatsuro Taira",
+                "weight_class": "Flyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Alexander Volkov vs. Waldo Cortes Acosta",
+                "winner": "Alexander Volkov",
+                "weight_class": "Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Sean Brady vs. Joaquin Buckley",
+                "winner": "Sean Brady",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "King Green vs. Jeremy Stephens",
+                "winner": "King Green",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Ateba Gautier vs. Ozzy Diaz",
+                "winner": "Ateba Gautier",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Yaroslav Amosov vs. Joel Alvarez",
+                "winner": "Yaroslav Amosov",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Grant Dawson vs. Mateusz Rebecki",
+                "winner": "Grant Dawson",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jim Miller vs. Jared Gordon",
+                "winner": "Jim Miller",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Roman Kopylov vs. Marco Tulio",
+                "winner": "Roman Kopylov",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Pat Sabatini vs. William Gomis",
+                "winner": "Pat Sabatini",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Baisangur Susurkaev vs. Djorden Santos",
+                "winner": "Baisangur Susurkaev",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Jose Ochoa vs. Clayton Carpenter",
+                "winner": "Jose Ochoa",
+                "weight_class": "Flyweight",
+                "predictions": {}
+            }
+        ]
+    },
+    {
         "event_name": "UFC Fight Night: Della Maddalena vs. Prates",
         "event_date": "May 02, 2026",
         "location": "Perth, Western Australia, Australia",
