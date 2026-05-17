@@ -1,5 +1,91 @@
 [
     {
+        "event_name": "UFC Fight Night: Allen vs. Costa",
+        "event_date": "May 16, 2026",
+        "location": "Las Vegas, Nevada, USA",
+        "url": "http://ufcstats.com/event-details/73abb7a5c57fb443",
+        "results": [
+            {
+                "fight": "Arnold Allen vs. Melquizael Costa",
+                "winner": "Arnold Allen",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Dooho Choi vs. Daniel Santos",
+                "winner": "Dooho Choi",
+                "weight_class": "Featherweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Juan Diaz vs. Malcolm Wellmaker",
+                "winner": "Juan Diaz",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Modestas Bukauskas vs. Christian Edwards",
+                "winner": "Modestas Bukauskas",
+                "weight_class": "Catch Weight",
+                "predictions": {}
+            },
+            {
+                "fight": "Benardo Sopaj vs. Timmy Cuamba",
+                "winner": "Benardo Sopaj",
+                "weight_class": "Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Khaos Williams vs. Nikolay Veretennikov",
+                "winner": "Khaos Williams",
+                "weight_class": "Welterweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Ivan Erslan vs. Tuco Tokkos",
+                "winner": "Ivan Erslan",
+                "weight_class": "Light Heavyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Tommy Gantt vs. Artur Minev",
+                "winner": "Tommy Gantt",
+                "weight_class": "Lightweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Ketlen Vieira vs. Jacqueline Cavalcanti",
+                "winner": "Ketlen Vieira",
+                "weight_class": "Women's Bantamweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Cody Brundage vs. Andre Petroski",
+                "winner": "Cody Brundage",
+                "weight_class": "Middleweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Alice Ardelean vs. Polyana Viana",
+                "winner": "Alice Ardelean",
+                "weight_class": "Women's Strawweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Luis Gurule vs. Daniel Barez",
+                "winner": "Luis Gurule",
+                "weight_class": "Flyweight",
+                "predictions": {}
+            },
+            {
+                "fight": "Nicolle Caliari vs. Shauna Bannon",
+                "winner": "Nicolle Caliari",
+                "weight_class": "Women's Strawweight",
+                "predictions": {}
+            }
+        ]
+    },
+    {
         "event_name": "UFC 328: Chimaev vs. Strickland",
         "event_date": "May 09, 2026",
         "location": "Newark, New Jersey, USA",
